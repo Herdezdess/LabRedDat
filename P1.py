@@ -3,5 +3,4 @@ import plotly.express as px
 import pandas as pd
 
 st.title('Parcial 1')
-st.write('Laboratorio de reducción de datos')
-st.write('Dessiré Z. Hernández')
+st.write('Laboratorio de reducción de datos\n Dessiré Zapeta Hernández\n 202112959')

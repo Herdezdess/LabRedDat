@@ -11,7 +11,7 @@ st.write('202112959')
 n = st.text_input('Ingrese el valor deseado de n')
 st.write('El valor de n es ', n)
 
-n = st.number_input(label, step=1, label_visibility="visible")
+n = st.number_input(label, step='1', label_visibility="visible")
 st.write('El valor de n es', n)
 
 p = st.text_input('Ingrese el valor deseado de p')

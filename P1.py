@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 
+st.header('Parcial 1')
 st.title('Parcial 1')
 
 st.write('Laboratorio de reducción de datos')

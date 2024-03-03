@@ -21,13 +21,15 @@ x = st.text_input('Ingrese el valor deseado de x', '10')
 st.write('El valor de x es ', x)
 
 def binomial(x,n,p):
-    # Todo lo que este aqui adentro es parte de lo que se ejecuta en la funcion
-
     comb = math.comb(n,x)
     p_x = p**x
     p_nx = (1-p)**(n-x)
-
     return comb*p_x*p_nx
+
+lista = numpy.arange(n+1)
+print(lista)
+
+
 
 
 

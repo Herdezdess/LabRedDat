@@ -18,11 +18,7 @@ p = st.text_input('Ingrese el valor deseado de p, la probabilidad de obtener el 
 st.write('El valor de p es ', p)
 
 #Definimos la función binomial
-def binomial(x,n,p):
-    comb = math.comb(n,x)
-    p_x = p**x
-    p_nx = (1-p)**(n-x)
-    return comb*p_x*p_nx
+
 
 #Hacemos una lista
 

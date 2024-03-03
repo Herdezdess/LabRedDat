@@ -27,7 +27,11 @@ def binomial(x,n,p):
     return comb*p_x*p_nx
 
 lista = np.arange(n+1)
-print(lista)
+data_table = pd.DataFrame({'x':lista})
+
+data_table['Pb'] = data_table.apply(lambda row: binomial(row['x'],n,p), axis=1)
+print(data_table)
+
 
 
 

@@ -1,4 +1,6 @@
-streamlit
+math
+numpy
 pandas
 plotly
 pyplot
+streamlit

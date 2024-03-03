@@ -25,27 +25,10 @@ def binomial(x,n,p):
     p_nx = (1-p)**(n-x)
     return comb*p_x*p_nx
 
-n = 1
-p = 1/2
+#Hacemos una lista
 
-lista = np.arange(n+1)
-print(lista)
-
-
-data_table = pd.DataFrame({'x':lista})
-data_table['Pb'] = data_table.apply(lambda row: binomial(row['x'],n,p), axis=1)
-print(data_table)
-binomial_plot, axis = plt.subplots()
-axis.bar(data_table['x'],data_table['Pb'])
-axis.plot(data_table['x'],data_table['Pb'],color='C1')
-# plt.show()
-binomial_plot.savefig('imagen.png')
-
-#########################################################################################################
-# Streamlit ########################################################################################################
-
-st.title('Graficos binomiales')
-st.pyplot(binomial_plot)
+lista = np.arange(n + 1)
+st.write(lista)
 
 
 

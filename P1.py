@@ -1,6 +1,8 @@
+from matplotlib import pyplot as plt
+import numpy
+import pandas
+import math
 import streamlit as st
-import plotly.express as px
-import pandas as pd
 
 st.title('Parcial 1')
 st.write('Laboratorio de reducción de datos')

@@ -1,5 +1,5 @@
 #Librerias
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 import math 
 
 import numpy as np

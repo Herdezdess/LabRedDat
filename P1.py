@@ -26,7 +26,7 @@ def binomial(x,n,p):
     p_nx = (1-p)**(n-x)
     return comb*p_x*p_nx
 
-lista = numpy.arange(n+1)
+lista = np.arange(n+1)
 print(lista)
 
 

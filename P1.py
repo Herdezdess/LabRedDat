@@ -1,17 +1,14 @@
-#librerias
 from matplotlib import pyplot as plt
 import numpy
 import pandas
 import math
 import streamlit as st
 
-#Datos personales
 st.title('Parcial 1')
 st.write('Laboratorio de reducción de datos')
 st.write('Dessiré Zapeta Hernández')
 st.write('202112959')
 
-#Cajas de texto para que el usuario agregue los datos 
 n = st.text_input('Ingrese el valor deseado de n, el número de caras', '1')
 st.write('El valor de n es ', n)
 

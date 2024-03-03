@@ -4,6 +4,8 @@ import pandas as pd
 
 st.title('Parcial 1')
 
-st.write('Laboratorio de reducción de datos \n Dessiré Zapeta Hernández\n 202112959')
+st.write('Laboratorio de reducción de datos')
+st.write('Dessiré Zapeta Hernández')
+st.write('202112959')
 
 st.button("Reset", type="primary")

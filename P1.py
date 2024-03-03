@@ -8,5 +8,7 @@ st.write('Laboratorio de reducción de datos')
 st.write('Dessiré Zapeta Hernández')
 st.write('202112959')
 
-n = input('Ingrese el valor de n')
+n = st.text_input('Valor de n', '2121')
+st.write('El valor de n es ', n)
+
 st.button("Reset", type="primary")

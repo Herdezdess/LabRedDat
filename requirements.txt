@@ -1,5 +1,4 @@
 math
-matplotlib
 numpy
 pandas
 plotly

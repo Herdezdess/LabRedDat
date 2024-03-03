@@ -16,6 +16,32 @@ st.write('El valor de p es ', p)
 x = st.text_input('Ingrese el valor deseado de x', '10')
 st.write('El valor de x es ', x)
 
+def binomial(x,n,p):
+    comb = math.comb(n,x)
+    p_x = p**x
+    u_p = (1 - p)**(n-x)
+return comb*p_x*u_p
+
+lista = numpy.arange(n+1)
+print(lista)
+
+data_table = pandas.DataFrame({'x':lista})
+
+data_table['Pb'] = data_table.apply(lambda row: binomial(row['x'],n,p,q), axis=1)
+print(data_table)
+
+
+binomial_plot, axis = plt.subplots()
+axis.bar(data_table['x'],data_table['Pb'])
+axis.plot(data_table['x'],data_table['Pb'],color='C1')
+
+binomial_plot.savefig('imagen.png')
+
+st.title('Graficos binomiales')
+st.pyplot(binomial_plot)
+
+
+
 
 
 

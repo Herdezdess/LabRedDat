@@ -12,9 +12,9 @@ st.write('Dessiré Zapeta Hernández')
 st.write('202112959')
 
 #Le pedimos al usuario que ingrese los datos necesarios
-n = st.number_input('Ingrese el valor deseado de n', '1')
+n = st.number_input("Ingrese el valor deseado de n", value=None, placeholder="Type a number...")
 st.write('El valor de n es ', n)
-p = st.number_input('Ingrese el valor deseado de p', '1/2')
+p = st.number_input("Ingrese el valor deseado de p", value=None, placeholder="Type a number...")
 st.write('El valor de p es ', p)
 
 #Definimos la función binomial
@@ -25,7 +25,7 @@ def binomial(x,n,p):
     return comb*p_x*p_nx 
 
 #Hacemos una lista para la nuestra tabla
-lista = np.arange(0,n+1,1)
+lista = np.arange(n+1)
 st.write(lista)
 
 

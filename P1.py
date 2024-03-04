@@ -26,20 +26,19 @@ def binomial(x,n,p):
 
 #Hacemos una lista para la nuestra tabla
 lista = np.arange(n+1)
-st.write(lista)
 
 #Definimos la primera fila de la tabla
 data_table = pd.DataFrame({'x':lista})
-#Ponelos la 
+#Ponelos la tabla con el valor probabilistico
 data_table['Pb'] = data_table.apply(lambda row: binomial(row['x'],n,p), axis=1)
 st.write(data_table)
 
-
+#Graficamos los datos de la tabla
 binomial_plot, axis = plt.subplots()
 axis.bar(data_table['x'],data_table['Pb'])
 axis.plot(data_table['x'],data_table['Pb'],color='C1')
 binomial_plot.savefig('imagen.png')
-
+#Le ponemos título al gráfico
 st.title('Graficos binomiales')
 st.pyplot(binomial_plot)
 

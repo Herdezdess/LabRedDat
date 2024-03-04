@@ -18,7 +18,7 @@ if  (isinstance(n, int)==false):
     st.write('n debe ser un número entero.')
 elif (n.isdigit()==false):
     st.write('n debe ser un valor númerico')
-else
+else:
     st.write('El valor de n es ', n)
 
 
@@ -31,7 +31,7 @@ if (p>1):
     st.write("P debe ser un número menor que 1")
 elif (p.isdigit()==false):
     st.write('p debe ser un valor númerico')
-else
+else:
     st.write('El valor de n es ', p)
 
 

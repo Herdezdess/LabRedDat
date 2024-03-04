@@ -16,7 +16,7 @@ n = st.number_input("Ingrese el valor deseado de n", value=None, placeholder="Ty
 #posibles errores, si n no es entero, si n no es un numero
 if  (isinstance(n, int)==false):
     st.write('n debe ser un número entero.')
-else if (n.isdigit()==false):
+elif (n.isdigit()==false):
     st.write('n debe ser un valor númerico')
 else
     st.write('El valor de n es ', n)
@@ -29,7 +29,7 @@ p = st.number_input("Ingrese el valor deseado de p", value=None, placeholder="Ty
 
 if (p>1):
     st.write("P debe ser un número menor que 1")
-else if (p.isdigit()==false):
+elif (p.isdigit()==false):
     st.write('p debe ser un valor númerico')
 else
     st.write('El valor de n es ', p)

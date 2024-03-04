@@ -25,7 +25,7 @@ def binomial(x,n,p):
     return comb*p_x*p_nx 
 
 #Hacemos una lista para la nuestra tabla
-lista = np.arange(n + 1)
+lista = list(n + 1)
 st.write(lista)
 
 

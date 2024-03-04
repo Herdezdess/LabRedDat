@@ -18,11 +18,11 @@ p = st.number_input("Ingrese el valor deseado de p", value=None, placeholder="Ty
 st.write('El valor de p es ', p)
 
 #Definimos la función binomial
-def binomial(x,n,p,q):
+def binomial(x,n,p):
     comb = math.comb(n,x)
     p_x = p**x
-    q_nx = (1-p)**(n-x)
-    return comb*p_x*q_nx 
+    p_nx = (1-p)**(n-x)
+    return comb*p_x*p_nx 
 
 #Hacemos una lista para la nuestra tabla
 lista = np.arange(n+1)
@@ -31,7 +31,7 @@ st.write(lista)
 #Definimos la primera fila de la tabla
 data_table = pd.DataFrame({'x':lista})
 #Ponelos la 
-data_table['Pb'] = data_table.apply(lambda row: binomial(row['x'],n,p,q), axis=1)
+data_table['Pb'] = data_table.apply(lambda row: binomial(row['x'],n,p), axis=1)
 st.write(data_table)
 
 

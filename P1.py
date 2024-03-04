@@ -13,9 +13,33 @@ st.write('202112959')
 
 #Le pedimos al usuario que ingrese los datos necesarios
 n = st.number_input("Ingrese el valor deseado de n", value=None, placeholder="Type a number...")
+#posibles errores, si n no es entero, si n no es un numero
+if  (isinstance(n, int)==false):
+st.write('n debe ser un número entero.')
+else if (n.isdigit()==false):
+st.write('n debe ser un valor númerico')
+else
 st.write('El valor de n es ', n)
+
+
+#Definimos los errores
+
+
 p = st.number_input("Ingrese el valor deseado de p", value=None, placeholder="Type a number...")
-st.write('El valor de p es ', p)
+
+if (p>1):
+st.write("P debe ser un número menor que 1")
+else if (p.isdigit()==false):
+st.write('p debe ser un valor númerico')
+else
+st.write('El valor de n es ', p)
+
+
+
+#Posibles errores de p
+
+
+
 
 #Definimos la función binomial
 def binomial(x,n,p):

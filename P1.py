@@ -12,9 +12,9 @@ st.write('Dessiré Zapeta Hernández')
 st.write('202112959')
 
 #Le pedimos al usuario que ingrese los datos necesarios
-n = st.text_input('Ingrese el valor deseado de n', '1')
+n = st.number_input('Ingrese el valor deseado de n', '1')
 st.write('El valor de n es ', n)
-p = st.text_input('Ingrese el valor deseado de p', '1/2')
+p = st.number_input('Ingrese el valor deseado de p', '1/2')
 st.write('El valor de p es ', p)
 
 #Definimos la función binomial

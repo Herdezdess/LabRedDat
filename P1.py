@@ -11,10 +11,10 @@ st.write('Laboratorio de reducción de datos')
 st.write('Dessiré Zapeta Hernández')
 st.write('202112959')
 
-#Le pedimos al usuario que ingrese los datos necesarios
+#Le pedimos al usuario que ingrese el valor de n
 n = st.number_input("Ingrese el valor deseado de n", value=None, placeholder="Type a number...")
 
-#posibles errores, si n no es entero, si n no es un numero
+#posibles errores: si n no es entero, si n no es un numero sino que nos de el valor de n ingresado
 #No sé porqué aquí ya no me funcionó el código, pidoperdón yo solo sé javascript
 #if  (isinstance(n, int)==False):
  #   st.write('n debe ser un número entero.')
@@ -23,9 +23,9 @@ n = st.number_input("Ingrese el valor deseado de n", value=None, placeholder="Ty
 #else:
  #   st.write('El valor de n es ', n)
 
-
+#Pedimos que ingrese el valor de p
 p = st.number_input("Ingrese el valor deseado de p", value=None, placeholder="Type a number...")
-#Posibles errores de p
+#Posibles errores de p: que sea menor que 1, que no sea un valor númerico sino que nos de el valor ingresado de p
 #if (p>1):
 #    st.write("P debe ser un número menor que 1")
 #elif (p.isdigit()==False):
@@ -41,7 +41,7 @@ def binomial(x,n,p):
     p_nx = (1-p)**(n-x)
     return comb*p_x*p_nx 
 
-#Hacemos una lista para la nuestra tabla
+#Hacemos una lista para nuestra tabla, le ingresamos n+1 porque el cero también es tomado como un valor
 lista = np.arange(n+1)
 
 #Definimos la primera fila de la tabla

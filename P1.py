@@ -13,23 +13,24 @@ st.write('202112959')
 
 #Le pedimos al usuario que ingrese los datos necesarios
 n = st.number_input("Ingrese el valor deseado de n", value=None, placeholder="Type a number...")
+
 #posibles errores, si n no es entero, si n no es un numero
-if  (isinstance(n, int)==false):
+if  (isinstance(n, int)==False):
     st.write('n debe ser un número entero.')
-elif (n.isdigit()==false):
+elif (n.isdigit()==False):
     st.write('n debe ser un valor númerico')
 else:
     st.write('El valor de n es ', n)
 
 
-#Definimos los errores
+
 
 
 p = st.number_input("Ingrese el valor deseado de p", value=None, placeholder="Type a number...")
 
 if (p>1):
     st.write("P debe ser un número menor que 1")
-elif (p.isdigit()==false):
+elif (p.isdigit()==False):
     st.write('p debe ser un valor númerico')
 else:
     st.write('El valor de n es ', p)

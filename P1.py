@@ -30,7 +30,7 @@ st.write(lista)
 
 data_table = pd.DataFrame({'x':lista})
 data_table['Pb'] = data_table.apply(lambda row: binomial(row['x'],n,p), axis=1)
-st.print(data_table)
+st.write(data_table)
 
 
 binomial_plot, axis = plt.subplots()

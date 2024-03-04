@@ -12,7 +12,7 @@ st.write('Dessiré Zapeta Hernández')
 st.write('202112959')
 
 #Le pedimos al usuario que ingrese los datos necesarios
-n = st.number_input("Ingrese el valor deseado de n", value=None, placeholder="Type a number...")
+n = st.number_input("Ingrese el valor deseado de n", value=None, step=int, placeholder="Type a number...")
 
 #posibles errores, si n no es entero, si n no es un numero
 if  (isinstance(n, int)==False):
@@ -26,7 +26,7 @@ else:
 
 
 
-p = st.number_input("Ingrese el valor deseado de p", value=None, placeholder="Type a number...")
+p = st.number_input("Ingrese el valor deseado de p", value=None, step=int, placeholder="Type a number...")
 
 if (p>1):
     st.write("P debe ser un número menor que 1")

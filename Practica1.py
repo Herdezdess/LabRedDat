@@ -12,6 +12,9 @@ menu_button = st.sidebar.button("☰ Menú")
 if menu_button:
     selected = st.sidebar.selectbox("Seleccione una página", ["Principal", "Teoria"])
 
+# Inicializar selected
+selected = None
+
 # Contenido de la página seleccionada
 if selected == "Principal":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)

@@ -6,7 +6,7 @@ import plotly.express as px
 st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="🌍", layout="wide")
 
 # Widget para el menú desplegable
-with st.sidebar.beta_expander("☰ Menú"):
+with st.sidebar.expander("☰ Menú"):
     selected = st.selectbox("Seleccione una página", ["Principal", "Teoria"])
 
 # Contenido de la página seleccionada
@@ -47,7 +47,6 @@ elif selected == "Teoria":
                   
     **2.** Devore, J.L. (2011). "Probability and Statistics for Engineering and the Sciences". Cengage Learning.  
                 
-    **3.** Wackerly, D., Mendenhall III, W., & Scheaffer, R.L. (2008). "Mathematical Statistics with Applications". Cengage Learning.  
-    """)
-    st.divider()
+    **3.** Wackerly, D., Mendenhall III, W., & Scheaffer, R.L
+
 

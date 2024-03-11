@@ -8,8 +8,13 @@ st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="�
 # Definir las opciones del menú
 menu_options = ["Principal", "Teoria"]
 
-# Widget para seleccionar el menú
-selected = st.sidebar.selectbox("Menú", menu_options)
+# Widget para el botón del menú
+menu_button = st.sidebar.button("☰ Menú")
+
+if menu_button:
+    selected = st.sidebar.selectbox("Menú", menu_options)
+else:
+    selected = None
 
 # Contenido de la página seleccionada
 if selected == "Principal":
@@ -52,3 +57,4 @@ elif selected == "Teoria":
     **3.** Wackerly, D., Mendenhall III, W., & Scheaffer, R.L. (2008). "Mathematical Statistics with Applications". Cengage Learning.  
     """)
     st.divider()
+

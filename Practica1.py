@@ -1,3 +1,4 @@
+Copy code
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -6,14 +7,11 @@ import plotly.express as px
 st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="🌍", layout="wide")
 
 # Widget para el botón del menú en la esquina superior izquierda
-menu_button = st.sidebar.button("☰ Menú")
+menu_expander = st.sidebar.expander("☰ Menú")
 
-# Mostrar el menú desplegable solo si el botón se presiona
-if menu_button:
+# Mostrar el menú desplegable
+with menu_expander:
     selected = st.sidebar.selectbox("Seleccione una página", ["Principal", "Teoria"])
-
-# Inicializar selected
-selected = None
 
 # Contenido de la página seleccionada
 if selected == "Principal":

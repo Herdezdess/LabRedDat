@@ -6,10 +6,10 @@ import plotly.express as px
 st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="🌍", layout="wide")
 
 # Widget para el botón del menú en la esquina superior izquierda
-menu_expander = st.sidebar.expander("☰ Menú")
+menu_button = st.sidebar.button("☰ Menú")
 
-# Mostrar el menú desplegable
-with menu_expander:
+# Mostrar el menú desplegable solo si el botón se presiona
+if menu_button:
     selected = st.sidebar.selectbox("Seleccione una página", ["Principal", "Teoria"])
 
 # Contenido de la página seleccionada

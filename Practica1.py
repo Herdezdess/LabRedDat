@@ -5,9 +5,12 @@ import plotly.express as px
 
 st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="🌍", layout="wide")
 
-# Widget para el menú desplegable
-with st.sidebar.expander("☰ Menú"):
-    selected = st.selectbox("Seleccione una página", ["Principal", "Teoria"])
+# Widget para el botón del menú en la página principal
+menu_button = st.sidebar.button("☰ Menú", key="menu_button")
+
+# Mostrar el menú desplegable solo si el botón se presiona
+if menu_button:
+    selected = st.sidebar.selectbox("Seleccione una página", ["Principal", "Teoria"], key="menu_select")
 
 # Contenido de la página seleccionada
 if selected == "Principal":
@@ -44,8 +47,8 @@ elif selected == "Teoria":
     st.markdown("<h3 style='text-align: left; color: black;'>Referencias</h1>", unsafe_allow_html=True)
     st.markdown("""  
     **1.** Johnson, N.L., Kotz, S., & Kemp, A.W. (1992). "Univariate Discrete Distributions". John Wiley and Sons.  
-                  
-    **2.** Devore, J.L. (2011). "Probability and Statistics for Engineering and the Sciences". Cengage Learning.  
+    
+    **2.** Devore, J.L. (2011). "Probability and Statistics for Engineering and the Sciences". Cengage Learning. 
                 
     **3.** Wackerly, D., Mendenhall III, W., & Scheaffer, R.L. (2008). "Mathematical Statistics with Applications". Cengage Learning.  
     """)

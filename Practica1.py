@@ -47,6 +47,8 @@ elif selected == "Teoria":
                   
     **2.** Devore, J.L. (2011). "Probability and Statistics for Engineering and the Sciences". Cengage Learning.  
                 
-    **3.** Wackerly, D., Mendenhall III, W., & Scheaffer, R.L
+    **3.** Wackerly, D., Mendenhall III, W., & Scheaffer, R.L. (2008). "Mathematical Statistics with Applications". Cengage Learning.  
+    """)
+    st.divider()
 
 

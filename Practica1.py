@@ -57,4 +57,3 @@ elif selected == "Teoria":
     **3.** Wackerly, D., Mendenhall III, W., & Scheaffer, R.L. (2008). "Mathematical Statistics with Applications". Cengage Learning.  
     """)
     st.divider()
-

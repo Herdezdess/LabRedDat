@@ -5,16 +5,9 @@ import plotly.express as px
 
 st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="🌍", layout="wide")
 
-# Definir las opciones del menú
-menu_options = ["Principal", "Teoria"]
-
-# Widget para el botón del menú
-menu_button = st.sidebar.button("☰ Menú")
-
-if menu_button:
-    selected = st.sidebar.selectbox("Menú", menu_options)
-else:
-    selected = None
+# Widget para el menú desplegable
+with st.sidebar.beta_expander("☰ Menú"):
+    selected = st.selectbox("Seleccione una página", ["Principal", "Teoria"])
 
 # Contenido de la página seleccionada
 if selected == "Principal":
@@ -57,3 +50,4 @@ elif selected == "Teoria":
     **3.** Wackerly, D., Mendenhall III, W., & Scheaffer, R.L. (2008). "Mathematical Statistics with Applications". Cengage Learning.  
     """)
     st.divider()
+

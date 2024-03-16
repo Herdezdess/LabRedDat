@@ -32,6 +32,7 @@ requests==2.31.0
 rich==13.7.0
 rpds-py==0.17.1
 six==1.16.0
+scipy==1.7.1
 smmap==5.0.1
 streamlit==1.31.0
 tenacity==8.2.3

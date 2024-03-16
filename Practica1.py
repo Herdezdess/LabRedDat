@@ -21,24 +21,33 @@ with st.sidebar:
 if selected == "Principal":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
     data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
+    #cantidad de tiros
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
     m_t = data.head(m)
     
-    # Historigrama
-    grafica = px.histogram(m_t, 'DF')
-
-    # Aquí empieza el ajuste
-    fit_params = binom.fit(m_t['DF'])
-    x_values = np.arange(0, m_t['DF'].max() + 1)
-    y_values = binom.pmf(x_values, *fit_params)
+    #histograma
+    plt.figure(figsize=(10, 6))
+    plt.hist(m_t['DF'], bins=np.arange(min(m_t['DF']), max(m_t['DF']) + 1.5) - 0.5, alpha=0.7, label='Datos', color='blue', density=True)
     
-    #Gráfico con el ajuste 
-    grafica.add_scatter(x=x_values, y=y_values, mode='lines', name='Distribución ajustada', line=dict(color='orange'))
-
-    # Mostrar gráficas
-    st.plotly_chart(grafica)
+    # Ajuste de la distribución binomial a los datos
+    n, p = len(m_t), 0.5  # Suponiendo una probabilidad de éxito de 0.5 para una moneda justa
+    x_values = np.arange(0, max(m_t['DF']) + 1)
+    y_values = binom.pmf(x_values, n, p)
+    
+    # Trazar la distribución
+    plt.plot(x_values, y_values, marker='o', linestyle='-', color='orange', label='Distribución Binomial')
+    
+    # Configuración de la gráfica
+    plt.xlabel('Número de éxitos')
+    plt.ylabel('Densidad de probabilidad')
+    plt.title('Histograma y distribución binomial')
+    plt.legend()
+    
+    # Mostrar la gráfica
+    st.pyplot(plt)
     st.divider()
-    st.table(m_t)
+    st.table(m_t) 
+
 
 if selected == "Teoria":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)  

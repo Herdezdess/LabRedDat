@@ -5,6 +5,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 import plotly.express as px
+from scipy.stats import binom
 
 #Nombre e ícono de la pestaña
 st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="🌍", layout="wide")
@@ -16,14 +17,28 @@ with st.sidebar:
         menu_icon = "heart-eyes-fill",
         default_index = 0,
     )
+
 if selected == "Principal":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
     data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
-    print(data)
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
     m_t = data.head(m)
+    
+    # Historigrama
     grafica = px.histogram(m_t, 'DF')
+
+    # Aquí empieza el ajuste
+    fit_params = binom.fit(m_t['DF'])
+    x_values = np.arange(0, m_t['DF'].max() + 1)
+    y_values = binom.pmf(x_values, *fit_params)
+    
+    #Gráfico con el ajuste 
+    fit_fig = px.bar(x=x_values, y=y_values, labels={'x': 'Número de éxitos', 'y': 'Probabilidad'}, title='Ajuste de distribución binomial')
+    fit_fig.update_traces(marker_color='orange')
+
+    # Mostrar gráficas
     st.plotly_chart(grafica)
+    st.plotly_chart(fit_fig)
     st.divider()
     st.table(m_t)
 

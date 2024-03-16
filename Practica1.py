@@ -33,12 +33,10 @@ if selected == "Principal":
     y_values = binom.pmf(x_values, *fit_params)
     
     #Gráfico con el ajuste 
-    fit_fig = px.bar(x=x_values, y=y_values, labels={'x': 'Número de éxitos', 'y': 'Probabilidad'}, title='Ajuste de distribución binomial')
-    fit_fig.update_traces(marker_color='orange')
+    grafica.add_scatter(x=x_values, y=y_values, mode='lines', name='Distribución ajustada', line=dict(color='orange'))
 
     # Mostrar gráficas
     st.plotly_chart(grafica)
-    st.plotly_chart(fit_fig)
     st.divider()
     st.table(m_t)
 

@@ -19,13 +19,6 @@ if selected == "Principal":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
     data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
     print(data)
-    def binom(x,n,p):
-        x = int(x)
-        n = int(n)
-        comb = math.comb(n,x)
-        p_x = p**x
-        q_nx = (1-p)**(n-x)
-        return comb*p_x*q_nx
 
 binom = np.vectorize(binom)
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)

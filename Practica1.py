@@ -20,33 +20,27 @@ with st.sidebar:
     )
 
 if selected == "Principal":
-# Función para ajuste de curva
-    def binomial_fit(x, p):
-        return np.math.comb(m, x) * p**x * (1-p)**(m-x)
-
-# Lectura de datos
+    # Título
+    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
+    # Lectura de datos
     data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
-
-# Interacción con el usuario para seleccionar la cantidad de tiros
-    m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
-    m_t = data.head(m)
-
-# Histograma con Plotly
-    grafica = px.histogram(m_t, 'DF')
-
-# Ajuste de curva
-    x = np.arange(m + 1)  # Valores posibles de x
-    y = m_t['DF'].value_counts(normalize=True).sort_index()  # Frecuencia relativa de cada valor de x
-    p_opt, _ = curve_fit(binomial_fit, x, y)
-
-# Agregar curva ajustada a la imagen
-    y_fit = binomial_fit(x, *p_opt)
-    grafica.add_scatter(x=x, y=y_fit, mode='lines', name='Curva ajustada')
-
-# Mostrar gráfico y tabla
-    st.plotly_chart(grafica)
+    # Selección de cantidad de tiros
+    m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)  # Crea un control deslizante para que el usuario seleccione la cantidad de tiros
+    m_t = data.head(m)  # Selecciona las primeras 'm' filas de los datos
+    # Gráfico de barras
+    grafica = px.histogram(m_t, 'DF')  # Crea un gráfico de barras utilizando Plotly Express con los datos de 'm_t'
+    st.plotly_chart(grafica)  # Muestra el gráfico de barras en la aplicación
+    # Ajuste de distribución binomial
+    x_values = np.arange(0, max(m_t['DF']) + 1)  # Crea un rango de valores de 0 a la máxima cantidad de tiros
+    n = len(m_t['DF'])  # Obtiene el tamaño de la muestra
+    p_fit = np.mean(m_t['DF']) / max(m_t['DF'])  # Calcula la probabilidad de éxito para el ajuste binomial
+    binomial_fit = binom.pmf(x_values, n, p_fit)  # Calcula la función de masa de probabilidad (PMF) de la distribución binomial
+    # Gráfico de ajuste
+    st.markdown("<h2 style='text-align: center; color: #A2BDF1;'>Ajuste de Distribución Binomial</h2>", unsafe_allow_html=True)  # Título del ajuste
+    st.line_chart(list(zip(x_values, binomial_fit)))  # Muestra un gráfico de línea con el ajuste de la distribución binomial
+    # Tabla de datos
+    st.table(m_t)  # Muestra una tabla con los datos de los tiros de monedas seleccionados por el usuario
     st.divider()
-    st.table(m_t)
 
 
 

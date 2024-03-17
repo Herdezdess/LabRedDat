@@ -3,10 +3,8 @@ import numpy as np
 import streamlit as st
 from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
-import plotly.express as px
 from scipy.stats import binom
 from scipy.optimize import curve_fit
-
 
 # Definir la función binomial_distribution fuera del bloque if
 
@@ -31,24 +29,24 @@ if selected == "Principal":
     m_t = data.head(m)
     
     # Crear histograma
-    plt.figure(figsize=(10, 6))
-    hist, bins, _ = plt.hist(m_t['DF'], bins=np.arange(min(m_t['DF']), max(m_t['DF']) + 1.5) - 0.5, alpha=0.7, label='Datos', color='blue', density=True)
+    fig, ax = plt.subplots(figsize=(10, 6))
+    hist, bins, _ = ax.hist(m_t['DF'], bins=np.arange(min(m_t['DF']), max(m_t['DF']) + 1.5) - 0.5, alpha=0.7, label='Datos', color='blue', density=True)
     
     # Ajuste de la distribución binomial a los datos
     x_values = np.linspace(0, max(m_t['DF']), len(hist))
     params, _ = curve_fit(binomial_distribution, x_values, hist)
     
     # Trazar la distribución binomial ajustada
-    plt.plot(x_values, binomial_distribution(x_values, *params), marker='o', linestyle='-', color='orange', label='Distribución Binomial')
+    ax.plot(x_values, binomial_distribution(x_values, *params), marker='o', linestyle='-', color='orange', label='Distribución Binomial')
     
     # Configuración de la gráfica
-    plt.xlabel('Número de éxitos')
-    plt.ylabel('Densidad de probabilidad')
-    plt.title('Histograma y distribución binomial')
-    plt.legend()
+    ax.set_xlabel('Número de éxitos')
+    ax.set_ylabel('Densidad de probabilidad')
+    ax.set_title('Histograma y distribución binomial')
+    ax.legend()
     
     # Mostrar la gráfica en Streamlit
-    st.pyplot()
+    st.pyplot(fig)
     st.divider()
     st.table(m_t)
 

@@ -31,7 +31,7 @@ if selected == "Principal":
     grafica = px.histogram(m_t, 'DF')  # Crea un gráfico de barras utilizando Plotly Express con los datos de 'm_t'
     st.plotly_chart(grafica)  # Muestra el gráfico de barras en la aplicación
     # Ajuste de distribución binomial
-    x_values = np.arange(0, max(m_t['DF']) + 1)  # Crea un rango de valores de 0 a la máxima cantidad de tiros
+    x_values = np.arange(0, m_t)  # Crea un rango de valores de 0 a la máxima cantidad de tiros
     n = len(m_t['DF'])  # Obtiene el tamaño de la muestra
     p_fit = np.mean(m_t['DF']) / max(m_t['DF'])  # Calcula la probabilidad de éxito para el ajuste binomial
     binomial_fit = binom.pmf(x_values, n, p_fit)  # Calcula la función de masa de probabilidad (PMF) de la distribución binomial

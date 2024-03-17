@@ -4,28 +4,55 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 import plotly.express as px
+from scipy.stats import binom
 
-st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="🌍", layout="wide")
+# Establecer la configuración de la página
+st.set_page_config(page_title="Práctica 1: Distribución Binomial", page_icon="🌍", layout="wide")
+
+# Definir el menú de opciones
 with st.sidebar:
-    selected=option_menu(
+    selected = option_menu(
         menu_title="Menú",
-        options = ["Principal", "Teoria"],
-        icons = ["house-heart-fill", "envelope-heart-fill"],
-        menu_icon = "heart-eyes-fill",
-        default_index = 0,
+        options=["Principal", "Teoria"],
+        icons=["house-heart-fill", "envelope-heart-fill"],
+        menu_icon="heart-eyes-fill",
+        default_index=0,
     )
 
+# Función para calcular los parámetros de la distribución binomial
+def calculate_binomial_params(data):
+    p = data.sum() / (len(data) * len(data.columns))
+    n = len(data.columns)
+    return p, n
+
+# Ajuste de la distribución binomial a los datos
+def fit_binomial_distribution(data):
+    p, n = calculate_binomial_params(data)
+    x = np.arange(0, n + 1)
+    y = binom.pmf(x, n, p)
+    return x, y
+
+# Principal
 if selected == "Principal":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
     data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
-    print(data)
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
     m_t = data.head(m)
     grafica = px.histogram(m_t, 'DF')
+
+    # Ajuste de la distribución binomial
+    x, y = fit_binomial_distribution(m_t)
+    plt.bar(x, y, alpha=0.5, color='orange', label='Distribución Binomial')
+
+    # Graficar el histograma
     st.plotly_chart(grafica)
+    st.pyplot()
+
+    # Mostrar la tabla de datos
     st.divider()
     st.table(m_t)
 
+# Teoría
 if selected == "Teoria":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)  
 

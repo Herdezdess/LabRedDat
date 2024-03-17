@@ -20,10 +20,10 @@ with st.sidebar:
     )
 
 if selected == "Principal":
-    # Título
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
-    # Selección de cantidad de tiros
-    m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)  # Crea un control deslizante para que el usuario seleccione la cantidad de tiros
+    m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100) 
+    m_t = data.head(m)
+    
     # Gráfico de barras
 
     def binom(x,n,p):

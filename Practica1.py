@@ -20,35 +20,34 @@ with st.sidebar:
     )
 
 if selected == "Principal":
-    def binomial_distribution(x, n, p):
-        return binom.pmf(x, n, p)
-    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
+# Función para ajuste de curva
+    def binomial_fit(x, p):
+        return np.math.comb(m, x) * p**x * (1-p)**(m-x)
+
+# Lectura de datos
     data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
-    #cantidad de tiros
+
+# Interacción con el usuario para seleccionar la cantidad de tiros
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
     m_t = data.head(m)
-    
-    # Crear histograma
-    fig, ax = plt.subplots(figsize=(10, 6))
-    hist, bins, _ = ax.hist(m_t['DF'], bins=np.arange(min(m_t['DF']), max(m_t['DF']) + 1.5) - 0.5, alpha=0.7, label='Datos', color='blue', density=True)
-    
-    # Ajuste de la distribución binomial a los datos
-    x_values = np.linspace(0, max(m_t['DF']), len(hist))
-    params, _ = curve_fit(binomial_distribution, x_values, hist)
-    
-    # Trazar la distribución binomial ajustada
-    ax.plot(x_values, binomial_distribution(x_values, *params), marker='o', linestyle='-', color='orange', label='Distribución Binomial')
-    
-    # Configuración de la gráfica
-    ax.set_xlabel('Número de éxitos')
-    ax.set_ylabel('Densidad de probabilidad')
-    ax.set_title('Histograma y distribución binomial')
-    ax.legend()
-    
-    # Mostrar la gráfica en Streamlit
-    st.pyplot(fig)
+
+# Histograma con Plotly
+    grafica = px.histogram(m_t, 'DF')
+
+# Ajuste de curva
+    x = np.arange(m + 1)  # Valores posibles de x
+    y = m_t['DF'].value_counts(normalize=True).sort_index()  # Frecuencia relativa de cada valor de x
+    p_opt, _ = curve_fit(binomial_fit, x, y)
+
+# Agregar curva ajustada a la imagen
+    y_fit = binomial_fit(x, *p_opt)
+    grafica.add_scatter(x=x, y=y_fit, mode='lines', name='Curva ajustada')
+
+# Mostrar gráfico y tabla
+    st.plotly_chart(grafica)
     st.divider()
     st.table(m_t)
+
 
 
 if selected == "Teoria":

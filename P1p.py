@@ -41,12 +41,15 @@ if selected == "Principal":
     grafica = px.histogram(m_t, 'DF')
 
     # Ajuste de la distribución binomial
-    x, y = fit_binomial_distribution(m_t)
-    plt.bar(x, y, alpha=0.5, color='orange', label='Distribución Binomial')
+    p = m_t.mean() / len(m_t.columns)
+    n = len(m_t.columns)
+    x_fit = np.arange(0, n + 1)
+    y_fit = binom.pmf(x_fit, n, p)
 
-    # Graficar el histograma
-    st.plotly_chart(grafica)
-    st.pyplot()
+    # Graficar el histograma y la función binomial ajustada
+    fig = px.histogram(m_t, 'DF')
+    fig.add_scatter(x=x_fit, y=y_fit, mode='lines', name='Distribución Binomial Ajustada')
+    st.plotly_chart(fig)
 
     # Mostrar la tabla de datos
     st.divider()

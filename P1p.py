@@ -23,17 +23,8 @@ if selected == "Principal":
     m_t = data.head(m)
     grafica = px.histogram(m_t, 'DF')
     st.plotly_chart(grafica)
-    # Ajuste de distribución binomial
-    x_values = np.arange(0, max(m_t['DF']) + 1)
-    n = len(m_t['DF'])
-    p_fit = np.mean(m_t['DF']) / max(m_t['DF']) 
-    binomial_fit = binom.pmf(x_values, n, p_fit)
-    # Gráfico de ajuste
-    st.markdown("<h2 style='text-align: center; color: #A2BDF1;'>Ajuste de Distribución Binomial</h2>", unsafe_allow_html=True)
-    st.line_chart(list(zip(x_values, binomial_fit)))
-    # Tabla de datos
-    st.table(m_t)
     st.divider()
+    st.table(m_t)
 
 if selected == "Teoria":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)  

@@ -23,8 +23,8 @@ if selected == "Principal":
     m_t = data.head(m)
     grafica = px.histogram(m_t, 'DF')
     st.plotly_chart(grafica)
-    st.divider()
     st.table(m_t)
+    st.divider()
 
 if selected == "Teoria":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)  

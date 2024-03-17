@@ -7,6 +7,16 @@ import plotly.express as px
 from scipy.stats import binom
 from scipy.optimize import curve_fit
 
+# Tu código para generar la figura
+plt.figure(figsize=(10, 6))
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.xlabel('Eje X')
+plt.ylabel('Eje Y')
+plt.title('Gráfico de ejemplo')
+
+# Llamar a st.pyplot() con la figura
+st.pyplot()
+
 # Definir la función binomial_distribution fuera del bloque if
 def binomial_distribution(x, n, p):
     return binom.pmf(x, n, p)

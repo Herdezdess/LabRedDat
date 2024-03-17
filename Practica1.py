@@ -5,6 +5,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 import plotly.express as px
+from scipy.stats import binom
 from scipy.optimize import curve_fit
 
 

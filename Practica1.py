@@ -10,6 +10,9 @@ from scipy.optimize import curve_fit
 
 # Definir la función binomial_distribution fuera del bloque if
 def binomial_distribution(x, n, p):
+    comb = math.comb(int(n),int(x))
+    p_x = p**x
+    p_nx = (1-p)**(n-x)
     return binom.pmf(x, n, p)
 
 #Nombre e ícono de la pestaña

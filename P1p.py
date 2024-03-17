@@ -20,7 +20,7 @@ if selected == "Principal":
     data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
     print(data)
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
-    m_t = data.head(m)
+    m_t = data.head(m + 1)
     grafica = px.histogram(m_t, 'DF')
     st.plotly_chart(grafica)
     st.divider()

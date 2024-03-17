@@ -34,7 +34,7 @@ if selected == "Principal":
     hist, bins, _ = plt.hist(m_t['DF'], bins=np.arange(min(m_t['DF']), max(m_t['DF']) + 1.5) - 0.5, alpha=0.7, label='Datos', color='blue', density=True)
     
     # Ajuste de la distribución binomial a los datos
-    x_values = np.arange(0, max(m_t['DF']) + 1)
+    x_values = np.linspace(0, max(m_t['DF']), len(hist))
     params, _ = curve_fit(binomial_distribution, x_values, hist)
     
     # Trazar la distribución binomial ajustada

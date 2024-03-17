@@ -22,23 +22,53 @@ with st.sidebar:
 if selected == "Principal":
     # Título
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
-    # Lectura de datos
-    data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
     # Selección de cantidad de tiros
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)  # Crea un control deslizante para que el usuario seleccione la cantidad de tiros
     m_t = data.head(m)  # Selecciona las primeras 'm' filas de los datos
     # Gráfico de barras
-    grafica = px.histogram(m_t, 'DF')  # Crea un gráfico de barras utilizando Plotly Express con los datos de 'm_t'
-    st.plotly_chart(grafica)  # Muestra el gráfico de barras en la aplicación
-    # Ajuste de distribución binomial
-    x_values = np.arange(0, m_t)  # Crea un rango de valores de 0 a la máxima cantidad de tiros
-    n = len(m_t['DF'])  # Obtiene el tamaño de la muestra
-    p_fit = np.mean(m_t['DF']) / max(m_t['DF'])  # Calcula la probabilidad de éxito para el ajuste binomial
-    binomial_fit = binom.pmf(x_values, n, p_fit)  # Calcula la función de masa de probabilidad (PMF) de la distribución binomial
-    # Gráfico de ajuste
-    st.markdown("<h2 style='text-align: center; color: #A2BDF1;'>Ajuste de Distribución Binomial</h2>", unsafe_allow_html=True)  # Título del ajuste
-    st.line_chart(list(zip(x_values, binomial_fit)))  # Muestra un gráfico de línea con el ajuste de la distribución binomial
-    # Tabla de datos
+
+    def binom(x,n,p):
+        x = int(x)
+        n = int(n)
+            
+        comb = math.comb(n,x)
+        p_x = p**x
+        q_nx = (1-p)**(n-x)
+        return comb*p_x*q_nx
+
+    binom = np.vectorize(binom)
+
+
+    data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
+    print(f'data:\n{data}')
+
+    data = data.loc[:m]
+
+    counts_non_sort = data['GS'].value_counts()
+    counts = pd.DataFrame(np.zeros(11))
+
+    for row, value in counts_non_sort.items():
+        counts.loc[row,0] = value
+
+    print(f'counts:\n{counts}')
+    print(f'index: {counts.index.values}')
+    print(f'normalized counts: {list(counts[0]/m)}')
+
+
+    fit, cov_mat = sco.curve_fit(binom,counts.index.values,counts[0]/m,[10,0.5],bounds=[(0,0),(np.inf,1)])
+
+    print(f'Fit:\n{fit}\ncov_mat\n{cov_mat}')
+
+
+
+
+
+    binomial_plot = px.line(x=counts.index.values, y=binom(counts.index.values,n,p), title="Lanzamiento de fichas")
+
+    binomial_plot.add_bar(x=counts.index.values, y=counts[0]/m, name='Lanzamientos experimentales')
+
+    binomial_plot.show()
+    
     st.table(m_t)  # Muestra una tabla con los datos de los tiros de monedas seleccionados por el usuario
     st.divider()
 

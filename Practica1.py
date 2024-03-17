@@ -21,52 +21,67 @@ with st.sidebar:
 
 if selected == "Principal":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
-    m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100) 
-    m_t = data.head(m)
-    
-    # Gráfico de barras
-
     def binom(x,n,p):
         x = int(x)
         n = int(n)
-            
         comb = math.comb(n,x)
         p_x = p**x
         q_nx = (1-p)**(n-x)
         return comb*p_x*q_nx
-
     binom = np.vectorize(binom)
-
-
-    data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
-    print(f'data:\n{data}')
-
+    
+    data = pd.read_csv('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica1/Copia%20de%20ConteosDeCarasPorPareja%20-%20Sheet1%20(1).csv')
+    #cantidad de tiros
+    m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
+    m_t = data.head(m)
+    
     data = data.loc[:m]
 
-    counts_non_sort = data['GS'].value_counts()
+    counts_non_sort = data['DF'].value_counts()
     counts = pd.DataFrame(np.zeros(11))
 
     for row, value in counts_non_sort.items():
-        counts.loc[row,0] = value
-
+        counts.loc[row,0] = value 
     print(f'counts:\n{counts}')
     print(f'index: {counts.index.values}')
     print(f'normalized counts: {list(counts[0]/m)}')
-
-
+    
     fit, cov_mat = sco.curve_fit(binom,counts.index.values,counts[0]/m,[10,0.5],bounds=[(0,0),(np.inf,1)])
 
     print(f'Fit:\n{fit}\ncov_mat\n{cov_mat}')
 
+    n = fit[0]
+    p = fit[1]
+
+    print(f'Este es el valor de n: {n}\nEste es el valor de p: {p}')
     binomial_plot = px.line(x=counts.index.values, y=binom(counts.index.values,n,p), title="Lanzamiento de fichas")
 
     binomial_plot.add_bar(x=counts.index.values, y=counts[0]/m, name='Lanzamientos experimentales')
 
-    binomial_plot.show()
-    
-    st.table(m_t)  # Muestra una tabla con los datos de los tiros de monedas seleccionados por el usuario
-    st.divider()
 
+    #Aquí calculamos el promedio de los datos y su desviación estandar
+    pro = np.mean(m_t)
+    desv_estd = np.std(m_t, ddof=1)
+    
+   # Crear histograma
+    fig, ax = plt.subplots(figsize=(10, 6))
+    hist, bins, _ = ax.hist(m_t['DF'], bins=np.arange(min(m_t['DF']), max(m_t['DF']) + 1.5) - 0.5, alpha=0.7, label='Datos', color='blue', density=True)
+    
+    # Configuración de la gráfica
+    ax.set_xlabel('Número de éxitos')
+    ax.set_ylabel('Densidad de probabilidad')
+    ax.set_title('Histograma y distribución binomial')
+    ax.legend()
+    
+    # Mostrar la gráfica en Streamlit
+    st.pyplot(binomial_plot)
+    if pro is not None:
+        st.success(f"**El promedio de los datos ingresados es: {pro}**")
+    if desv_estd is not None:
+        st.success(f"**La desviación estandar para los datos ingresados es: {desv_estd}**")
+    st.divider()
+    with st.expander("Click para ver la tabla de datos"):
+        st.table(m_t)
 
 
 if selected == "Teoria":

@@ -5,6 +5,9 @@ from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 from scipy.stats import binom
 from scipy.optimize import curve_fit
+import math
+import plotly.express as px
+from scipy import optimize as sco
 
 # Definir la función binomial_distribution fuera del bloque if
 
@@ -22,14 +25,19 @@ with st.sidebar:
 if selected == "Principal":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
     def binom(x,n,p):
-        x = int(x)
-        n = int(n)
-        comb = math.comb(n,x)
-        p_x = p**x
-        q_nx = (1-p)**(n-x)
-        return comb*p_x*q_nx
+    
+
+     x = int(x)
+     n = int(n)
+        
+     comb = math.comb(n,x)
+     p_x = p**x
+     q_nx = (1-p)**(n-x)
+
+     return comb*p_x*q_nx
     binom = np.vectorize(binom)
     
+
     data = pd.read_csv('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica1/Copia%20de%20ConteosDeCarasPorPareja%20-%20Sheet1%20(1).csv')
     #cantidad de tiros
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
@@ -57,6 +65,7 @@ if selected == "Principal":
     binomial_plot = px.line(x=counts.index.values, y=binom(counts.index.values,n,p), title="Lanzamiento de fichas")
 
     binomial_plot.add_bar(x=counts.index.values, y=counts[0]/m, name='Lanzamientos experimentales')
+    binomial_plot.show()
 
 
     #Aquí calculamos el promedio de los datos y su desviación estandar
@@ -74,7 +83,6 @@ if selected == "Principal":
     ax.legend()
     
     # Mostrar la gráfica en Streamlit
-    st.pyplot(binomial_plot)
     if pro is not None:
         st.success(f"**El promedio de los datos ingresados es: {pro}**")
     if desv_estd is not None:

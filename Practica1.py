@@ -25,17 +25,16 @@ if selected == "Principal":
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
     m_t = data.head(m)
     
-    #histograma
+        # Crear histograma
     plt.figure(figsize=(10, 6))
-    plt.hist(m_t['DF'], bins=np.arange(min(m_t['DF']), max(m_t['DF']) + 1.5) - 0.5, alpha=0.7, label='Datos', color='blue', density=True)
+    hist, bins, _ = plt.hist(m_t['DF'], bins=np.arange(min(m_t['DF']), max(m_t['DF']) + 1.5) - 0.5, alpha=0.7, label='Datos', color='blue', density=True)
     
     # Ajuste de la distribución binomial a los datos
-    n, p = len(m_t), 0.5  # Suponiendo una probabilidad de éxito de 0.5 para una moneda justa
     x_values = np.arange(0, max(m_t['DF']) + 1)
-    y_values = binom.pmf(x_values, n, p)
+    params, _ = curve_fit(binomial_distribution, x_values, hist)
     
-    # Trazar la distribución
-    plt.plot(x_values, y_values, marker='o', linestyle='-', color='orange', label='Distribución Binomial')
+    # Trazar la distribución binomial ajustada
+    plt.plot(x_values, binomial_distribution(x_values, *params), marker='o', linestyle='-', color='orange', label='Distribución Binomial')
     
     # Configuración de la gráfica
     plt.xlabel('Número de éxitos')
@@ -43,11 +42,10 @@ if selected == "Principal":
     plt.title('Histograma y distribución binomial')
     plt.legend()
     
-    # Mostrar la gráfica
-    st.pyplot(plt)
+    # Mostrar la gráfica en Streamlit
+    st.pyplot()
     st.divider()
-    st.table(m_t) 
-
+    st.table(m_t)
 
 if selected == "Teoria":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)  

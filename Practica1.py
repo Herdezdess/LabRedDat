@@ -5,7 +5,8 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 import plotly.express as px
-from scipy.stats import binom
+from scipy.optimize import curve_fit
+
 
 #Nombre e ícono de la pestaña
 st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="🌍", layout="wide")

@@ -83,6 +83,7 @@ if selected == "Principal":
     ax.legend()
     
     # Mostrar la gráfica en Streamlit
+    st.pyplot(binomial_plot)
     if pro is not None:
         st.success(f"**El promedio de los datos ingresados es: {pro}**")
     if desv_estd is not None:

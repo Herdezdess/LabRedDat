@@ -41,7 +41,7 @@ if selected == "Principal":
     data = pd.read_csv('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica1/Copia%20de%20ConteosDeCarasPorPareja%20-%20Sheet1%20(1).csv')
     #cantidad de tiros
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
-    m_t = data.head(m)
+    m_t = data.head(m + 1)
     
     data = data.loc[:m]
 

@@ -1,37 +1,13 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-from streamlit_option_menu import option_menu
-import matplotlib.pyplot as plt
 import plotly.express as px
 from scipy.stats import binom
 
 # Establecer la configuración de la página
 st.set_page_config(page_title="Práctica 1: Distribución Binomial", page_icon="🌍", layout="wide")
 
-# Definir el menú de opciones
-with st.sidebar:
-    selected = option_menu(
-        menu_title="Menú",
-        options=["Principal", "Teoria"],
-        icons=["house-heart-fill", "envelope-heart-fill"],
-        menu_icon="heart-eyes-fill",
-        default_index=0,
-    )
-
-# Principal
-if selected == "Principal":
-    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
-    data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
-    m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
-
-    # Función para calcular los parámetros de la distribución binomial
-def calculate_binomial_params(data):
-    p = data.sum() / (len(data) * len(data.columns))
-    n = len(data.columns)
-    return p, n
-
-# Ajuste de la distribución binomial a los datos
+# Función para ajustar la distribución binomial a los datos
 def fit_binomial(data):
     p = data.mean().mean() / len(data.columns)
     n = len(data.columns)
@@ -39,30 +15,30 @@ def fit_binomial(data):
     y = binom.pmf(x, n, p)
     return x, y
 
+# Principal
+if st.sidebar.selectbox("Menú", ["Principal", "Teoría"]) == "Principal":
+    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
+    data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
+    m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
     m_t = data.head(m)
     grafica = px.histogram(m_t, 'DF')
 
     # Ajuste de la distribución binomial
-    p = m_t.mean() / len(m_t.columns)
-    n = len(m_t.columns)
-    x_fit = np.arange(0, n + 1)
-    y_fit = binom.pmf(x_fit, n, p)
+    x_fit, y_fit = fit_binomial(m_t)
 
-    # Graficar el histograma y la función binomial ajustada
+    # Graficar el histograma y la distribución binomial ajustada
     fig = px.histogram(m_t, 'DF')
-    fig.add_scatter(x=x_fit, y=y_fit, mode='lines', name='Distribución Binomial Ajustada')
+    fig.add_scatter(x=x_fit, y=y_fit, mode='lines', name='Ajuste Binomial')
     st.plotly_chart(fig)
 
     # Mostrar la tabla de datos
     st.divider()
     st.table(m_t)
 
-# Teoría
-if selected == "Teoria":
-    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)  
+elif st.sidebar.selectbox("Menú", ["Principal", "Teoría"]) == "Teoría":
+    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoría de la Distribución Binomial</h1>", unsafe_allow_html=True)  
 
-    st.markdown("""La distribución binomial es modelo probabilistico discreto. Este describe el número de éxitos en una serie de ensayos secuenciales independientes, donde cada uno tiene siempre la misma probabilidad de exito. Este modelo es utilizado con mucha frecuencia en experimentos donde se obtengan resultados binarios, es decir, si el resultado se puede categorizar como Éxito o Fracaso.""")
-    st.markdown("""Para definir a la distribución binomial, se requieren dos parametros. El primero de ellos es el **número total de intentos (n)** y la **probabilidad de exito de cada ensayo (p)**. Agregado a esto, regularmente se utiliza el simbolo X para denotar una variable que cuenta el número de éxitos en n cantidad de ensayos. """)
+    st.markdown("""La distribución binomial es un modelo probabilístico discreto que describe el número de éxitos en una serie de ensayos independientes, donde cada uno tiene la misma probabilidad de éxito.""")
     st.markdown("""La fórmula para calcular la probabilidad de exactamente k éxitos en n ensayos, con una probabilidad de éxito p, es:""")
 
     st.latex(r''' P(x = k) = \binom{n}{k} p^{k} (1-p)^{n-k} ''')
@@ -71,12 +47,11 @@ if selected == "Teoria":
     ▶ (n k) es el coeficiente binomial.  
     ▶ p es la probabilidad de éxito en un solo ensayo.  
     ▶ (1 - p) es la probabilidad de fracaso en un solo ensayo.  
-    ▶ k es el número de exitos en n ensayos.
+    ▶ k es el número de éxitos en n ensayos.
     """)
     st.divider()
-    st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Acerca de esta practica</h1>", unsafe_allow_html=True)  
-    st.markdown("""En esta practica, cada pareja, lanzó un grupo de 10 monedas un total de 100 veces para poder observar la tendencia de las monedas a caer en el lado de la cara. Tras recopilar todos los datos, estos fueron ingresados en un archivo csv para su analisis posterior. Lo primero que se realizó fue un histograma que muestra la fomra en que se distribuyó una cierta cantidad m de tiros de las monedas, donde la m puede ser elegida por el usuario. Añadido a lo anterior, se realizó un ajuste a los datos que se muestran en el histograma. Dicho ajuste fue hecho a paritr de un función binomial. Por último, se muestran los valores obtenidos a partir del ajuste, los valores obtenidos en los conteos de monedas y la desviación estandar de todos estos datos. """)  
-    st.markdown("""En el caso donde se utilizaron los datos de toda la clase, se realizó un proceso muy similar al caso anterior, con la diferencia que en este histograma no se puede varias la m, por lo cual se muestra la información de todos los datos obtenidos. De igual manera se presenta el ajuste binomial, los valores del ajuste, los valores de ocnteo medio de caras y su desviación estandar. """)
+    st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Acerca de esta práctica</h1>", unsafe_allow_html=True)  
+    st.markdown("""En esta práctica, se lanzaron 10 monedas un total de 100 veces para observar la tendencia de las monedas a caer en el lado de la cara. Luego de recopilar los datos, se realizó un histograma que muestra la distribución de una cierta cantidad m de tiros de las monedas. Además, se ajustó una función binomial a los datos y se graficó junto con el histograma.""")  
     st.divider()
     st.markdown("<h2 style='text-align: left; color: #A2BDF1;'>Análisis de Resultados</h1>", unsafe_allow_html=True)  
     st.divider()
@@ -90,4 +65,5 @@ if selected == "Teoria":
                 
     **3.** Wackerly, D., Mendenhall III, W., & Scheaffer, R.L. (2008). "Mathematical Statistics with Applications". Cengage Learning.  
     """)
+
     st.divider()

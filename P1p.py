@@ -3,6 +3,8 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 from scipy.stats import binom
+from streamlit_option_menu import option_menu
+import matplotlib.pyplot as plt
 
 # Establecer la configuración de la página
 st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="🌍", layout="wide")

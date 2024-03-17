@@ -20,6 +20,8 @@ with st.sidebar:
     )
 
 if selected == "Principal":
+    def binomial_distribution(x, n, p):
+    return binom.pmf(x, n, p)
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
     data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
     #cantidad de tiros

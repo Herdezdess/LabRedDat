@@ -1,4 +1,3 @@
-#Paqueticos
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -8,6 +7,9 @@ import plotly.express as px
 from scipy.stats import binom
 from scipy.optimize import curve_fit
 
+# Definir la función binomial_distribution fuera del bloque if
+def binomial_distribution(x, n, p):
+    return binom.pmf(x, n, p)
 
 #Nombre e ícono de la pestaña
 st.set_page_config(page_title="Practica 1: Distribución Binomial", page_icon="🌍", layout="wide")
@@ -21,15 +23,13 @@ with st.sidebar:
     )
 
 if selected == "Principal":
-    def binomial_distribution(x, n, p):
-        return binom.pmf(x, n, p)
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
     data = pd.read_csv('https://raw.githubusercontent.com/JARA99/F503-2024-public/main/Unidades/2-Distribuciones/Binomial-fichas.csv')
     #cantidad de tiros
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)
     m_t = data.head(m)
     
-        # Crear histograma
+    # Crear histograma
     plt.figure(figsize=(10, 6))
     hist, bins, _ = plt.hist(m_t['DF'], bins=np.arange(min(m_t['DF']), max(m_t['DF']) + 1.5) - 0.5, alpha=0.7, label='Datos', color='blue', density=True)
     
@@ -50,6 +50,7 @@ if selected == "Principal":
     st.pyplot()
     st.divider()
     st.table(m_t)
+
 
 if selected == "Teoria":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)  

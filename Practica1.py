@@ -24,7 +24,6 @@ if selected == "Principal":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
     # Selección de cantidad de tiros
     m = st.slider('Seleccione la cantidad de tiros (m)', 0, 100, value=100)  # Crea un control deslizante para que el usuario seleccione la cantidad de tiros
-    m_t = data.head(m)  # Selecciona las primeras 'm' filas de los datos
     # Gráfico de barras
 
     def binom(x,n,p):
@@ -58,10 +57,6 @@ if selected == "Principal":
     fit, cov_mat = sco.curve_fit(binom,counts.index.values,counts[0]/m,[10,0.5],bounds=[(0,0),(np.inf,1)])
 
     print(f'Fit:\n{fit}\ncov_mat\n{cov_mat}')
-
-
-
-
 
     binomial_plot = px.line(x=counts.index.values, y=binom(counts.index.values,n,p), title="Lanzamiento de fichas")
 

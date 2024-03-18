@@ -27,6 +27,17 @@ if selected == "Principal":
     st.table(m_t)
 
 if selected == "Teoria":
+    estilo_cuadro = """
+    <style>
+    .cuadro-morado {
+        padding: 20px;
+        background-color: #F4E8FF; /* Morado pálido */
+        border-radius: 10px;
+    }
+    </style>
+    """
+    st.markdown(estilo_cuadro, unsafe_allow_html=True)
+    
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)  
 
     st.markdown("""La distribución binomial es modelo probabilístico discreto. Este describe el número de éxitos en una serie de ensayos secuenciales independientes, donde cada uno tiene siempre la misma probabilidad de éxito. Este modelo es utilizado con mucha frecuencia en experimentos donde se obtengan resultados binarios, es decir, si el resultado se puede categorizar como Éxito o Fracaso.""")
@@ -42,9 +53,13 @@ if selected == "Teoria":
     ▶ k es el número de exitos en n ensayos.
     """)
     st.divider()
-    st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Acerca de esta practica</h1>", unsafe_allow_html=True)  
-    st.markdown("""En esta practica, cada pareja, lanzó un grupo de 10 monedas un total de 100 veces para poder observar la tendencia de las monedas a caer en el lado de la cara. Tras recopilar todos los datos, estos fueron ingresados en un archivo csv para su analisis posterior. Lo primero que se realizó fue un histograma que muestra la forma en que se distribuyó una cierta cantidad m de tiros de las monedas, donde la m puede ser elegida por el usuario. Añadido a lo anterior, se realizó un ajuste a los datos que se muestran en el histograma. Dicho ajuste fue hecho a partir de un función binomial. Por último, se muestran los valores obtenidos a partir del ajuste, los valores obtenidos en los conteos de monedas y la desviación estándar de todos estos datos. """)  
-    st.markdown("""En el caso donde se utilizaron los datos de toda la clase, se realizó un proceso muy similar al caso anterior, con la diferencia que en este histograma no se puede varias la m, por lo cual se muestra la información de todos los datos obtenidos. De igual manera se presenta el ajuste binomial, los valores del ajuste, los valores de conteo medio de caras y su desviación estándar. """)
+    st.markdown("""
+    <div class="cuadro-morado">
+        <h2 style='text-align: left; color: #D3BEF1;'>Acerca de esta práctica</h2>
+        <p>En esta práctica, cada pareja lanzó un grupo de 10 monedas un total de 100 veces para poder observar la tendencia de las monedas a caer en el lado de la cara. Tras recopilar todos los datos, estos fueron ingresados en un archivo CSV para su análisis posterior. Lo primero que se realizó fue un histograma que muestra la forma en que se distribuyó una cierta cantidad m de tiros de las monedas, donde la m puede ser elegida por el usuario. Añadido a lo anterior, se realizó un ajuste a los datos que se muestran en el histograma. Dicho ajuste fue hecho a partir de una función binomial. Por último, se muestran los valores obtenidos a partir del ajuste, los valores obtenidos en los conteos de monedas y la desviación estándar de todos estos datos.</p>
+        <p>En el caso donde se utilizaron los datos de toda la clase, se realizó un proceso muy similar al caso anterior, con la diferencia de que en este histograma no se puede variar la m, por lo cual se muestra la información de todos los datos obtenidos. De igual manera, se presenta el ajuste binomial, los valores del ajuste, los valores de conteo medio de caras y su desviación estándar.</p>
+    </div>
+    """, unsafe_allow_html=True)
     st.divider()
     st.markdown("<h2 style='text-align: left; color: #A2BDF1;'>Análisis de Resultados</h1>", unsafe_allow_html=True)
     st.markdown("""

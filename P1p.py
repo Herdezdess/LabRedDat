@@ -50,6 +50,19 @@ if selected == "Teoria":
     #se agregan a streamlit
     st.markdown(estilo_cuadro, unsafe_allow_html=True)
     st.markdown(estilo_cuadro_azul, unsafe_allow_html=True)
+
+    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Resumen</h1>", unsafe_allow_html=True) 
+    st.divider()
+
+    st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Objetivos</h1>", unsafe_allow_html=True)
+    st.markdown("""
+    <div class="cuadro-morado">
+        <p>▶ Obtener de forma experimental la cantidad de caras al lanzar diez monedas del mismo valor. </p>
+        <p>▶ Realizar un histograma con los datos obtenidos usando Python y mostrarlos en una app de Streamlit.</p>
+        <p>▶ Ajustar los valores obtenidos en el histograma y mostrarlos en la app.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    st.divider()
     
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)  
 

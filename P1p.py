@@ -71,15 +71,16 @@ if selected == "Teoria":
         <p>La distribución binomial es un modelo probabilístico discreto que describe el número de éxitos en una serie de ensayos secuenciales independientes, donde cada uno tiene siempre la misma probabilidad de éxito. Este modelo es utilizado con mucha frecuencia en experimentos donde se obtengan resultados binarios, es decir, si el resultado se puede categorizar como Éxito o Fracaso.</p>
         <p>Para definir a la distribución binomial, se requieren dos parámetros. El primero de ellos es el <strong>número total de intentos (n)</strong> y la <strong>probabilidad de éxito de cada ensayo (p)</strong>. Agregado a esto, regularmente se utiliza el símbolo X para denotar una variable que cuenta el número de éxitos en n cantidad de ensayos.</p>
         <p>La fórmula para calcular la probabilidad de exactamente k éxitos en n ensayos, con una probabilidad de éxito p, es:</p>
-
-        <p>$$ P(x = k) = \binom{n}{k} p^{k} (1-p)^{n-k} $$</p>
-        
-        <p> ▶ (n k) es el coeficiente binomial.</p>  
-        <p>▶ p es la probabilidad de éxito en un solo ensayo.  </p>
-        <p>▶ (1 - p) es la probabilidad de fracaso en un solo ensayo. </p>
-        <p>▶ k es el número de exitos en n ensayos. </p>
+        <p>$$ P(x = k) = \\binom{n}{k} p^{k} (1-p)^{n-k} $$</p>
+        <p>Donde:</p>
+        <ul>
+            <li>(n k) es el coeficiente binomial.</li>
+            <li>p es la probabilidad de éxito en un solo ensayo.</li>
+            <li>(1 - p) es la probabilidad de fracaso en un solo ensayo.</li>
+            <li>k es el número de éxitos en n ensayos.</li>
+        </ul>
     </div>
-    """, unsafe_allow_html=True) 
+    """, unsafe_allow_html=True)
     st.divider()
 
     

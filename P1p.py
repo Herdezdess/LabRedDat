@@ -68,6 +68,7 @@ if selected == "Teoria":
     
     st.divider()
     st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Acerca de esta practica</h1>", unsafe_allow_html=True)
+    
     st.markdown("""
     <div class="cuadro-morado">
         <p>En esta práctica, cada pareja lanzó un grupo de 10 monedas un total de 100 veces para poder observar la tendencia de las monedas a caer en el lado de la cara. Tras recopilar todos los datos, estos fueron ingresados en un archivo CSV para su análisis posterior. Lo primero que se realizó fue un histograma que muestra la forma en que se distribuyó una cierta cantidad m de tiros de las monedas, donde la m puede ser elegida por el usuario. Añadido a lo anterior, se realizó un ajuste a los datos que se muestran en el histograma. Dicho ajuste fue hecho a partir de una función binomial. Por último, se muestran los valores obtenidos a partir del ajuste, los valores obtenidos en los conteos de monedas y la desviación estándar de todos estos datos.</p>
@@ -81,11 +82,14 @@ if selected == "Teoria":
     ▶ Se utilizaron monedas de diez centavos, sin embargo un lado de la moneda no es simétrico respecto al otro, lo cual podría alterar nuestra toma de datos.
     """)
     st.divider()
-    st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Conclusiones</h1>", unsafe_allow_html=True)  
+    st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Conclusiones</h1>", unsafe_allow_html=True)
+
     st.markdown("""
-    ▶ En nuestra gráfica podemos observar que el valor que más se repite es el cinco, este es el valor promedio de los datos tomados. Lo que concuerda con la teoría, ya que es el caso más probable.\n
-    ▶ Nuestros datos han sido aterados de forma mínima por las condiciones en la toma de datos (el peso de las monedas, el suelo, aire, entre otros.), esto se ve reflejado en la comparación de estos datos con los valores teóricos esperados. Los valores experimentales son similares a los valores teóricos, podemos decir entonces que no se cometieron errores significativos en la toma de datos.  
-    """)
+    <div class="cuadro-morado">
+        <p>▶ En nuestra gráfica podemos observar que el valor que más se repite es el cinco, este es el valor promedio de los datos tomados. Lo que concuerda con la teoría, ya que es el caso más probable.</p>
+        <p>▶ Nuestros datos han sido aterados de forma mínima por las condiciones en la toma de datos (el peso de las monedas, el suelo, aire, entre otros.), esto se ve reflejado en la comparación de estos datos con los valores teóricos esperados. Los valores experimentales son similares a los valores teóricos, podemos decir entonces que no se cometieron errores significativos en la toma de datos.</p>
+    </div>
+    """, unsafe_allow_html=True)
     st.divider()
     st.markdown("<h3 style='text-align: left; color: black;'>Referencias</h1>", unsafe_allow_html=True)
     st.markdown("""  

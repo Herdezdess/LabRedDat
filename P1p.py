@@ -31,9 +31,9 @@ if selected == "Teoria":
     estilo_bordes = """
     <style>
     .bordes-morado {
-        padding: 20px;
-        border-left: 10px solid #F4E8FF; /* Morado pálido */
-        border-right: 10px solid #F4E8FF; /* Morado pálido */
+        padding: 200px;
+        border-left: 100px solid #F4E8FF; 
+        border-right: 100px solid #F4E8FF; 
     }
     </style>
     """

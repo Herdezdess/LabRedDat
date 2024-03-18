@@ -53,9 +53,9 @@ if selected == "Teoria":
     ▶ k es el número de exitos en n ensayos.
     """)
     st.divider()
+    st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Acerca de esta practica</h1>", unsafe_allow_html=True)
     st.markdown("""
     <div class="cuadro-morado">
-        <h2 style='text-align: left; color: #D3BEF1;'>Acerca de esta práctica</h2>
         <p>En esta práctica, cada pareja lanzó un grupo de 10 monedas un total de 100 veces para poder observar la tendencia de las monedas a caer en el lado de la cara. Tras recopilar todos los datos, estos fueron ingresados en un archivo CSV para su análisis posterior. Lo primero que se realizó fue un histograma que muestra la forma en que se distribuyó una cierta cantidad m de tiros de las monedas, donde la m puede ser elegida por el usuario. Añadido a lo anterior, se realizó un ajuste a los datos que se muestran en el histograma. Dicho ajuste fue hecho a partir de una función binomial. Por último, se muestran los valores obtenidos a partir del ajuste, los valores obtenidos en los conteos de monedas y la desviación estándar de todos estos datos.</p>
         <p>En el caso donde se utilizaron los datos de toda la clase, se realizó un proceso muy similar al caso anterior, con la diferencia de que en este histograma no se puede variar la m, por lo cual se muestra la información de todos los datos obtenidos. De igual manera, se presenta el ajuste binomial, los valores del ajuste, los valores de conteo medio de caras y su desviación estándar.</p>
     </div>

@@ -77,10 +77,11 @@ if selected == "Teoria":
     """, unsafe_allow_html=True)
     st.divider()
     st.markdown("<h2 style='text-align: left; color: #A2BDF1;'>Análisis de Resultados</h1>", unsafe_allow_html=True)
+    
     st.markdown("""
     <div class= "cuadro-azul">
-        <p>▶ Al variar el número de veces que se lanzan las monedas la gráfica de barras cambia, notamos que mientras mayor es este número más se parece a lo teóricamente esperado.\n
-        <p>▶ Se utilizaron monedas de diez centavos, sin embargo un lado de la moneda no es simétrico respecto al otro, lo cual podría alterar nuestra toma de datos.
+        <p>▶ Al variar el número de veces que se lanzan las monedas la gráfica de barras cambia, notamos que mientras mayor es este número más se parece a lo teóricamente esperado.</p>
+        <p>▶ Se utilizaron monedas de diez centavos, sin embargo un lado de la moneda no es simétrico respecto al otro, lo cual podría alterar nuestra toma de datos.</p>
     </div>
     """, unsafe_allow_html=True) 
     st.divider()

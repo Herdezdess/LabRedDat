@@ -51,7 +51,12 @@ if selected == "Teoria":
     st.markdown(estilo_cuadro, unsafe_allow_html=True)
     st.markdown(estilo_cuadro_azul, unsafe_allow_html=True)
 
-    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Resumen</h1>", unsafe_allow_html=True) 
+    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Resumen</h1>", unsafe_allow_html=True)
+    st.markdown("""
+    <div class= "cuadro-azul">
+        <p>Existen diferentes métodos para conocer la probabilidad de obtener un caso especifico. La distribución binomial es uno de ellos, las condiciones de uso es conocer el número de lanzamientos que se quiere (en el caso de una moneda) y también la probabilidad de obtener lo esperado. Durante la realización de esta práctica su uso nos ayudará a predecir, conocer y calcular la probabilidad de obtener cierto lado de varias monedas en ciertos tiros</p>
+    </div>
+    """, unsafe_allow_html=True)
     st.divider()
 
     st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Objetivos</h1>", unsafe_allow_html=True)
@@ -64,7 +69,7 @@ if selected == "Teoria":
     """, unsafe_allow_html=True)
     st.divider()
     
-    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoría de la Distribución Binomial</h1>", unsafe_allow_html=True)
 
     st.markdown("""
     <div class= "cuadro-azul">
@@ -86,10 +91,6 @@ if selected == "Teoria":
         </ul>
     </div>
     """, unsafe_allow_html=True)
-    st.divider()
-
-    
-
     
     st.divider()
     st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Acerca de esta practica</h1>", unsafe_allow_html=True)

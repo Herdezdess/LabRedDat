@@ -54,7 +54,7 @@ if selected == "Teoria":
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Resumen</h1>", unsafe_allow_html=True)
     st.markdown("""
     <div class= "cuadro-azul">
-        <p>Existen diferentes métodos para conocer la probabilidad de obtener un caso especifico. La distribución binomial es uno de ellos, las condiciones de uso son: conocer el número de lanzamientos que se quiere, en este caso con monedas; conocer la probabilidad de obtener lo esperado y saber el número de monedas a lanzar. Durante la realización de esta práctica su uso nos ayudará a predecir, conocer y calcular la probabilidad de obtener cierto lado de varias monedas en ciertos tiros</p>
+        <p>Existen diferentes métodos para conocer la probabilidad de obtener un caso especifico. La distribución binomial es uno de ellos, las condiciones de uso son: conocer el número de lanzamientos que se quiere, en este caso con monedas; conocer la probabilidad de obtener lo esperado y saber el número de monedas a lanzar. Durante la realización de esta práctica su uso nos ayudará a predecir, conocer y calcular la probabilidad de obtener cierto lado de varias monedas en ciertos tiros y esto lo modelaremos usando herramientas como Python y Streamlit.</p>
     </div>
     """, unsafe_allow_html=True)
     st.divider()

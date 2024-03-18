@@ -40,7 +40,7 @@ if selected == "Teoria":
 
     estilo_cuadro_azul = """
     <style>
-    .cuadro-azul-palido {
+    .cuadro-azul {
         padding: 20px;
         background-color: #C2D5F5; 
         border-radius: 10px;

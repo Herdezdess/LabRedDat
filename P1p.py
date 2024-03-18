@@ -42,7 +42,7 @@ if selected == "Teoria":
     <style>
     .cuadro-azul {
         padding: 20px;
-        background-color: #C2D5F5; 
+        background-color: #D4EEF0; 
         border-radius: 10px;
     }
     </style>

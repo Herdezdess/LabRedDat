@@ -89,17 +89,7 @@ if selected == "Teoria":
     st.divider()
 
     
-    st.markdown("""Para definir a la distribución binomial, se requieren dos parámetros. El primero de ellos es el **número total de intentos (n)** y la **probabilidad de exito de cada ensayo (p)**. Agregado a esto, regularmente se utiliza el simbolo X para denotar una variable que cuenta el número de éxitos en n cantidad de ensayos. """)
-    st.markdown("""La fórmula para calcular la probabilidad de exactamente k éxitos en n ensayos, con una probabilidad de éxito p, es:""")
 
-    st.latex(r''' P(x = k) = \binom{n}{k} p^{k} (1-p)^{n-k} ''')
-
-    st.markdown("""Donde:  
-    ▶ (n k) es el coeficiente binomial.  
-    ▶ p es la probabilidad de éxito en un solo ensayo.  
-    ▶ (1 - p) es la probabilidad de fracaso en un solo ensayo.  
-    ▶ k es el número de exitos en n ensayos.
-    """)
     
     st.divider()
     st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Acerca de esta practica</h1>", unsafe_allow_html=True)

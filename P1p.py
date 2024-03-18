@@ -30,10 +30,10 @@ if selected == "Teoria":
     # Estilo CSS para bordes laterales blancos
     estilo_bordes = """
     <style>
-    .bordes-blancos {
+    .bordes-morado {
         padding: 20px;
-        border-left: 10px solid #FFFFFF;
-        border-right: 10px solid #FFFFFF;
+        border-left: 10px solid #F4E8FF; /* Morado pálido */
+        border-right: 10px solid #F4E8FF; /* Morado pálido */
     }
     </style>
     """

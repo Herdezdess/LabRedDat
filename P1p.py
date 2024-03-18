@@ -27,6 +27,20 @@ if selected == "Principal":
     st.table(m_t)
 
 if selected == "Teoria":
+    # Estilo CSS para bordes laterales blancos
+    estilo_bordes = """
+    <style>
+    .bordes-blancos {
+        padding: 20px;
+        border-left: 10px solid #FFFFFF;
+        border-right: 10px solid #FFFFFF;
+    }
+    </style>
+    """
+
+# Incluir el estilo CSS en la página
+    st.markdown(estilo_bordes, unsafe_allow_html=True)
+
     st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Teoria de la Distribución Binomial</h1>", unsafe_allow_html=True)  
 
     st.markdown("""La distribución binomial es modelo probabilístico discreto. Este describe el número de éxitos en una serie de ensayos secuenciales independientes, donde cada uno tiene siempre la misma probabilidad de éxito. Este modelo es utilizado con mucha frecuencia en experimentos donde se obtengan resultados binarios, es decir, si el resultado se puede categorizar como Éxito o Fracaso.""")

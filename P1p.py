@@ -32,7 +32,7 @@ if selected == "Teoria":
     <style>
     .cuadro-morado {
         padding: 20px;
-        background-color: #F4E8FF; /* Morado pálido */
+        background-color: #F4E8FF; 
         border-radius: 10px;
     }
     </style>
@@ -42,7 +42,7 @@ if selected == "Teoria":
     <style>
     .cuadro-azul-palido {
         padding: 20px;
-        background-color: #A2BDF1; /* Azul pálido */
+        background-color: #C2D5F5; 
         border-radius: 10px;
     }
     </style>

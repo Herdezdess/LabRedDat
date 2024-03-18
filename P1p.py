@@ -48,13 +48,13 @@ if selected == "Teoria":
     st.divider()
     st.markdown("<h2 style='text-align: left; color: #A2BDF1;'>Análisis de Resultados</h1>", unsafe_allow_html=True)
     st.markdown("""
-    ▶ Al variar el número de veces que se lanzan las monedas la gráfica de barras cambia, notamos que mientras mayor es este número más se parece a lo teóricamente esperado.
+    ▶ Al variar el número de veces que se lanzan las monedas la gráfica de barras cambia, notamos que mientras mayor es este número más se parece a lo teóricamente esperado.\n
     ▶ Se utilzaron monedas de diez centavos, sin embargo estas no son simetrícas respecto a las caras, lo cual podría alterar nuestra toma de datos.
     """)
     st.divider()
     st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Conclusiones</h1>", unsafe_allow_html=True)  
     st.markdown("""
-    ▶ En nuestra gráfica podemos observar que el valor que más se repite es el cinco, este es el valor promedio de los datos tomados. Lo que concuerda con la teoría, ya que es el caso más probable.
+    ▶ En nuestra gráfica podemos observar que el valor que más se repite es el cinco, este es el valor promedio de los datos tomados. Lo que concuerda con la teoría, ya que es el caso más probable.\n
     ▶ Nuestrso datos han sido aterados de forma mínima por las condiciones en la toma de datos, esto se ve reflejado en la comparación de estos datos con los valores teóricos esperados.
     """)
     st.divider()

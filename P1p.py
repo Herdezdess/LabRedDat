@@ -58,8 +58,9 @@ if selected == "Teoria":
     </div>
     """, unsafe_allow_html=True)
     st.divider()
+    
+    st.markdown("<h1 style='text-align: center; color: #D3BEF1;'>Objetivos</h1>", unsafe_allow_html=True)
 
-    st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Objetivos</h1>", unsafe_allow_html=True)
     st.markdown("""
     <div class="cuadro-morado">
         <p>▶ Obtener de forma experimental la cantidad de caras al lanzar diez monedas del mismo valor. </p>

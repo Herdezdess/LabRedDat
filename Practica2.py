@@ -4,8 +4,6 @@ import streamlit as st
 import matplotlib.pyplot as plt
 from streamlit_option_menu import option_menu
 import plotly.express as px
-import plotly.graph_objects as go
-import os, time
 
 st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
 with st.sidebar:
@@ -21,7 +19,11 @@ if selected == "Principal":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Predicción de COVID19</h1>", unsafe_allow_html=True)
 #lector del csv
   data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha.csv')
-  print(data)
+#Convertirlo a dataframe
+  dataframe=pd.DataFrame(csv[{"Fecha","Casos por fecha de inicio de síntomas","Casos por fecha de toma de muestra","Casos por fecha de emisión de resultados"}])
+  print(dataframe)
+  
+  
 
   
 

@@ -15,7 +15,7 @@ with st.sidebar:
   )
 if selected == "Principal":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Predicción de COVID19</h1>", unsafe_allow_html=True)
-  data = pd.read_csv('https://github.com/Herdezdess/LabRedDat/blob/main/confirmados_fecha.csv')
+  data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha.csv')
   print(data)
   
 

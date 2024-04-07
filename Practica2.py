@@ -15,13 +15,12 @@ with st.sidebar:
     default_index = 0,
   )
 if selected == "Principal":
-#título
+  #título
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Predicción de COVID19</h1>", unsafe_allow_html=True)
-#lector del csv
+  #lector del csv
   data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha.csv')
-#Convertirlo a dataframe
-  dataframe=pd.DataFrame(csv[["Fecha","Casos por fecha de inicio de síntomas","Casos por fecha de toma de muestra","Casos por fecha de emisión de resultados"]])
-  print(dataframe)
+  #Convertirlo a dataframe
+  
   
   
 

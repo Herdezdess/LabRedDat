@@ -20,7 +20,7 @@ if selected == "Principal":
   #lector del csv
   data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha.csv')
   #Convertirlo a dataframe
-  dataframe=pd.DataFrame(data[["Fecha","Casos por fecha de inicio de síntomas","Casos por fecha de toma de muestra","Casos por fecha de emisión de resultados"]])
+  dataframe=pd.DataFrame(data[{"Fecha","Casos por fecha de inicio de síntomas","Casos por fecha de toma de muestra","Casos por fecha de emisión de resultados"}])
   print(dataframe)
   
   

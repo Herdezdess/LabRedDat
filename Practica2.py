@@ -8,7 +8,7 @@ with st.sidebar:
   selected=option_menu(
     menu_title="Menú",
     options = ["Principal", "Teoría"],
-    icons = ["house-heart-fill", "envelope-heart_fill"],
+    icons = ["house-heart-fill", "envelope-heart-fill"],
     menu_icon = "heart-eyes-fill",
     default_index = 0,
   )

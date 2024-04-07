@@ -19,7 +19,7 @@ if selected == "Principal":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Predicción de COVID19</h1>", unsafe_allow_html=True)
   #lector del csv
   data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha.csv')
-  data['fecha'] = pd.to_datetime(data['fecha'])
+  data['Fecha'] = pd.to_datetime(data['Fecha'])
   fig = px.line(data, x='fecha', y='Casos por fecha de inicio de síntomas', title='Número de casos confirmados por fecha de inicio de síntomas')
   fig.update_xaxes(title='Fecha')
   fig.update_yaxes(title='Casos')

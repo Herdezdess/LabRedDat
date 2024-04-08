@@ -56,7 +56,7 @@ if selected == "Principal":
       plt.ylabel("Casos")
       plt.title("Ajuste lineal utilizando numpy")
       plt.legend()
-      st.pyplot()
+      st.pyplot() 
     
 
   with tab3:

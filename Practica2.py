@@ -24,7 +24,7 @@ if selected == "Principal":
 
   tab1, tab2, tab3, tab4 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
 
-  with tab1
+  with tab1:
     fig, ax = plt.subplots(figsize=(10, 6))
     data['Casos por fecha de inicio de síntomas'].plot(label='Casos por fecha de inicio de síntomas')
     data['Casos por fecha de toma de muestra'].plot(label='Casos por fecha de toma de muestra')
@@ -34,7 +34,8 @@ if selected == "Principal":
     plt.title("Casos de COVID-19 a lo largo del tiempo")
     plt.legend()
     st.pyplot(fig)
-  with tab2
+    
+  with tab2:
     fig, ax = plt.subplots(figsize=(10, 6))
     data['Casos por fecha de inicio de síntomas'].plot(label='Casos por fecha de inicio de síntomas')
     plt.xlabel("Fecha")
@@ -42,7 +43,7 @@ if selected == "Principal":
     plt.legend()
     st.pyplot(fig)
 
-  with tab3
+  with tab3:
     fig, ax = plt.subplots(figsize=(10, 6))
     data['Casos por fecha de toma de muestra'].plot(label='Casos por fecha de toma de muestra')
     plt.xlabel("Fecha")
@@ -50,7 +51,7 @@ if selected == "Principal":
     plt.legend()
     st.pyplot(fig)
 
-  with tab4
+  with tab4:
     fig, ax = plt.subplots(figsize=(10, 6))
     data['Casos por fecha de emisión de resultados'].plot(label='Casos por fecha de emisión de resultados')
     plt.xlabel("Fecha")

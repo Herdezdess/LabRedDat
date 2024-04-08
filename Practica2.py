@@ -8,6 +8,11 @@ import seaborn as sns
 sns.set()
 
 st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
+
+# Establecer el tema claro por defecto
+st.set_page_config(layout="wide", initial_sidebar_state="expanded", theme="light")
+
+# Menú lateral
 with st.sidebar:
   selected=option_menu(
     menu_title="Menú",

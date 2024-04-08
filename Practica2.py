@@ -43,14 +43,7 @@ if selected == "Principal":
     plt.ylabel("Número de casos")
     plt.legend()
     st.pyplot(fig)
-    # Convertir la columna 'Fecha' a datetime
-    data['Fecha'] = pd.to_datetime(data['Fecha'])
-  
-    # Crear la gráfica con Plotly Express
-    fig_plotly = px.scatter(data, x='Fecha', y='Casos', title='Número de Casos Confirmados por Día', hover_data=['Fecha', 'Casos'])
-  
-    # Mostrar la gráfica interactiva
-    st.plotly_chart(fig_plotly)
+    
 
   with tab3:
     fig, ax = plt.subplots(figsize=(10, 6))

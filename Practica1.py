@@ -12,7 +12,7 @@ from scipy import optimize as sco
 # Definir la función binomial_distribution fuera del bloque if
 
 #Nombre e ícono de la pestaña
-st.set_page_config(page_title="Práctica 1: Distribución Binomial", page_icon="🌍", layout="wide")
+st.set_page_config(page_title="Práctica 1: Distribución Binomial", page_icon="🌍", layout="wide", base="light")
 with st.sidebar:
     selected=option_menu(
         menu_title="Menú",

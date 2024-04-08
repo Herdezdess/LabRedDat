@@ -45,7 +45,7 @@ if selected == "Principal":
   with tab2:
     
     data1=data['Casos por fecha de inicio de síntomas']
-    st.scatter_chart(data1, color='#00129A', size=10, use_container_width=True)
+    st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
     
 
   with tab3:

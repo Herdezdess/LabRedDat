@@ -34,7 +34,6 @@ if selected == "Principal":
   data['Casos por fecha de toma de muestra'].plot()
   data['Casos por fecha de emisión de resultados'].plot()
   plt.show()
-  st.pyplot(data)
   
 
   

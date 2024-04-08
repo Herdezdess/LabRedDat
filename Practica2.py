@@ -36,7 +36,7 @@ if selected == "Principal":
     plt.legend()
     st.pyplot(fig)
 
-with tab2
+  with tab2
     fig, ax = plt.subplots(figsize=(10, 6))
     data['Casos por fecha de inicio de síntomas'].plot(label='Casos por fecha de inicio de síntomas')
     plt.xlabel("Fecha")
@@ -44,7 +44,7 @@ with tab2
     plt.legend()
     st.pyplot(fig)
 
-with tab3
+  with tab3
     fig, ax = plt.subplots(figsize=(10, 6))
     data['Casos por fecha de toma de muestra'].plot(label='Casos por fecha de toma de muestra')
     plt.xlabel("Fecha")
@@ -52,7 +52,7 @@ with tab3
     plt.legend()
     st.pyplot(fig)
 
-with tab4
+  with tab4
     fig, ax = plt.subplots(figsize=(10, 6))
     data['Casos por fecha de emisión de resultados'].plot(label='Casos por fecha de emisión de resultados')
     plt.xlabel("Fecha")

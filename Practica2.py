@@ -31,7 +31,7 @@ if selected == "Principal":
   tab1, tab2, tab3, tab4 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
 
   with tab1:
-    
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     fig, ax = plt.subplots(figsize=(10, 6))
     data['Casos por fecha de inicio de síntomas'].plot(marker='o', linestyle='None', markersize=3, color='#00129A', label='Casos por fecha de inicio de síntomas')
     data['Casos por fecha de toma de muestra'].plot(marker='o', linestyle='None', markersize=3, color='#00A2E8', label='Casos por fecha de toma de muestra')

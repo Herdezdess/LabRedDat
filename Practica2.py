@@ -42,7 +42,6 @@ if selected == "Principal":
     st.pyplot(fig)
     
   with tab2:
-    st.set_option('deprecation.showPyplotGlobalUse', False)
     
     data1=data['Casos por fecha de inicio de síntomas']
     st.line_chart(data1, use_container_width=True)

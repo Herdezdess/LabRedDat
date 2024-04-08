@@ -47,9 +47,10 @@ if selected == "Principal":
     data1=data['Casos por fecha de inicio de síntomas']
     st.line_chart(data1, use_container_width=True)
     x = np.arange(len(data1))
-    slope, intercept, _, _, _ = linregress(x, data1)
-    fit_line = slope * x + intercept
-    plt.figure(marker='o', linestyle='None', markersize=3, color='#00A2E8', figsize=(10, 6))
+    
+    #slope, intercept, _, _, _ = linregress(x, data1)
+    #fit_line = slope * x + intercept
+    plt.figure(figsize=(10, 6))
     st.pyplot()
     
 

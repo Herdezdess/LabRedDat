@@ -21,31 +21,44 @@ if selected == "Principal":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Predicción de COVID19</h1>", unsafe_allow_html=True)
   #lector del csv
   data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha.csv', index_col=1, parse_dates=True)
-  #Convertirlo a dataframe
-  #dataframe=pd.DataFrame(data[["Fecha","Casos por fecha de inicio de síntomas","Casos por fecha de toma de muestra","Casos por fecha de emisión de resultados"]])
-  #Tomamos los datos
-  #fecha=dataframe["Fecha"]
-  #casos_sintomas=dataframe["Casos por fecha de inicio de síntomas"]
-  #casos_muestra=dataframe["Casos por fecha de toma de muestra"]
-  #casos_resultado=dataframe["Casos por fecha de emisión de resultados"]
-  #Grafica de los tres casos
-  
-  
-  # data.plot()
-  #Grafica de 
-  # data['Casos por fecha de inicio de síntomas'].plot()
-  # data['Casos por fecha de toma de muestra'].plot()
-  # data['Casos por fecha de emisión de resultados'].plot()
-  
-  fig, ax = plt.subplots(figsize=(10, 6))
-  data['Casos por fecha de inicio de síntomas'].plot(label='Casos por fecha de inicio de síntomas')
-  data['Casos por fecha de toma de muestra'].plot(label='Casos por fecha de toma de muestra')
-  data['Casos por fecha de emisión de resultados'].plot(label='Casos por fecha de emisión de resultados')
-  plt.xlabel("Fecha")
-  plt.ylabel("Número de casos")
-  plt.title("Casos de COVID-19 a lo largo del tiempo")
-  plt.legend()
-  st.pyplot(fig)
+
+  tab1, tab2, tab3, tab4 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
+
+  with tab1
+    
+    fig, ax = plt.subplots(figsize=(10, 6))
+    data['Casos por fecha de inicio de síntomas'].plot(label='Casos por fecha de inicio de síntomas')
+    data['Casos por fecha de toma de muestra'].plot(label='Casos por fecha de toma de muestra')
+    data['Casos por fecha de emisión de resultados'].plot(label='Casos por fecha de emisión de resultados')
+    plt.xlabel("Fecha")
+    plt.ylabel("Número de casos")
+    plt.title("Casos de COVID-19 a lo largo del tiempo")
+    plt.legend()
+    st.pyplot(fig)
+
+with tab2
+    fig, ax = plt.subplots(figsize=(10, 6))
+    data['Casos por fecha de inicio de síntomas'].plot(label='Casos por fecha de inicio de síntomas')
+    plt.xlabel("Fecha")
+    plt.ylabel("Número de casos")
+    plt.legend()
+    st.pyplot(fig)
+
+with tab3
+    fig, ax = plt.subplots(figsize=(10, 6))
+    data['Casos por fecha de toma de muestra'].plot(label='Casos por fecha de toma de muestra')
+    plt.xlabel("Fecha")
+    plt.ylabel("Número de casos")
+    plt.legend()
+    st.pyplot(fig)
+
+with tab4
+    fig, ax = plt.subplots(figsize=(10, 6))
+    data['Casos por fecha de emisión de resultados'].plot(label='Casos por fecha de emisión de resultados')
+    plt.xlabel("Fecha")
+    plt.ylabel("Número de casos")
+    plt.legend()
+    st.pyplot(fig)
 
   
 

@@ -69,10 +69,14 @@ if selected == "Principal":
 
 if selected == "Teoría":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>RESUMEN</h1>", unsafe_allow_html=True)
+  st.markdown("""En Guatemala los datos de contagios de COVID19 han sido registrados en diversas páginas, esto es útil en la predicción de ciertos fenómenos como la tendencia de los datos.""")
+  st.markdown("""Usando """)
   st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>MARCO TEÓRICO</h1>", unsafe_allow_html=True)
+  
   st.divider()
-  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CASO DE ESTUDIO</h1>", unsafe_allow_html=True)  
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CASO DE ESTUDIO</h1>", unsafe_allow_html=True)
+  st.markdown("""Utilizando los registros de casos de COVID19 del ministerio de salud de la República de Guatemala se realizaron gráficas de los datos disponibles desde el 1 de junio de 2020 hasta el 15 de marzo de 2021.""")
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>PROCEDIMIENTO EXPERIMENTAL</h1>", unsafe_allow_html=True)
   st.divider()
@@ -82,7 +86,7 @@ if selected == "Teoría":
   st.divider()
   st.markdown("<h3 style='text-align: left; color: black;'>Referencias</h1>", unsafe_allow_html=True)
   st.markdown("""  
-  **1.**   
+  **1.** Ministerio de Salud Pública y Asistencia Social. Situación de COVID19 en Guatemala. 
                   
   **2.**   
                 

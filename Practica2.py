@@ -45,10 +45,10 @@ if selected == "Principal":
   with tab2:
     
     data1=data['Casos por fecha de inicio de síntomas']
-    st.scatter_chart(data1, color='#00129A', size=3, use_container_width=True)
-    x = np.arange(len(data1))
-    plt.figure(figsize=(10, 6))
-    st.pyplot()
+    st.scatter_chart(data1, color='#00129A', size=5, use_container_width=True)
+    #x = np.arange(len(data1))
+    #plt.figure(figsize=(10, 6))
+    #st.pyplot()
     
 
   with tab3:

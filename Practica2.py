@@ -27,9 +27,9 @@ if selected == "Principal":
   with tab1:
     
     fig, ax = plt.subplots(figsize=(10, 6))
-    data['Casos por fecha de inicio de síntomas'].plot(label='Casos por fecha de inicio de síntomas')
-    data['Casos por fecha de toma de muestra'].plot(label='Casos por fecha de toma de muestra')
-    data['Casos por fecha de emisión de resultados'].plot(label='Casos por fecha de emisión de resultados')
+    data['Casos por fecha de inicio de síntomas'].plot(marker='o', linestyle='None', label='Casos por fecha de inicio de síntomas')
+    data['Casos por fecha de toma de muestra'].plot(marker='o', linestyle='None', label='Casos por fecha de toma de muestra')
+    data['Casos por fecha de emisión de resultados'].plot(marker='o', linestyle='None', label='Casos por fecha de emisión de resultados')
     plt.xlabel("Fecha")
     plt.ylabel("Número de casos")
     plt.title("Casos de COVID-19 a lo largo del tiempo")
@@ -46,7 +46,7 @@ if selected == "Principal":
 
   with tab3:
     fig, ax = plt.subplots(figsize=(10, 6))
-    data['Casos por fecha de toma de muestra'].plot(label='Casos por fecha de toma de muestra')
+    data['Casos por fecha de toma de muestra'].plot(marker='o', linestyle='None', label='Casos por fecha de toma de muestra')
     plt.xlabel("Fecha")
     plt.ylabel("Número de casos")
     plt.legend()
@@ -54,7 +54,7 @@ if selected == "Principal":
 
   with tab4:
     fig, ax = plt.subplots(figsize=(10, 6))
-    data['Casos por fecha de emisión de resultados'].plot(label='Casos por fecha de emisión de resultados')
+    data['Casos por fecha de emisión de resultados'].plot(marker='o', linestyle='None', label='Casos por fecha de emisión de resultados')
     plt.xlabel("Fecha")
     plt.ylabel("Número de casos")
     plt.legend()

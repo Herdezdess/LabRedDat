@@ -1,4 +1,4 @@
-import pandas as pd
+#import pandas as pd
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -22,10 +22,10 @@ if selected == "Principal":
   #Convertirlo a dataframe
   #dataframe=pd.DataFrame(data[["Fecha","Casos por fecha de inicio de síntomas","Casos por fecha de toma de muestra","Casos por fecha de emisión de resultados"]])
   #Tomamos los datos
-  fecha=dataframe["Fecha"]
-  casos_sintomas=dataframe["Casos por fecha de inicio de síntomas"]
-  casos_muestra=dataframe["Casos por fecha de toma de muestra"]
-  casos_resultado=dataframe["Casos por fecha de emisión de resultados"]
+  #fecha=dataframe["Fecha"]
+  #casos_sintomas=dataframe["Casos por fecha de inicio de síntomas"]
+  #casos_muestra=dataframe["Casos por fecha de toma de muestra"]
+  #casos_resultado=dataframe["Casos por fecha de emisión de resultados"]
   #Grafica
   dataframe.plot()
   

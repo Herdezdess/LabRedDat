@@ -38,7 +38,7 @@ if selected == "Principal":
     
   with tab2:
     fig, ax = plt.subplots(figsize=(10, 6))
-    data['Casos por fecha de inicio de síntomas'].plot(label='Casos por fecha de inicio de síntomas')
+    data['Casos por fecha de inicio de síntomas'].plot(marker='o', linestyle='None', label='Casos por fecha de inicio de síntomas')
     plt.xlabel("Fecha")
     plt.ylabel("Número de casos")
     plt.legend()

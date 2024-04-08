@@ -29,8 +29,10 @@ if selected == "Principal":
   #casos_sintomas=dataframe["Casos por fecha de inicio de síntomas"]
   #casos_muestra=dataframe["Casos por fecha de toma de muestra"]
   #casos_resultado=dataframe["Casos por fecha de emisión de resultados"]
-  #Grafica
+  #Grafica de los tres casos
   data.plot()
+  #Grafica de 
+  data['Casos por fecha de inicio de síntomas'].plot()
   
 
   

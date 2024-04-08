@@ -88,4 +88,4 @@ if selected == "Teoría":
                 
   **3.**   
     """)
-    st.divider()
+  st.divider()

@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 from streamlit_option_menu import option_menu
+from scipy.stats import linregress
 import plotly.express as px
 import seaborn as sns
 sns.set()

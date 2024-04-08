@@ -25,6 +25,7 @@ if selected == "Principal":
   tab1, tab2, tab3, tab4 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
 
   with tab1:
+    
     fig, ax = plt.subplots(figsize=(10, 6))
     data['Casos por fecha de inicio de síntomas'].plot(label='Casos por fecha de inicio de síntomas')
     data['Casos por fecha de toma de muestra'].plot(label='Casos por fecha de toma de muestra')

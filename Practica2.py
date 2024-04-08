@@ -8,7 +8,7 @@ import seaborn as sns
 sns.set()
 
 #Configuración de la página
-st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
+st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide", base="light")
 
 
 # Menú lateral

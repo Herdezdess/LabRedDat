@@ -6,6 +6,7 @@ from streamlit_option_menu import option_menu
 from scipy.stats import linregress
 import plotly.express as px
 import seaborn as sns
+import altair as alt
 sns.set()
 
 #Configuración de la página

@@ -45,18 +45,18 @@ if selected == "Principal":
     st.set_option('deprecation.showPyplotGlobalUse', False)
     
     data1=data['Casos por fecha de inicio de síntomas']
-      st.line_chart(data1, use_container_width=True)
-      x = np.arange(len(data1))
-      slope, intercept, _, _, _ = linregress(x, data1)
-      fit_line = slope * x + intercept
-      plt.figure(figsize=(10, 6))
-      plt.plot(data1.index, data1, label="Casos por fecha de inicio de síntomas")
-      plt.plot(data1.index, fit_line, label="Ajuste lineal", color='red')
-      plt.xlabel("Fecha")
-      plt.ylabel("Casos")
-      plt.title("Ajuste lineal utilizando numpy")
-      plt.legend()
-      st.pyplot()
+    st.line_chart(data1, use_container_width=True)
+    x = np.arange(len(data1))
+    slope, intercept, _, _, _ = linregress(x, data1)
+    fit_line = slope * x + intercept
+    plt.figure(figsize=(10, 6))
+    plt.plot(data1.index, data1, label="Casos por fecha de inicio de síntomas")
+    plt.plot(data1.index, fit_line, label="Ajuste lineal", color='red')
+    plt.xlabel("Fecha")
+    plt.ylabel("Casos")
+    plt.title("Ajuste lineal utilizando numpy")
+    plt.legend()
+    st.pyplot()
     
 
   with tab3:

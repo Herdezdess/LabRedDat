@@ -35,15 +35,7 @@ if selected == "Principal":
   #data['Casos por fecha de emisión de resultados'].plot()
   #plt.show()
 
-  fig, ax = plt.subplots(figsize=(10, 6))
-    data['Casos por fecha de inicio de síntomas'].plot(label='Casos por fecha de inicio de síntomas')
-    data['Casos por fecha de toma de muestra'].plot(label='Casos por fecha de toma de muestra')
-    data['Casos por fecha de emisión de resultados'].plot(label='Casos por fecha de emisión de resultados')
-    plt.xlabel("Fecha")
-    plt.ylabel("Número de casos")
-    plt.title("Casos de COVID-19 a lo largo del tiempo")
-    plt.legend()
-    st.pyplot(fig)
+
   
 
   

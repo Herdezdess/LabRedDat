@@ -32,9 +32,9 @@ if selected == "Principal":
   #Grafica de los tres casos
   data.plot()
   #Grafica de 
-  data['Casos por fecha de inicio de síntomas'].plt.show()
-  data['Casos por fecha de toma de muestra'].plt.show()
-  data['Casos por fecha de emisión de resultados'].plt.show()
+  data['Casos por fecha de inicio de síntomas'].show()
+  #data['Casos por fecha de toma de muestra'].plt.show()
+  #data['Casos por fecha de emisión de resultados'].plt.show()
   
 
   

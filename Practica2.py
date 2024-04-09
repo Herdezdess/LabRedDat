@@ -27,18 +27,15 @@ if selected == "Principal":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Predicción de COVID19</h1>", unsafe_allow_html=True)
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Gráficas desde el 13/03/2020 hasta el 1/05/2020</h1>", unsafe_allow_html=True)
-  #lector del csv
+  #lector del csv primera fecha
   data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha_junio.csv', index_col=1, parse_dates=True)
-
   tab1, tab2, tab3, tab4 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
-
   with tab1:
-    #jala los datos
+    #hala los datos
     st.set_option('deprecation.showPyplotGlobalUse', False)
     data1 = data['Casos por fecha de inicio de síntomas']
     data2 = data['Casos por fecha de toma de muestra']
     data3 = data['Casos por fecha de emisión de resultados']
-
     # Combinación de datos
     combined_data = pd.DataFrame({
       'Casos por fecha de inicio de síntomas': data1,
@@ -47,23 +44,17 @@ if selected == "Principal":
     })
     #muetsra el grafico
     st.scatter_chart(combined_data, size=20, use_container_width=True)
-    
   with tab2:
-    
     data1=data['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
-    
-
   with tab3:
-   
     data2=data['Casos por fecha de toma de muestra']
     st.scatter_chart(data2, color='#00A2E8', size=20, use_container_width=True)
-
   with tab4:
-
     data3=data['Casos por fecha de emisión de resultados']
     st.scatter_chart(data3, color='#7A1A82', size=20, use_container_width=True)
 
+  #Lo mismo, pero para la segunda fecha
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Gráficas desde el 13/03/2020 hasta el 15/03/2021</h1>", unsafe_allow_html=True)
     

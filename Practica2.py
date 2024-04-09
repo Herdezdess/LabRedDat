@@ -42,6 +42,19 @@ if selected == "Principal":
     plt.title("Casos de COVID-19 a lo largo del tiempo")
     plt.legend()
     st.pyplot(fig)
+
+    data1 = data['Casos por fecha de inicio de síntomas']
+    data2 = data['Casos por fecha de toma de muestra']
+    data3 = data['Casos por fecha de emisión de resultados']
+
+    # Combina los datos en un único DataFrame
+    combined_data = pd.DataFrame({
+      'Inicio de síntomas': data1,
+      'Toma de muestra': data2,
+      'Emisión de resultados': data3
+    })
+
+    st.scatter_chart(combined_data, use_container_width=True)
     
   with tab2:
     

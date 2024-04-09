@@ -28,7 +28,7 @@ if selected == "Principal":
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Gráficas desde el 13/03/2020 hasta el 1/05/2020</h1>", unsafe_allow_html=True)
   #lector del csv
-  data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha.csv', index_col=1, parse_dates=True)
+  data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha_junio.csv', index_col=1, parse_dates=True)
 
   tab1, tab2, tab3, tab4 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
 
@@ -63,6 +63,9 @@ if selected == "Principal":
 
     data3=data['Casos por fecha de emisión de resultados']
     st.scatter_chart(data3, color='#7A1A82', size=20, use_container_width=True)
+
+  st.divider()
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Gráficas desde el 13/03/2020 hasta el 15/03/2021</h1>", unsafe_allow_html=True)
     
   
     

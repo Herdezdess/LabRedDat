@@ -69,16 +69,16 @@ if selected == "Principal":
 
 if selected == "Teoría":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>RESUMEN</h1>", unsafe_allow_html=True)
-  st.markdown("""En Guatemala los datos de contagios de COVID19 han sido registrados en diversas páginas, esto es útil en la predicción de ciertos fenómenos como la tendencia de los datos.""")
-  st.markdown("""Usando """)
+  st.markdown("""La pandemia del COVID-19 fué uno de los desafíos más grandes a los que la sociedad guatemalteca se ha enfrentado en la historia reciente. Esto no afectó solamente al sector de la salud, sino que fue un problema multifacético el cual afectó principalmente en las siguientes áreas:""")
   st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>MARCO TEÓRICO</h1>", unsafe_allow_html=True)
   
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CASO DE ESTUDIO</h1>", unsafe_allow_html=True)
-  st.markdown("""Utilizando los registros de casos de COVID19 del ministerio de salud de la República de Guatemala se realizaron gráficas de los datos disponibles desde el 1 de junio de 2020 hasta el 15 de marzo de 2021.""")
+  st.markdown("""Utilizando los registros de casos de COVID19 del ministerio de salud de la República de Guatemala se realizaron gráficas de los datos medidos en dos intervalos de tiempo diferentes. Cada uno de estos intervalos inicia el día en el que se registró el primer caso positivo de COVID-19 en Guatemala, es decir, el 13 de marzo de 2020. El primer intervalo toma los datos desde la anterior fecha hasta el 1 de junio de 2020. El segundo caso, toma aún más datos, siendo el 15 de marzo de 2021 la fecha límite para la toma de datos.""")
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>PROCEDIMIENTO EXPERIMENTAL</h1>", unsafe_allow_html=True)
+  st.markdown("""Para esta práctica, se tomaron los dos casos de estudio mencionados anteriormente y se utilizó un ajuste hecho a partir de una distribución binomial. También fue necesario el uso de herramientas externas a Python como Gnuplot. Esto debido a que el ajuste realizado con Python se adapta solamente a los datos tomados y no realiza las predicciones deseadas, por lo cual se utilizó Gnuplot para poder obtener los valores para la distribución binomial y luego plotearla dentro de la gráfica con los datos recopilados. Este ajuste nos permitió dar una estimación de la fecha en la cual se dará el pico de casos positivos para COVID-19.""")
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #A2BDF1;'>DISCUSIÓN DE RESULTADOS</h1>", unsafe_allow_html=True)  
   st.divider()

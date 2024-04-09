@@ -57,6 +57,31 @@ if selected == "Principal":
   #Lo mismo, pero para la segunda fecha
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Gráficas desde el 13/03/2020 hasta el 15/03/2021</h1>", unsafe_allow_html=True)
+  sf = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha_marzo.csv', index_col=1, parse_dates=True)
+  tab5, tab6, tab7, tab8 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
+  with tab5:
+    #hala los datos
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    data4 = data['Casos por fecha de inicio de síntomas']
+    data5 = data['Casos por fecha de toma de muestra']
+    data6 = data['Casos por fecha de emisión de resultados']
+    # Combinación de datos
+    combined_data2 = pd.DataFrame({
+      'Casos por fecha de inicio de síntomas': data4,
+      'Casos por fecha de toma de muestra': data5,
+      'Casos por fecha de emisión de resultados': data6
+    })
+    #muetsra el grafico
+    st.scatter_chart(combined_data2, size=20, use_container_width=True)
+  with tab6:
+    data4=sf['Casos por fecha de inicio de síntomas']
+    st.scatter_chart(data4, color='#00129A', size=20, use_container_width=True)
+  with tab7:
+    data5=sf['Casos por fecha de toma de muestra']
+    st.scatter_chart(data5, color='#00A2E8', size=20, use_container_width=True)
+  with tab8:
+    data6=sf['Casos por fecha de emisión de resultados']
+    st.scatter_chart(data6, color='#7A1A82', size=20, use_container_width=True)
     
   
     

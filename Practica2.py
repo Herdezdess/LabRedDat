@@ -41,6 +41,9 @@ if selected == "Principal":
     plt.title("Casos de COVID-19 a lo largo del tiempo")
     plt.legend()
     st.pyplot(fig)
+
+    g=data['Casos por fecha de inicio de síntomas', 'Casos por fecha de toma de muestra','Casos por fecha de emisión de resultados']
+    st.scatter_chart(g, use_cointer_width=True)
     
   with tab2:
     
@@ -51,12 +54,12 @@ if selected == "Principal":
   with tab3:
    
     data2=data['Casos por fecha de toma de muestra']
-    st.scatter_chart(data2, color='#00129A', size=20, use_container_width=True)
+    st.scatter_chart(data2, color='#00A2E8', size=20, use_container_width=True)
 
   with tab4:
 
     data3=data['Casos por fecha de emisión de resultados']
-    st.scatter_chart(data3, color='#00129A', size=20, use_container_width=True)
+    st.scatter_chart(data3, color='#7A1A82', size=20, use_container_width=True)
     
   
     

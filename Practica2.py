@@ -62,9 +62,9 @@ if selected == "Principal":
   with tab5:
     #hala los datos
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    data4 = data['Casos por fecha de inicio de síntomas']
-    data5 = data['Casos por fecha de toma de muestra']
-    data6 = data['Casos por fecha de emisión de resultados']
+    data4 = sf['Casos por fecha de inicio de síntomas']
+    data5 = sf['Casos por fecha de toma de muestra']
+    data6 = sf['Casos por fecha de emisión de resultados']
     # Combinación de datos
     combined_data2 = pd.DataFrame({
       'Casos por fecha de inicio de síntomas': data4,
@@ -82,6 +82,35 @@ if selected == "Principal":
   with tab8:
     data6=sf['Casos por fecha de emisión de resultados']
     st.scatter_chart(data6, color='#7A1A82', size=20, use_container_width=True)
+
+  #Lo mismo, pero para la tercera fecha
+  st.divider()
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Gráficas desde el 13/03/2020 hasta el 07/04/2024</h1>", unsafe_allow_html=True)
+  tf = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha_todos.csv', index_col=1, parse_dates=True)
+  tab9, tab10, tab11, tab12 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
+  with tab9:
+    #hala los datos
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    data7 = tf['Casos por fecha de inicio de síntomas']
+    data8 = tf['Casos por fecha de toma de muestra']
+    data9 = tf['Casos por fecha de emisión de resultados']
+    # Combinación de datos
+    combined_data3 = pd.DataFrame({
+      'Casos por fecha de inicio de síntomas': data7,
+      'Casos por fecha de toma de muestra': data8,
+      'Casos por fecha de emisión de resultados': data9
+    })
+    #muetsra el grafico
+    st.scatter_chart(combined_data3, size=20, use_container_width=True)
+  with tab10:
+    data7=tf['Casos por fecha de inicio de síntomas']
+    st.scatter_chart(data7, color='#00129A', size=20, use_container_width=True)
+  with tab11:
+    data8=tf['Casos por fecha de toma de muestra']
+    st.scatter_chart(data8, color='#00A2E8', size=20, use_container_width=True)
+  with tab12:
+    data9=tf['Casos por fecha de emisión de resultados']
+    st.scatter_chart(data9, color='#7A1A82', size=20, use_container_width=True)
     
   
     

@@ -41,6 +41,13 @@ if selected == "Principal":
     plt.title("Casos de COVID-19 a lo largo del tiempo")
     plt.legend()
     st.pyplot(fig)
+
+    data1=data['Casos por fecha de inicio de síntomas']
+    data2=data['Casos por fecha de toma de muestra']
+    data3=data['Casos por fecha de emisión de resultados']
+
+    gt=pd.DataFrame(columns=[data1,data2,data3])
+    st,catter_chart(gt, use_container_width=True)
     
   with tab2:
     
@@ -49,20 +56,17 @@ if selected == "Principal":
     
 
   with tab3:
-    fig, ax = plt.subplots(figsize=(10, 6))
-    data['Casos por fecha de toma de muestra'].plot(marker='o', linestyle='None', markersize=3, color='#00A2E8', label='Casos por fecha de toma de muestra')
-    plt.xlabel("Fecha")
-    plt.ylabel("Número de casos")
-    plt.legend()
-    st.pyplot(fig)
+   
+    data2=data['Casos por fecha de toma de muestra']
+    st.scatter_chart(data2, color='#00129A', size=20, use_container_width=True)
 
   with tab4:
-    fig, ax = plt.subplots(figsize=(10, 6))
-    data['Casos por fecha de emisión de resultados'].plot(marker='o', linestyle='None', markersize=3, color='#7A1A82', label='Casos por fecha de emisión de resultados')
-    plt.xlabel("Fecha")
-    plt.ylabel("Número de casos")
-    plt.legend()
-    st.pyplot(fig)
+
+    data3=data['Casos por fecha de emisión de resultados']
+    st.scatter_chart(data3, color='#00129A', size=20, use_container_width=True)
+    
+  
+    
 
   
 

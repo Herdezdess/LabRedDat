@@ -44,7 +44,7 @@ if selected == "Principal":
       'Casos por fecha de emisión de resultados': data3
     })
     #muetsra el grafico
-    st.scatter_chart(combined_data, size=20 use_container_width=True)
+    st.scatter_chart(combined_data, size=20, use_container_width=True)
     
   with tab2:
     

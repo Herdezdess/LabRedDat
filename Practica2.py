@@ -31,9 +31,6 @@ if selected == "Principal":
   #lector del csv primera fecha
   data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha_junio.csv', index_col=1, parse_dates=True)
   tab1, tab2, tab3, tab4 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
-  # Función exponencial
-  def f(x, A, u, r):
-    return A * np.exp(-((x - u) / r) ** 2 / 2)
 
   
   with tab1:
@@ -59,6 +56,8 @@ if selected == "Principal":
     A = 325.658
     u = 73.265
     r = 9.05745
+    def f(x, A, u, r):
+      return A * np.exp(-((x - u) / r) ** 2 / 2)
     x_values = np.arange(len(data1))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')

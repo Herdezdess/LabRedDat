@@ -7,6 +7,7 @@ from scipy.stats import linregress
 import plotly.express as px
 import seaborn as sns
 import altair as alt
+import math 
 sns.set()
 
 #Configuración de la página
@@ -46,7 +47,14 @@ if selected == "Principal":
     st.scatter_chart(combined_data, size=20, use_container_width=True)
   with tab2:
     data1=data['Casos por fecha de inicio de síntomas']
-    st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
+    #fit con datos de gnuplot
+    fit=325.655*math.exp(-((data1-73.265)/9.05765)**2/2)
+    #combinación de datos
+    cd1 = pd.DataFrame({
+      'Casos por fecha de inicio de síntomas': data1,
+      'Distribución de Poisson': cd1
+    })
+    st.scatter_chart(cd1, color='#00129A', size=20, use_container_width=True)
   with tab3:
     data2=data['Casos por fecha de toma de muestra']
     st.scatter_chart(data2, color='#00A2E8', size=20, use_container_width=True)

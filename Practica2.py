@@ -56,7 +56,7 @@ if selected == "Principal":
     A = 325.658
     u = 73.265
     r = 9.05745
-    def f(x, A, u, r):
+    def f(x):
       return A * np.exp(-((x - u) / r) ** 2 / 2)
     x_values = np.arange(len(data1))
     y_values = f(x_values)

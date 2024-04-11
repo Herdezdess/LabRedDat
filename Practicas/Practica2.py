@@ -51,6 +51,7 @@ if selected == "Principal":
     st.scatter_chart(combined_data, size=20, use_container_width=True)
     
   with tab2:
+    
     data1=data['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
 
@@ -64,33 +65,21 @@ if selected == "Principal":
     st.pyplot()
     st.snow()
 
-  
-    # Datos
-    x = np.linspace(0, 10, 100)
-    y1 = np.sin(x)
-    y2 = np.cos(x)
 
-# Crear una figura y ejes
-    fig, ax = plt.subplots(figsize=(8, 6))
-
-# Graficar líneas
-    ax.plot(x, y1, label='Sin(x)', color='blue')
-
-# Graficar puntos
-    ax.scatter(x, y2, label='Cos(x)', color='red')
-
-# Configuración de la gráfica
-    ax.set_xlabel('X')
-    ax.set_ylabel('Y')
-    ax.set_title('Gráfico de puntos y líneas')
-    ax.legend()
-
-# Mostrar la figura en Streamlit
-    st.pyplot(fig)
     
   with tab3:
     data2=data['Casos por fecha de toma de muestra']
     st.scatter_chart(data2, color='#00A2E8', size=20, use_container_width=True)
+    
+    A = 325.658
+    u = 73.265
+    r = 9.05745
+    x_values = np.arange(len(data2))
+    y_values = f(x_values)
+    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
+    st.pyplot()
+    st.snow()
+    
   with tab4:
     data3=data['Casos por fecha de emisión de resultados']
     st.scatter_chart(data3, color='#7A1A82', size=20, use_container_width=True)

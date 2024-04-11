@@ -31,6 +31,11 @@ if selected == "Principal":
   #lector del csv primera fecha
   data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha_junio.csv', index_col=1, parse_dates=True)
   tab1, tab2, tab3, tab4 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
+  # Función exponencial
+  def f(x, A, u, r):
+    return A * np.exp(-((x - u) / r) ** 2 / 2)
+
+  
   with tab1:
     #hala los datos
     st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -45,16 +50,20 @@ if selected == "Principal":
     })
     #muetsra el grafico
     st.scatter_chart(combined_data, size=20, use_container_width=True)
+    
   with tab2:
     data1=data['Casos por fecha de inicio de síntomas']
-    #fit con datos de gnuplot
-    fit=325.655*math.exp(-((data1-73.265)/9.05765)**2/2)
-    #combinación de datos
-    cd1 = pd.DataFrame({
-      'Casos por fecha de inicio de síntomas': data1,
-      'Distribución de Poisson': cd1
-    })
     st.scatter_chart(cd1, color='#00129A', size=20, use_container_width=True)
+
+    # Parámetros finales del ajuste que se obtuvieron en gnuplot
+    A = 325.658
+    u = 73.265
+    r = 9.05745
+    x_values = np.arange(len(data1))
+    y_values = f(x_values)
+    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
+    st.pyplot()
+    
   with tab3:
     data2=data['Casos por fecha de toma de muestra']
     st.scatter_chart(data2, color='#00A2E8', size=20, use_container_width=True)

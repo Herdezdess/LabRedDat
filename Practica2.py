@@ -62,6 +62,7 @@ if selected == "Principal":
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()
+    st.balloons()
     
   with tab3:
     data2=data['Casos por fecha de toma de muestra']

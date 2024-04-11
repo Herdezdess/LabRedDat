@@ -63,6 +63,30 @@ if selected == "Principal":
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()
     st.snow()
+
+  
+    # Datos
+    x = np.linspace(0, 10, 100)
+    y1 = np.sin(x)
+    y2 = np.cos(x)
+
+# Crear una figura y ejes
+    fig, ax = plt.subplots(figsize=(8, 6))
+
+# Graficar líneas
+    ax.plot(x, y1, label='Sin(x)', color='blue')
+
+# Graficar puntos
+    ax.scatter(x, y2, label='Cos(x)', color='red')
+
+# Configuración de la gráfica
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_title('Gráfico de puntos y líneas')
+    ax.legend()
+
+# Mostrar la figura en Streamlit
+    st.pyplot(fig)
     
   with tab3:
     data2=data['Casos por fecha de toma de muestra']

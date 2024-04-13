@@ -59,7 +59,7 @@ if selected == "Principal":
     A = 325.658
     u = 73.265
     r = 9.05745
-    x_values = np.arange(len(data1) + 20)
+    x_values = np.arange(len(data1))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()

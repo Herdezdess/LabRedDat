@@ -169,9 +169,9 @@ if selected == "Principal":
     data7=tf['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data7, color='#00129A', size=20, use_container_width=True)
 
-    A = 325.658
-    u = 73.265
-    r = 9.05745
+    A = 107
+    u = 28.7638
+    r = 25.8805
     x_values = np.arange(len(data7))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
@@ -181,9 +181,9 @@ if selected == "Principal":
     data8=tf['Casos por fecha de toma de muestra']
     st.scatter_chart(data8, color='#00A2E8', size=20, use_container_width=True)
 
-    A = 325.658
-    u = 73.265
-    r = 9.05745
+    A = 107
+    u = 28.7638
+    r = 25.8805
     x_values = np.arange(len(data8))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
@@ -193,9 +193,9 @@ if selected == "Principal":
     data9=tf['Casos por fecha de emisión de resultados']
     st.scatter_chart(data9, color='#7A1A82', size=20, use_container_width=True)
 
-    A = 325.658
-    u = 73.265
-    r = 9.05745
+    A = 107
+    u = 28.7638
+    r = 25.8805
     x_values = np.arange(len(data9))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')

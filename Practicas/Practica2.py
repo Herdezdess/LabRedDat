@@ -78,11 +78,18 @@ if selected == "Principal":
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()
-    st.snow()
     
   with tab4:
     data3=data['Casos por fecha de emisión de resultados']
     st.scatter_chart(data3, color='#7A1A82', size=20, use_container_width=True)
+
+    A = 325.658
+    u = 73.265
+    r = 9.05745
+    x_values = np.arange(len(data1))
+    y_values = f(x_values)
+    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
+    st.pyplot()
 
   #Lo mismo, pero para la segunda fecha
   st.divider()
@@ -106,12 +113,38 @@ if selected == "Principal":
   with tab6:
     data4=sf['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data4, color='#00129A', size=20, use_container_width=True)
+    
+    A = 407.334
+    u = 207.88
+    r = 146.028
+    x_values = np.arange(len(data1))
+    y_values = f(x_values)
+    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
+    st.pyplot()
+    
   with tab7:
     data5=sf['Casos por fecha de toma de muestra']
     st.scatter_chart(data5, color='#00A2E8', size=20, use_container_width=True)
+
+    A = 325.658
+    u = 73.265
+    r = 9.05745
+    x_values = np.arange(len(data1))
+    y_values = f(x_values)
+    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
+    st.pyplot()
+    
   with tab8:
     data6=sf['Casos por fecha de emisión de resultados']
     st.scatter_chart(data6, color='#7A1A82', size=20, use_container_width=True)
+
+    A = 325.658
+    u = 73.265
+    r = 9.05745
+    x_values = np.arange(len(data1))
+    y_values = f(x_values)
+    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
+    st.pyplot()
 
   #Lo mismo, pero para la tercera fecha
   st.divider()
@@ -135,12 +168,38 @@ if selected == "Principal":
   with tab10:
     data7=tf['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data7, color='#00129A', size=20, use_container_width=True)
+
+    A = 325.658
+    u = 73.265
+    r = 9.05745
+    x_values = np.arange(len(data1))
+    y_values = f(x_values)
+    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
+    st.pyplot()
+    
   with tab11:
     data8=tf['Casos por fecha de toma de muestra']
     st.scatter_chart(data8, color='#00A2E8', size=20, use_container_width=True)
+
+    A = 325.658
+    u = 73.265
+    r = 9.05745
+    x_values = np.arange(len(data1))
+    y_values = f(x_values)
+    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
+    st.pyplot()
+    
   with tab12:
     data9=tf['Casos por fecha de emisión de resultados']
     st.scatter_chart(data9, color='#7A1A82', size=20, use_container_width=True)
+
+    A = 325.658
+    u = 73.265
+    r = 9.05745
+    x_values = np.arange(len(data1))
+    y_values = f(x_values)
+    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
+    st.pyplot()
     
   
     

@@ -60,6 +60,7 @@ if selected == "Principal":
     u = 73.265
     r = 9.05745
     x_values = np.arange(len(data1))
+    set xrange = [0:100]
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()

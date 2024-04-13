@@ -86,7 +86,7 @@ if selected == "Principal":
     A = 325.658
     u = 73.265
     r = 9.05745
-    x_values = np.arange(len(data1))
+    x_values = np.arange(len(data3))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()
@@ -117,7 +117,7 @@ if selected == "Principal":
     A = 407.334
     u = 207.88
     r = 146.028
-    x_values = np.arange(len(data1))
+    x_values = np.arange(len(data4))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()
@@ -129,7 +129,7 @@ if selected == "Principal":
     A = 325.658
     u = 73.265
     r = 9.05745
-    x_values = np.arange(len(data1))
+    x_values = np.arange(len(data5))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()
@@ -141,7 +141,7 @@ if selected == "Principal":
     A = 325.658
     u = 73.265
     r = 9.05745
-    x_values = np.arange(len(data1))
+    x_values = np.arange(len(data6))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()
@@ -172,7 +172,7 @@ if selected == "Principal":
     A = 325.658
     u = 73.265
     r = 9.05745
-    x_values = np.arange(len(data1))
+    x_values = np.arange(len(data7))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()
@@ -184,7 +184,7 @@ if selected == "Principal":
     A = 325.658
     u = 73.265
     r = 9.05745
-    x_values = np.arange(len(data1))
+    x_values = np.arange(len(data8))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()
@@ -196,7 +196,7 @@ if selected == "Principal":
     A = 325.658
     u = 73.265
     r = 9.05745
-    x_values = np.arange(len(data1))
+    x_values = np.arange(len(data9))
     y_values = f(x_values)
     plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
     st.pyplot()

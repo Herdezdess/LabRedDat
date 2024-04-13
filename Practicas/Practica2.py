@@ -114,7 +114,7 @@ if selected == "Principal":
     data4=sf['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data4, color='#00129A', size=20, use_container_width=True)
     
-    A = 10546.2
+    A = 1546.2
     u = 398.284
     r = 142.106
     x_values = np.arange(len(data4))
@@ -126,7 +126,7 @@ if selected == "Principal":
     data5=sf['Casos por fecha de toma de muestra']
     st.scatter_chart(data5, color='#00A2E8', size=20, use_container_width=True)
 
-    A = 10546.2
+    A = 1546.2
     u = 398.284
     r = 142.106
     x_values = np.arange(len(data5))
@@ -138,7 +138,7 @@ if selected == "Principal":
     data6=sf['Casos por fecha de emisión de resultados']
     st.scatter_chart(data6, color='#7A1A82', size=20, use_container_width=True)
 
-    A = 10546.2
+    A = 1546.2
     u = 398.284
     r = 142.106
     x_values = np.arange(len(data6))

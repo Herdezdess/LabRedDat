@@ -220,7 +220,7 @@ if selected == "Teoría":
   st.markdown("""Para esta práctica, se tomaron los dos casos de estudio mencionados anteriormente y se utilizó un ajuste hecho a partir de una distribución binomial. También fue necesario el uso de herramientas externas a Python como Gnuplot. Esto debido a que el ajuste realizado con Python se adapta solamente a los datos tomados y no realiza las predicciones deseadas, por lo cual se utilizó Gnuplot para poder obtener los valores para la distribución binomial y luego plotearla dentro de la gráfica con los datos recopilados. Este ajuste nos permitió dar una estimación de la fecha en la cual se dará el pico de casos positivos para COVID-19.""")
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #A2BDF1;'>DISCUSIÓN DE RESULTADOS</h1>", unsafe_allow_html=True)  
-  st.markdow("""Para la segunda gráfica, como esta ya tiene picos se tomarón valores hasta septiembre 6 del 2020""")
+  st.markdow("""Para la segunda gráfica, como esta ya tiene picos se tomarón valores del 1 de enero del 2021 hasta el 15/3/2021""")
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CONCLUSIONES</h1>", unsafe_allow_html=True)  
   st.markdown("""Como ya se tiene una primera ola no se puede hacer el ajuste porque la gráfica ya no se comporta como una bonimial""")

@@ -56,7 +56,7 @@ if selected == "Principal":
     st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
 
     # Parámetros finales del ajuste que se obtuvieron en gnuplot
-    A = 325.658
+    A = 400.658
     u = 73.265
     r = 9.05745
     x_values = np.arange(100)

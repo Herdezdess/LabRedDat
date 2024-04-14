@@ -29,7 +29,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 
 # Menú lateral
-with st.sidebar.header:
+with st.sidebar:
   selected=option_menu(
     menu_title="Menú",
     options = ["Principal", "Teoría"],

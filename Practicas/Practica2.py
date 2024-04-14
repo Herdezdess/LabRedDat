@@ -22,21 +22,6 @@ custom_css = """
     position: relative;
 }
 
-/* Estilo para los emojis */
-.emoji {
-    position: absolute;
-    animation: fall 3s infinite;
-}
-
-/* Animación de caída */
-@keyframes fall {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(100%);
-    }
-}
 </style>
 """
 

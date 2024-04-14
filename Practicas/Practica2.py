@@ -13,44 +13,44 @@ sns.set()
 #Configuración de la página
 st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
 
-# Definimos el CSS personalizado
+# CSS personalizado para los bordes laterales con emojis cayendo
 custom_css = """
 <style>
 /* Estilo para los bordes laterales */
 .stApp {
-    border-left: 200px solid #FF5733; /* Color del borde izquierdo */
-    border-right: 200px solid #FF5733; /* Color del borde derecho */
+    border-left: 200px solid #D7C7F7; /* Color del borde izquierdo */
+    border-right: 200px solid #D7C7F7; /* Color del borde derecho */
 }
 
-/* Estilo para los emojis flotantes */
-.floating-emoji {
-    position: fixed; /* Fija la posición del emoji */
-    font-size: 40px; /* Tamaño del emoji */
-    z-index: 999; /* Asegura que los emojis estén sobre otros elementos */
-    color: #FF5733; /* Color del emoji */
-    animation: float 5s infinite; /* Animación de flotación */
+/* Animación de emojis cayendo */
+@keyframes falling {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
 }
 
-/* Animación de flotación */
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+/* Estilo para los emojis */
+.falling-emoji {
+    position: fixed;
+    animation: falling 10s linear infinite;
+    font-size: 2em;
 }
+
+/* Ajusta la posición de los emojis */
+#emoji1 { left: 50px; }
+#emoji2 { left: 150px; }
+#emoji3 { right: 50px; }
+#emoji4 { right: 150px; }
 </style>
 """
 
-# Aplicamos el CSS personalizado
+# Agregar el CSS personalizado a la aplicación Streamlit
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Renderizamos los emojis flotantes dentro de los bordes laterales
-st.markdown('<div class="floating-emoji">🎈</div>', unsafe_allow_html=True)
+# Emojis cayendo en los bordes laterales
+st.markdown('<div class="falling-emoji" id="emoji1">🎈</div>', unsafe_allow_html=True)
+st.markdown('<div class="falling-emoji" id="emoji2">🎈</div>', unsafe_allow_html=True)
+st.markdown('<div class="falling-emoji" id="emoji3">🎈</div>', unsafe_allow_html=True)
+st.markdown('<div class="falling-emoji" id="emoji4">🎈</div>', unsafe_allow_html=True)
 
 
 # Menú lateral

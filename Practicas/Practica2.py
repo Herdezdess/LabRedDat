@@ -13,19 +13,44 @@ sns.set()
 #Configuración de la página
 st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
 
-# CSS personalizado para los bordes laterales
+# Definimos el CSS personalizado
 custom_css = """
 <style>
 /* Estilo para los bordes laterales */
 .stApp {
-    border-left: 200px solid #D1CAF7; /* Color del borde izquierdo */
-    border-right: 200px solid #D1CAF7; /* Color del borde derecho */
+    border-left: 5px solid #FF5733; /* Color del borde izquierdo */
+    border-right: 5px solid #FF5733; /* Color del borde derecho */
+}
+
+/* Estilo para los emojis flotantes */
+.floating-emoji {
+    position: fixed; /* Fija la posición del emoji */
+    font-size: 40px; /* Tamaño del emoji */
+    z-index: 999; /* Asegura que los emojis estén sobre otros elementos */
+    color: #FF5733; /* Color del emoji */
+    animation: float 5s infinite; /* Animación de flotación */
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 </style>
 """
 
-# Insertar el CSS personalizado en la aplicación
+# Aplicamos el CSS personalizado
 st.markdown(custom_css, unsafe_allow_html=True)
+
+# Renderizamos los emojis flotantes dentro de los bordes laterales
+st.markdown('<div class="floating-emoji">🎈</div>', unsafe_allow_html=True)
 
 
 # Menú lateral

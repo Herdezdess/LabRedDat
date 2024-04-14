@@ -18,8 +18,8 @@ custom_css = """
 <style>
 /* Estilo para los bordes laterales */
 .stApp {
-    border-left: 5px solid #FF5733; /* Color del borde izquierdo */
-    border-right: 5px solid #FF5733; /* Color del borde derecho */
+    border-left: 20px solid #D1CAF7; /* Color del borde izquierdo */
+    border-right: 20px solid #D1CAF7; /* Color del borde derecho */
 }
 </style>
 """

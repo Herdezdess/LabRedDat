@@ -62,7 +62,7 @@ if selected == "Principal":
     x_values = np.arange(len(data1))
     y_values = f(x_values)
     df = pd.DataFrame({'x': x_values, 'y': y_values})
-    st.line_chart(df, color='red', size=20)
+    st.line_chart(df)
     st.snow()
 
 

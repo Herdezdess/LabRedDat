@@ -134,7 +134,7 @@ if selected == "Principal":
     data4=sf['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data4, color='#00129A', size=20, use_container_width=True)
     
-    A = = 1054.62
+    A = 1054.62
     u = 398.284
     r = 142.106
     x_values = np.arange(500)

@@ -53,7 +53,7 @@ if selected == "Principal":
   with tab2:
     
     data1=data['Casos por fecha de inicio de síntomas']
-    st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
+    scatter= scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
 
     # Parámetros finales del ajuste que se obtuvieron en gnuplot
     A = 325.658
@@ -62,9 +62,13 @@ if selected == "Principal":
     x_values = np.arange(100)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
-    st.line_chart(df)
+    line = line_chart(df)
     st.snow()
 
+    combined_chart = (scatter + line).properties(
+      title=' '
+    )
+    st.altair_chart(combined_chart, use_container_width=True)
 
     
   with tab3:

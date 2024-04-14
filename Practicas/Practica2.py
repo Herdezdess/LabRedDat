@@ -20,38 +20,29 @@ custom_css = """
 .stApp {
     border-left: 200px solid #D7C7F7; /* Color del borde izquierdo */
     border-right: 200px solid #D7C7F7; /* Color del borde derecho */
+    position: relative;
 }
 
-/* Estilo para el emoji */
-#floating-balloon {
-    position: fixed;
-    font-size: 24px;
-    color: #FF69B4; /* Color del emoji */
+/* Estilo para los emojis */
+.emoji {
+    position: absolute;
+    animation: fall 5s linear infinite;
+}
+
+/* Keyframes para la animación de caída */
+@keyframes fall {
+    0% { top: -50px; }
+    100% { top: 100vh; }
 }
 </style>
 """
 
-# Inyectar CSS personalizado en la aplicación
+# Agregar el CSS personalizado a la aplicación
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Mostrar emoji flotante que sigue al cursor
-st.write(f'<div id="floating-balloon">🎈</div>', unsafe_allow_html=True)
-
-# JavaScript para hacer que el emoji siga al cursor
-js_code = """
-document.addEventListener('DOMContentLoaded', () => {
-    const balloon = document.getElementById('floating-balloon');
-    document.addEventListener('mousemove', (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
-        balloon.style.left = x + 'px';
-        balloon.style.top = y + 'px';
-    });
-});
-"""
-
-# Ejecutar JavaScript
-st.write(f'<script>{js_code}</script>', unsafe_allow_html=True)
+# Agregar los emojis a los bordes laterales
+for i in range(20):
+    st.markdown(f'<div class="emoji" style="left: {i*5}%; top: {i*5}%; font-size: 30px;">🎈</div>', unsafe_allow_html=True)
 
 # Menú lateral
 with st.sidebar:

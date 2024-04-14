@@ -72,24 +72,14 @@ if selected == "Principal":
     r = 9.05745
     x_values = np.arange(100)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
-    df = pd.DataFrame({'x': x_values, 'y': y_values})
+    df = pd.DataFrame({'y': y_values}, index=data1.index)  # Índice igual al de data1
 
-    scatter_chart = alt.Chart(data1).mark_circle(color='#00129A', size=20).encode(
-      x='index',
-      y='Casos por fecha de inicio de síntomas'
-    )
+    # Gráfico de dispersión
+    st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
 
-    line_chart = alt.Chart(df).mark_line(color='red').encode(
-      x='x',
-      y='y'
-    )
+    # Gráfico de línea con los mismos ejes que el gráfico de dispersión
+    st.line_chart(df)
 
-    combined_chart = alt.layer(scatter_chart, line_chart).properties(
-      width=600,
-      height=400
-    )
-
-    st.altair_chart(combined_chart, use_container_width=True)
 
     
   with tab3:

@@ -237,8 +237,10 @@ if selected == "Teoría":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>RESUMEN</h1>", unsafe_allow_html=True)
   st.markdown("""La pandemia del COVID-19 fué uno de los desafíos más grandes a los que la sociedad guatemalteca se ha enfrentado en la historia reciente. Esto no afectó solamente al sector de la salud, sino que fue un problema multifacético el cual afectó principalmente en las siguientes áreas:""")
   st.markdown("""  
-    ▶ Impacto económico y social: Las medidas de contención tuvieron un impacto significativo en la economía guatemalteca, especialmente en sectore como el turismo, la agricultura y la manufactura. Además, muchos guatemaltecos enfrentaron dificultades económicas debido a la pérdida de empleos y la reducción de ingresos.  
+    ▶ Impacto económico y social: Las medidas de contención tuvieron un impacto significativo en la economía guatemalteca, especialmente en sectore como el turismo, la agricultura y la manufactura. Además, muchos guatemaltecos enfrentaron dificultades económicas debido a la pérdida de empleos y la reducción de ingresos. 
+    
     ▶ Presión sobre el sistema de salud: El sistema de salud guatemalteco enfrentó desafíos significativos debido al aumento de casos de COVID-19. La falta de recursos, equipos de protección personal y capacidad hospitalaria adecuada se convirtieron en preocupaciones importantes durante los picos de la pandemia. 
+    
     ▶ Desafíos sociales y desigualdades: La pandemia destacó y exacerbó las desigualdades sociales existentes en Guatemala. Grupos vulnerables, como comunidades indígenas y personas de bajos recursos enfrentaron dificultades adicionales debido a la falta de acceso a servicios de salud adecuados y a condiciones de vida precarias.
     """)
   st.markdown("""La pandemia tuvo un fuerte impacto en cada uno de los puntos vitales de la sociedad en Guatemala. Es por ello que su estudio a lo largo del tiempo es importante. Este laboratorio pretende realizar un estudio posterior para determinar si es posible realizar predicciones acertadas a partir de una cantidas limitada de datos obtenidos durante los ciertos periodos de la pandemia.""")
@@ -249,13 +251,17 @@ if selected == "Teoría":
   st.latex(r''' P(x = k) = \binom{n}{k} p^{k} (1-p)^{n-k} ''')
   st.markdown("""Todo esto permite que la distribución binomial sea utilizada para el estudio del comportamiento de algún fenómeno, proceso u objeto de estudio. Esto quiere decir que nos permite hacer predicciones a partir de un grupo de datos medidos para tener una idea de cómo evolucionará el objeto o fenómeno de estudio, lo cual da cabida a aplicaciones como:
     ▶ Procesos Bernoulli: La distribución binomial es adecuada para modelar experimentos con dos resultados posibles, como lanzamientos de monedas, pruebas de éxito/fallo, entre otros.
+    
     ▶ Predicciones en investigación y ciencias sociales: Se utiliza para predecir el número de respuestas afirmativas o negativas en encuestas, votaciones, estudios de mercado, entre otros.
+    
     ▶ Control de calidad: Permite predecir la cantidad de productos defectuosos en una muestra tomada de una producción de masa.
+    
     ▶ Finanzas: En la valoración de opciones financieras, la distribución binomial es utilizada para modelar el comportamiento de los precios de las acciones.
     """)
   st.markdown("""A pesar de que la distribución binomial puede llegar a ser de mucha ayuda a la hora de realizar predicciones hay que tomar en cuenta que esta misma tiene ciertas consideraciones y limitaciones a tomar en cuenta.""")
   st.markdown("""
     ▶ La distribución binomial asume que los ensayos son independientes y que la probabilidad de éxito es constante en cada ensayo. Si estas condiciones no se cumplen, otros modelos probabilísticos pueden ser más apropiados.
+    
     ▶ En casos donde el número de ensayos (n) es grande, la distribución binomial se aproxima a la distribución normal mediante el teorema del límite central, lo que facilita los cálculos y las interpretaciones.
     """)
   st.divider()

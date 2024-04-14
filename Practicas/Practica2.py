@@ -34,12 +34,6 @@ custom_css = """
     animation: falling 10s linear infinite;
     font-size: 2em;
 }
-
-/* Ajusta la posición de los emojis */
-#emoji1 { left: 50px; }
-#emoji2 { left: 150px; }
-#emoji3 { right: 50px; }
-#emoji4 { right: 150px; }
 </style>
 """
 
@@ -47,10 +41,10 @@ custom_css = """
 st.markdown(custom_css, unsafe_allow_html=True)
 
 # Emojis cayendo en los bordes laterales
-st.markdown('<div class="falling-emoji" id="emoji1">🎈</div>', unsafe_allow_html=True)
-st.markdown('<div class="falling-emoji" id="emoji2">🎈</div>', unsafe_allow_html=True)
-st.markdown('<div class="falling-emoji" id="emoji3">🎈</div>', unsafe_allow_html=True)
-st.markdown('<div class="falling-emoji" id="emoji4">🎈</div>', unsafe_allow_html=True)
+emojis = ["🎈", "❤️", "🌟", "🎉", "🍀", "💡", "💫", "🎈", "❤️", "🌟", "🎉", "🍀", "💡", "💫"]  # Agrega más emojis aquí si lo deseas
+
+for i, emoji in enumerate(emojis, start=1):
+    st.markdown(f'<div class="falling-emoji" id="emoji{i}">{emoji}</div>', unsafe_allow_html=True)
 
 
 # Menú lateral

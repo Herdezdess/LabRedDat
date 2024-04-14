@@ -13,6 +13,7 @@ sns.set()
 #Configuración de la página
 st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
 
+# CSS personalizado para los bordes laterales
 custom_css = """
 <style>
 /* Estilo para los bordes laterales */
@@ -21,34 +22,36 @@ custom_css = """
     border-right: 200px solid #D7C7F7; /* Color del borde derecho */
 }
 
-/* Estilo para los emojis */
-.emoji {
+/* Estilo para el emoji */
+#floating-balloon {
     position: fixed;
-    pointer-events: none;
-    animation: fallingEmoji linear infinite;
-}
-
-/* Animación para los emojis */
-@keyframes fallingEmoji {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(100vh);
-    }
+    font-size: 24px;
+    color: #FF69B4; /* Color del emoji */
 }
 </style>
 """
 
-# Agregar el CSS personalizado a la aplicación
+# Inyectar CSS personalizado en la aplicación
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Definir la lista de emojis a mostrar
-emojis = ["🎈"] * 10  # Se pueden agregar más emojis aquí
+# Mostrar emoji flotante que sigue al cursor
+st.write(f'<div id="floating-balloon">🎈</div>', unsafe_allow_html=True)
 
-# Mostrar los emojis en la aplicación
-for emoji in emojis:
-    st.markdown(f'<div class="emoji">{emoji}</div>', unsafe_allow_html=True)
+# JavaScript para hacer que el emoji siga al cursor
+js_code = """
+document.addEventListener('DOMContentLoaded', () => {
+    const balloon = document.getElementById('floating-balloon');
+    document.addEventListener('mousemove', (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        balloon.style.left = x + 'px';
+        balloon.style.top = y + 'px';
+    });
+});
+"""
+
+# Ejecutar JavaScript
+st.write(f'<script>{js_code}</script>', unsafe_allow_html=True)
 
 # Menú lateral
 with st.sidebar:

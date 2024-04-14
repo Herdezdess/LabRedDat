@@ -54,6 +54,8 @@ if selected == "Principal":
     
     data1=data['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
+    #obtener los valores de x de la gráfica anterior
+    x = data.index.tolist()
 
     # Parámetros finales del ajuste que se obtuvieron en gnuplot
     A = 400.658

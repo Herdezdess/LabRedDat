@@ -58,7 +58,7 @@ if selected == "Principal":
     x = data.index.tolist()
 
     # Parámetros finales del ajuste que se obtuvieron en gnuplot
-    A = 400.658
+    A = 470.658
     u = 73.265
     r = 9.05745
     x_values = np.arange(100)
@@ -72,26 +72,26 @@ if selected == "Principal":
   with tab3:
     data2=data['Casos por fecha de toma de muestra']
     st.scatter_chart(data2, color='#00A2E8', size=20, use_container_width=True)
-    
-    A = 325.658
+
+    A = 638.658
     u = 73.265
     r = 9.05745
-    x_values = np.arange(len(data2))
-    y_values = f(x_values)
-    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
-    st.pyplot()
+    x_values = np.arange(100)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
     
   with tab4:
     data3=data['Casos por fecha de emisión de resultados']
     st.scatter_chart(data3, color='#7A1A82', size=20, use_container_width=True)
 
-    A = 325.658
+    A = 423.658
     u = 73.265
     r = 9.05745
-    x_values = np.arange(len(data3))
-    y_values = f(x_values)
-    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
-    st.pyplot()
+    x_values = np.arange(100)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
 
   #Lo mismo, pero para la segunda fecha
   st.divider()
@@ -116,37 +116,37 @@ if selected == "Principal":
     data4=sf['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data4, color='#00129A', size=20, use_container_width=True)
     
-    A = 1546.2
+    A = 670.2
     u = 398.284
     r = 142.106
-    x_values = np.arange(len(data4))
-    y_values = f(x_values)
-    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
-    st.pyplot()
+    x_values = np.arange(100)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
     
   with tab7:
     data5=sf['Casos por fecha de toma de muestra']
     st.scatter_chart(data5, color='#00A2E8', size=20, use_container_width=True)
 
-    A = 1546.2
+    A = 1130.2
     u = 398.284
     r = 142.106
-    x_values = np.arange(len(data5))
-    y_values = f(x_values)
-    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
-    st.pyplot()
+    x_values = np.arange(100)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
     
   with tab8:
     data6=sf['Casos por fecha de emisión de resultados']
     st.scatter_chart(data6, color='#7A1A82', size=20, use_container_width=True)
 
-    A = 1546.2
+    A = 942.34
     u = 398.284
     r = 142.106
-    x_values = np.arange(len(data6))
-    y_values = f(x_values)
-    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
-    st.pyplot()
+    x_values = np.arange(100)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
 
   #Lo mismo, pero para la tercera fecha
   st.divider()
@@ -174,34 +174,34 @@ if selected == "Principal":
     A = 107
     u = 28.7638
     r = 25.8805
-    x_values = np.arange(len(data7))
-    y_values = f(x_values)
-    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
-    st.pyplot()
+    x_values = np.arange(100)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
     
   with tab11:
     data8=tf['Casos por fecha de toma de muestra']
     st.scatter_chart(data8, color='#00A2E8', size=20, use_container_width=True)
 
-    A = 107
+    A = 300.12
     u = 28.7638
     r = 25.8805
-    x_values = np.arange(len(data8))
-    y_values = f(x_values)
-    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
-    st.pyplot()
+    x_values = np.arange(100)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
     
   with tab12:
     data9=tf['Casos por fecha de emisión de resultados']
     st.scatter_chart(data9, color='#7A1A82', size=20, use_container_width=True)
 
-    A = 107
+    A = 521.53
     u = 28.7638
     r = 25.8805
-    x_values = np.arange(len(data9))
-    y_values = f(x_values)
-    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
-    st.pyplot()
+    x_values = np.arange(100)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
     
   
     

@@ -61,7 +61,7 @@ if selected == "Principal":
     r = 9.05745
     x_values = np.arange(len(data1))
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
-    df = pd.DataFrame({'x': x_values, 'y': y_values})
+    df = pd.DataFrame({'y': y_values})
     st.line_chart(df)
     st.snow()
 

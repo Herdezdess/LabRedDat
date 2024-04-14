@@ -61,8 +61,8 @@ if selected == "Principal":
     r = 9.05745
     x_values = np.arange(len(data1))
     y_values = f(x_values)
-    plt.plot(x_values, y_values, color='red', label='Ajuste de la función')
-    st.pyplot()
+    df = pd.DataFrame({'x': x_values, 'y': y_values})
+    st.line_chart(df, color='red', size=20)
     st.snow()
 
 

@@ -13,27 +13,6 @@ sns.set()
 #Configuración de la página
 st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
 
-custom_css = """
-<style>
-/* Estilo para los bordes laterales */
-.stApp {
-    border-left: 200px solid #D7C7F7; /* Color del borde izquierdo */
-    border-right: 200px solid #D7C7F7; /* Color del borde derecho */
-    position: relative;
-}
-
-</style>
-"""
-
-# Agregar el estilo CSS personalizado
-st.markdown(custom_css, unsafe_allow_html=True)
-
-# Agregar los emojis dentro de los bordes laterales
-with st.sidebar:
-    st.markdown('<div class="emoji" style="left: 10px;">🎈</div>', unsafe_allow_html=True)
-    st.markdown('<div class="emoji" style="left: 50px;">🎈</div>', unsafe_allow_html=True)
-    st.markdown('<div class="emoji" style="left: 90px;">🎈</div>', unsafe_allow_html=True)
-
 # Menú lateral
 with st.sidebar:
   selected=option_menu(

@@ -236,15 +236,33 @@ if selected == "Principal":
 if selected == "Teoría":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>RESUMEN</h1>", unsafe_allow_html=True)
   st.markdown("""La pandemia del COVID-19 fué uno de los desafíos más grandes a los que la sociedad guatemalteca se ha enfrentado en la historia reciente. Esto no afectó solamente al sector de la salud, sino que fue un problema multifacético el cual afectó principalmente en las siguientes áreas:""")
+  st.markdown("""  
+    ▶ Impacto económico y social: Las medidas de contención tuvieron un impacto significativo en la economía guatemalteca, especialmente en sectore como el turismo, la agricultura y la manufactura. Además, muchos guatemaltecos enfrentaron dificultades económicas debido a la pérdida de empleos y la reducción de ingresos.  
+    ▶ Presión sobre el sistema de salud: El sistema de salud guatemalteco enfrentó desafíos significativos debido al aumento de casos de COVID-19. La falta de recursos, equipos de protección personal y capacidad hospitalaria adecuada se convirtieron en preocupaciones importantes durante los picos de la pandemia. 
+    ▶ Desafíos sociales y desigualdades: La pandemia destacó y exacerbó las desigualdades sociales existentes en Guatemala. Grupos vulnerables, como comunidades indígenas y personas de bajos recursos enfrentaron dificultades adicionales debido a la falta de acceso a servicios de salud adecuados y a condiciones de vida precarias.
+    """)
+  st.markdown("""La pandemia tuvo un fuerte impacto en cada uno de los puntos vitales de la sociedad en Guatemala. Es por ello que su estudio a lo largo del tiempo es importante. Este laboratorio pretende realizar un estudio posterior para determinar si es posible realizar predicciones acertadas a partir de una cantidas limitada de datos obtenidos durante los ciertos periodos de la pandemia.""")
   st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>MARCO TEÓRICO</h1>", unsafe_allow_html=True)
-  
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Distribución binomial</h1>", unsafe_allow_html=True)
+  st.markdown("""Este modelo matemático nos da la probabilidad de obtener una cantidad k de casos exitosos en una cantidad de ensayos n. Cada uno de estos intentos tiene una probabilidad de éxito p. La expresión para la distribución binomial es:""")
+  st.latex(r''' P(x = k) = \binom{n}{k} p^{k} (1-p)^{n-k} ''')
+  st.markdown("""Todo esto permite que la distribución binomial sea utilizada para el estudio del comportamiento de algún fenómeno, proceso u objeto de estudio. Esto quiere decir que nos permite hacer predicciones a partir de un grupo de datos medidos para tener una idea de cómo evolucionará el objeto o fenómeno de estudio, lo cual da cabida a aplicaciones como:
+    ▶ Procesos Bernoulli: La distribución binomial es adecuada para modelar experimentos con dos resultados posibles, como lanzamientos de monedas, pruebas de éxito/fallo, entre otros.
+    ▶ Predicciones en investigación y ciencias sociales: Se utiliza para predecir el número de respuestas afirmativas o negativas en encuestas, votaciones, estudios de mercado, entre otros.
+    ▶ Control de calidad: Permite predecir la cantidad de productos defectuosos en una muestra tomada de una producción de masa.
+    ▶ Finanzas: En la valoración de opciones financieras, la distribución binomial es utilizada para modelar el comportamiento de los precios de las acciones.
+    """)
+  st.markdown("""A pesar de que la distribución binomial puede llegar a ser de mucha ayuda a la hora de realizar predicciones hay que tomar en cuenta que esta misma tiene ciertas consideraciones y limitaciones a tomar en cuenta.""")
+  st.markdown("""
+    ▶ La distribución binomial asume que los ensayos son independientes y que la probabilidad de éxito es constante en cada ensayo. Si estas condiciones no se cumplen, otros modelos probabilísticos pueden ser más apropiados.
+    ▶ En casos donde el número de ensayos (n) es grande, la distribución binomial se aproxima a la distribución normal mediante el teorema del límite central, lo que facilita los cálculos y las interpretaciones.
+    """)
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CASO DE ESTUDIO</h1>", unsafe_allow_html=True)
-  st.markdown("""Utilizando los registros de casos de COVID19 del ministerio de salud de la República de Guatemala se realizaron gráficas de los datos medidos en dos intervalos de tiempo diferentes. Cada uno de estos intervalos inicia el día en el que se registró el primer caso positivo de COVID-19 en Guatemala, es decir, el 13 de marzo de 2020. El primer intervalo toma los datos desde la anterior fecha hasta el 1 de junio de 2020. El segundo caso, toma aún más datos, siendo el 15 de marzo de 2021 la fecha límite para la toma de datos.""")
-  st.divider()
+  st.markdown("""Utilizando los registros de casos de COVID19 del Ministerio de Salud de la República de Guatemala se realizaron gráficas de los datos medidos en dos intervalos de tiempo diferentes. Cada uno de estos intervalos inicia el día en el que se registró el primer caso positivo de COVID19 en Guatemala, es decir, el 13 de marzo de 2020. El primer intervalo toma los datos desde la anterior fecha hasta el 1 de junio de 2020. El segundo caso toma aún más datos, siendo el 15 de marzo de 2021 la fecha límite para la toma de datos. Por último se agregó un tercer rango de fechas, con fecha límite el 7 de abril de 2024.""")
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>PROCEDIMIENTO EXPERIMENTAL</h1>", unsafe_allow_html=True)
-  st.markdown("""Para esta práctica, se tomaron los dos casos de estudio mencionados anteriormente y se utilizó un ajuste hecho a partir de una distribución binomial. También fue necesario el uso de herramientas externas a Python como Gnuplot. Esto debido a que el ajuste realizado con Python se adapta solamente a los datos tomados y no realiza las predicciones deseadas, por lo cual se utilizó Gnuplot para poder obtener los valores para la distribución binomial y luego plotearla dentro de la gráfica con los datos recopilados. Este ajuste nos permitió dar una estimación de la fecha en la cual se dará el pico de casos positivos para COVID-19.""")
+  st.markdown("""Para esta práctica, se tomaron los casos de estudio mencionados anteriormente y se utilizó un ajuste hecho a partir de una distribución binomial. También fue necesario el uso de herramientas externas a Python como Gnuplot. Esto debdo a que el ajuste realizado con Python se adapta solamente a los datos tomados y no realiza las predicciones deseadas, por lo cual se utilizó Gnuplot para poder obtener los valores para la disribución binomial y luego plotearla dentro de la gráfica con los datos recopilados. Este ajuste nos permitió dar una estimación de la fecha en la cual se dará el pico de casos positivos para COVID19.""")
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #A2BDF1;'>DISCUSIÓN DE RESULTADOS</h1>", unsafe_allow_html=True)  
   st.markdown("""Para la segunda gráfica, como esta ya tiene picos se tomarón valores del 1 de enero del 2021 hasta el 15/3/2021""")

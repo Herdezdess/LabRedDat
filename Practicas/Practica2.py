@@ -52,33 +52,18 @@ if selected == "Principal":
     
   with tab2:
     
-    #data1=data['Casos por fecha de inicio de síntomas']
-    #st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
+    data1=data['Casos por fecha de inicio de síntomas']
+    st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
 
     # Parámetros finales del ajuste que se obtuvieron en gnuplot
-    #A = 325.658
-    #u = 73.265
-    #r = 9.05745
-    #x_values = np.arange(100)
-    #y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
-    #df = pd.DataFrame({'y': y_values})
-    #st.line_chart(df)
-    st.snow()
-
-
-    data1 = pd.DataFrame({'Casos por fecha de inicio de síntomas': np.random.randn(100)})
     A = 325.658
     u = 73.265
     r = 9.05745
     x_values = np.arange(100)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
-    df = pd.DataFrame({'y': y_values}, index=data1.index)  # Índice igual al de data1
-
-    # Gráfico de dispersión
-    st.scatter_chart(data1, color='#00129A', size=20, use_container_width=True)
-
-    # Gráfico de línea con los mismos ejes que el gráfico de dispersión
+    df = pd.DataFrame({'y': y_values})
     st.line_chart(df)
+    st.snow()
 
 
     

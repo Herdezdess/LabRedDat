@@ -59,7 +59,7 @@ if selected == "Principal":
     A = 325.658
     u = 73.265
     r = 9.05745
-    x_values = np.arange(len(data1))
+    x_values = np.arange(100)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)

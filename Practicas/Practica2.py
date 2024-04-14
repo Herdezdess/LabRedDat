@@ -89,7 +89,8 @@ if selected == "Principal":
     )
 
     combined_chart = scatter_chart + line_chart
-    st.altair_chart(combined_chart, use_container_width=True)
+    chart_json = combined_chart.to_json()
+    st.altair_chart(chart_json, use_container_width=True)
 
 
     

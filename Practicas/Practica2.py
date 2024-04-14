@@ -13,7 +13,6 @@ sns.set()
 #Configuración de la página
 st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
 
-# CSS personalizado para los bordes laterales
 custom_css = """
 <style>
 /* Estilo para los bordes laterales */
@@ -26,23 +25,29 @@ custom_css = """
 /* Estilo para los emojis */
 .emoji {
     position: absolute;
-    animation: fall 5s linear infinite;
+    animation: fall 3s infinite;
 }
 
-/* Keyframes para la animación de caída */
+/* Animación de caída */
 @keyframes fall {
-    0% { top: -50px; }
-    100% { top: 100vh; }
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
 }
 </style>
 """
 
-# Agregar el CSS personalizado a la aplicación
+# Agregar el estilo CSS personalizado
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Agregar los emojis a los bordes laterales
-for i in range(20):
-    st.markdown(f'<div class="emoji" style="left: {i*5}%; top: {i*5}%; font-size: 30px;">🎈</div>', unsafe_allow_html=True)
+# Agregar los emojis dentro de los bordes laterales
+with st.sidebar:
+    st.markdown('<div class="emoji" style="left: 10px;">🎈</div>', unsafe_allow_html=True)
+    st.markdown('<div class="emoji" style="left: 50px;">🎈</div>', unsafe_allow_html=True)
+    st.markdown('<div class="emoji" style="left: 90px;">🎈</div>', unsafe_allow_html=True)
 
 # Menú lateral
 with st.sidebar:

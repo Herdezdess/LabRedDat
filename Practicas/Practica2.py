@@ -66,7 +66,7 @@ if selected == "Principal":
     st.snow()
 
 
-    data1 = pd.DataFrame({'Casos por fecha de inicio de síntomas'})
+    data1 = pd.DataFrame({'Casos por fecha de inicio de síntomas': np.random.randn(100)})
     A = 325.658
     u = 73.265
     r = 9.05745

@@ -187,7 +187,7 @@ if selected == "Principal":
     st.scatter_chart(combined_data3, size=20, use_container_width=True)
     
     A = 354.251
-    u = 390.7638
+    u = 1425.638
     r = 25.8805
     x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
@@ -198,7 +198,7 @@ if selected == "Principal":
     st.scatter_chart(data7, color='#00129A', size=20, use_container_width=True)
 
     A = 108.243
-    u = 965.7638
+    u = 1422.7638
     r = 25.8805
     x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
@@ -210,7 +210,7 @@ if selected == "Principal":
     st.scatter_chart(data8, color='#00A2E8', size=20, use_container_width=True)
 
     A = 295.42
-    u = 395.638
+    u = 1422.638
     r = 25.8805
     x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
@@ -222,7 +222,7 @@ if selected == "Principal":
     st.scatter_chart(data9, color='#7A1A82', size=20, use_container_width=True)
 
     A = 521.25
-    u = 388.01
+    u = 1430.01
     r = 25.8805
     x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)

@@ -13,6 +13,20 @@ sns.set()
 #Configuración de la página
 st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
 
+# CSS personalizado para los bordes laterales
+custom_css = """
+<style>
+/* Estilo para los bordes laterales */
+.stApp {
+    border-left: 5px solid #FF5733; /* Color del borde izquierdo */
+    border-right: 5px solid #FF5733; /* Color del borde derecho */
+}
+</style>
+"""
+
+# Insertar el CSS personalizado en la aplicación
+st.markdown(custom_css, unsafe_allow_html=True)
+
 
 # Menú lateral
 with st.sidebar:

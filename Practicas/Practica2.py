@@ -50,6 +50,14 @@ if selected == "Principal":
     })
     #muetsra el grafico
     st.scatter_chart(combined_data, size=20, use_container_width=True)
+
+    A = 630.658
+    u = 73.265
+    r = 9.05745
+    x_values = np.arange(100)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
     
   with tab2:
     
@@ -87,7 +95,7 @@ if selected == "Principal":
     st.scatter_chart(data3, color='#7A1A82', size=20, use_container_width=True)
 
     A = 423.658
-    u = 73.265
+    u = 72.265
     r = 9.05745
     x_values = np.arange(100)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
@@ -113,14 +121,23 @@ if selected == "Principal":
     })
     #muetsra el grafico
     st.scatter_chart(combined_data2, size=20, use_container_width=True)
+
+    A = 1054.62
+    u = 398.284
+    r = 142.106
+    x_values = np.arange(500)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
+    
   with tab6:
     data4=sf['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data4, color='#00129A', size=20, use_container_width=True)
     
-    A = 670.2
+    A = = 1054.62
     u = 398.284
     r = 142.106
-    x_values = np.arange(100)
+    x_values = np.arange(500)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)
@@ -132,7 +149,7 @@ if selected == "Principal":
     A = 1130.2
     u = 398.284
     r = 142.106
-    x_values = np.arange(100)
+    x_values = np.arange(500)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)
@@ -144,7 +161,7 @@ if selected == "Principal":
     A = 942.34
     u = 398.284
     r = 142.106
-    x_values = np.arange(100)
+    x_values = np.arange(500)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)
@@ -168,14 +185,22 @@ if selected == "Principal":
     })
     #muetsra el grafico
     st.scatter_chart(combined_data3, size=20, use_container_width=True)
+    
+    A = 76.2614
+    u = 28.7638
+    r = 25.8805
+    x_values = np.arange(1000)
+    y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
+    df = pd.DataFrame({'y': y_values})
+    st.line_chart(df)
   with tab10:
     data7=tf['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data7, color='#00129A', size=20, use_container_width=True)
 
-    A = 107
+    A = 76.26
     u = 28.7638
     r = 25.8805
-    x_values = np.arange(100)
+    x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)
@@ -184,10 +209,10 @@ if selected == "Principal":
     data8=tf['Casos por fecha de toma de muestra']
     st.scatter_chart(data8, color='#00A2E8', size=20, use_container_width=True)
 
-    A = 300.12
+    A = 76.12
     u = 28.7638
     r = 25.8805
-    x_values = np.arange(100)
+    x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)
@@ -196,10 +221,10 @@ if selected == "Principal":
     data9=tf['Casos por fecha de emisión de resultados']
     st.scatter_chart(data9, color='#7A1A82', size=20, use_container_width=True)
 
-    A = 521.53
+    A = 76.2614
     u = 28.7638
     r = 25.8805
-    x_values = np.arange(100)
+    x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)

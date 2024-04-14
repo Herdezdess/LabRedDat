@@ -38,8 +38,6 @@ st.markdown(custom_css, unsafe_allow_html=True)
 #    default_index = 0,
 #  )
     
-st.button("Principal", type="primary")
-st.button("Teoría", type="primary")
 
 #if selected == "Principal":
 if st.button('Principal'):

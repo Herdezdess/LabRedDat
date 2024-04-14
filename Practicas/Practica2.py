@@ -29,15 +29,20 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 
 # Menú lateral
-with st.sidebar:
-  selected=option_menu(
-    menu_title="Menú",
-    options = ["Principal", "Teoría"],
-    icons = ["house-heart-fill", "envelope-heart-fill"],
-    menu_icon = "heart-eyes-fill",
-    default_index = 0,
-  )
-if selected == "Principal":
+#with st.sidebar:
+#  selected=option_menu(
+#    menu_title="Menú",
+#    options = ["Principal", "Teoría"],
+#    icons = ["house-heart-fill", "envelope-heart-fill"],
+#    menu_icon = "heart-eyes-fill",
+#    default_index = 0,
+#  )
+    
+st.button("Principal", type="primary")
+st.button("Teoría", type="primary")
+
+#if selected == "Principal":
+if st.button('Principal'):
   #título
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Predicción de COVID19</h1>", unsafe_allow_html=True)
   st.divider()
@@ -221,8 +226,8 @@ if selected == "Principal":
     
 
   
-
-if selected == "Teoría":
+if st.button('Teoría'):
+#if selected == "Teoría":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>RESUMEN</h1>", unsafe_allow_html=True)
   st.markdown("""La pandemia del COVID-19 fué uno de los desafíos más grandes a los que la sociedad guatemalteca se ha enfrentado en la historia reciente. Esto no afectó solamente al sector de la salud, sino que fue un problema multifacético el cual afectó principalmente en las siguientes áreas:""")
   st.divider()

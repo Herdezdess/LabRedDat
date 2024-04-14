@@ -189,7 +189,7 @@ if selected == "Principal":
     A = 354.251
     u = 1425.638
     r = 25.8805
-    x_values = np.arange(1000)
+    x_values = np.arange(1500)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)
@@ -200,7 +200,7 @@ if selected == "Principal":
     A = 108.243
     u = 1422.7638
     r = 25.8805
-    x_values = np.arange(1000)
+    x_values = np.arange(1500)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)
@@ -212,7 +212,7 @@ if selected == "Principal":
     A = 295.42
     u = 1422.638
     r = 25.8805
-    x_values = np.arange(1000)
+    x_values = np.arange(1500)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)
@@ -224,7 +224,7 @@ if selected == "Principal":
     A = 521.25
     u = 1430.01
     r = 25.8805
-    x_values = np.arange(1000)
+    x_values = np.arange(1500)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
     st.line_chart(df)

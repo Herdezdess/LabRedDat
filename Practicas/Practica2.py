@@ -13,7 +13,6 @@ sns.set()
 #Configuración de la página
 st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
 
-# CSS personalizado para bordes laterales
 custom_css = """
 <style>
 /* Estilo para los bordes laterales */
@@ -22,44 +21,34 @@ custom_css = """
     border-right: 200px solid #D7C7F7; /* Color del borde derecho */
 }
 
-/* Estilo para emojis */
+/* Estilo para los emojis */
 .emoji {
-    position: absolute;
-    animation: fall 5s linear infinite;
+    position: fixed;
+    pointer-events: none;
+    animation: fallingEmoji linear infinite;
 }
 
-/* Animación para emojis */
-@keyframes fall {
-    0% { top: -100px; }
-    100% { top: 100%; }
+/* Animación para los emojis */
+@keyframes fallingEmoji {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
 }
 </style>
 """
 
-# Agregar CSS personalizado
+# Agregar el CSS personalizado a la aplicación
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Agregar emojis dentro de los bordes laterales
-st.markdown('<div id="emoji-container"></div>', unsafe_allow_html=True)
+# Definir la lista de emojis a mostrar
+emojis = ["🎈"] * 10  # Se pueden agregar más emojis aquí
 
-# Script JavaScript para rastrear el cursor y agregar emojis
-script = """
-<script>
-document.addEventListener('mousemove', function(e) {
-    var emojiContainer = document.getElementById('emoji-container');
-    var emoji = document.createElement('span');
-    emoji.setAttribute('class', 'emoji');
-    emoji.innerHTML = '🎈';
-    emoji.style.left = e.pageX + 'px';
-    emoji.style.top = e.pageY + 'px';
-    emojiContainer.appendChild(emoji);
-});
-</script>
-"""
-
-# Agregar script JavaScript
-st.markdown(script, unsafe_allow_html=True)
-
+# Mostrar los emojis en la aplicación
+for emoji in emojis:
+    st.markdown(f'<div class="emoji">{emoji}</div>', unsafe_allow_html=True)
 
 # Menú lateral
 with st.sidebar:

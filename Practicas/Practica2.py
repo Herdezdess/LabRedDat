@@ -122,9 +122,9 @@ if selected == "Principal":
     #muetsra el grafico
     st.scatter_chart(combined_data2, size=20, use_container_width=True)
 
-    A = 1054.62
-    u = 398.284
-    r = 142.106
+    A = 1000.2614
+    u = 390.7638
+    r = 25.8805
     x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
@@ -134,9 +134,9 @@ if selected == "Principal":
     data4=sf['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data4, color='#00129A', size=20, use_container_width=True)
     
-    A = 1054.62
-    u = 398.284
-    r = 142.106
+    A = 1915.516
+    u = 965.7638
+    r = 25.8805
     x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
@@ -146,9 +146,9 @@ if selected == "Principal":
     data5=sf['Casos por fecha de toma de muestra']
     st.scatter_chart(data5, color='#00A2E8', size=20, use_container_width=True)
 
-    A = 1130.2
-    u = 398.284
-    r = 142.106
+    A = 1992.6
+    u = 395.638
+    r = 25.8805
     x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
@@ -158,9 +158,9 @@ if selected == "Principal":
     data6=sf['Casos por fecha de emisión de resultados']
     st.scatter_chart(data6, color='#7A1A82', size=20, use_container_width=True)
 
-    A = 942.34
-    u = 398.284
-    r = 142.106
+    A = 950.2614
+    u = 388.01
+    r = 25.8805
     x_values = np.arange(1000)
     y_values = A * np.exp(-((x_values - u) / r)**2 / 2)
     df = pd.DataFrame({'y': y_values})
@@ -186,7 +186,7 @@ if selected == "Principal":
     #muetsra el grafico
     st.scatter_chart(combined_data3, size=20, use_container_width=True)
     
-    A = 1000.2614
+    A = 354.251
     u = 390.7638
     r = 25.8805
     x_values = np.arange(1000)
@@ -197,7 +197,7 @@ if selected == "Principal":
     data7=tf['Casos por fecha de inicio de síntomas']
     st.scatter_chart(data7, color='#00129A', size=20, use_container_width=True)
 
-    A = 1915.516
+    A = 108.243
     u = 965.7638
     r = 25.8805
     x_values = np.arange(1000)
@@ -209,7 +209,7 @@ if selected == "Principal":
     data8=tf['Casos por fecha de toma de muestra']
     st.scatter_chart(data8, color='#00A2E8', size=20, use_container_width=True)
 
-    A = 1992.6
+    A = 295.42
     u = 395.638
     r = 25.8805
     x_values = np.arange(1000)
@@ -221,7 +221,7 @@ if selected == "Principal":
     data9=tf['Casos por fecha de emisión de resultados']
     st.scatter_chart(data9, color='#7A1A82', size=20, use_container_width=True)
 
-    A = 950.2614
+    A = 521.25
     u = 388.01
     r = 25.8805
     x_values = np.arange(1000)

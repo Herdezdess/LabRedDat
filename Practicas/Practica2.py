@@ -24,7 +24,7 @@ custom_css = """
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
-st.image("banner_covis.png", use_column_width=True)
+
 
 # Menú lateral
 with st.sidebar:

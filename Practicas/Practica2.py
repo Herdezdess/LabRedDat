@@ -36,10 +36,10 @@ custom_css = """
 }
 
 /* posición covichus */
-#emoji1 { left: 50px; }
-#emoji2 { left: 150px; }
-#emoji3 { right: 50px; }
-#emoji4 { right: 150px; }
+#emoji1 { left: 30px; }
+#emoji2 { left: 120px; }
+#emoji3 { right: 30px; }
+#emoji4 { right: 120px; }
 </style>
 """
 

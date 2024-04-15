@@ -13,31 +13,29 @@ sns.set()
 #Configuración de la página
 st.set_page_config(page_title="Práctica 2: Predicción de COVID19", page_icon="🌍", layout="wide")
 
-import streamlit as st
-
-# CSS
+#diseño css y animación de los covichus
 custom_css = """
 <style>
-/* Estilo para los bordes laterales */
+/* Bordes laterales */
 .stApp {
     border-left: 200px solid #D7C7F7; /* Color del borde izquierdo */
     border-right: 200px solid #D7C7F7; /* Color del borde derecho */
 }
 
-/* Animación de emojis cayendo */
+/* Animación de covis cayendo */
 @keyframes falling {
     0% { transform: translateY(-100%); }
     100% { transform: translateY(100vh); }
 }
 
-/* Estilo para los emojis */
+/* Estilo para los covis */
 .falling-emoji {
     position: fixed;
     animation: falling 10s linear infinite;
     font-size: 2em;
 }
 
-/* Ajusta la posición de los emojis */
+/* posición covichus */
 #emoji1 { left: 50px; }
 #emoji2 { left: 150px; }
 #emoji3 { right: 50px; }
@@ -45,14 +43,29 @@ custom_css = """
 </style>
 """
 
-# CSS  a Streamlit
+# Se agrega el diseño CSS a streamlit
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Emojis cayendo en los bordes laterales
+# Los covichus cayendo
 st.markdown('<div class="falling-emoji" id="emoji1">🦠</div>', unsafe_allow_html=True)
 st.markdown('<div class="falling-emoji" id="emoji2">🦠</div>', unsafe_allow_html=True)
 st.markdown('<div class="falling-emoji" id="emoji3">🦠</div>', unsafe_allow_html=True)
 st.markdown('<div class="falling-emoji" id="emoji4">🦠</div>', unsafe_allow_html=True)
+
+# Covichus cada 2 segundos
+script = """
+<script>
+setInterval(function() {
+    var emojis = document.querySelectorAll('.falling-emoji');
+    emojis.forEach(function(emoji) {
+        var top = parseInt(emoji.style.top || 0);
+        emoji.style.top = (top + 10) + 'px';
+    });
+}, 2000);
+</script>
+"""
+st.markdown(script, unsafe_allow_html=True)
+
 
 
 

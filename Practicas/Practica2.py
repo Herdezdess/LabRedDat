@@ -291,7 +291,7 @@ if selected == "Teoría":
   st.divider()
   st.markdown("*USAC-ECFM. Laboratorio de reducción de datos.*")
   st.markdown("*Práctica 2. Predicción de COVID19.*")
-  st.markdown("*Mencos Avila, Allan Fabricio. 202106009,*")
+  st.markdown("*Mencos Calva, Allan Fabricio. 202106009,*")
   st.markdown("*Zapeta Hernández, Alejandra Dessiré. 202112959.*")
   st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- RESUMEN ---</h1>", unsafe_allow_html=True)

@@ -22,6 +22,7 @@ custom_css = """
 }
 </style>
 """
+st.markdown(custom_css, unsafe_allow_html=True)
 
 # Menú lateral
 with st.sidebar:

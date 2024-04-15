@@ -32,7 +32,7 @@ custom_css = """
 .falling-emoji {
     position: fixed;
     animation: falling 7s linear infinite;
-    font-size: 2em;
+    font-size: 3em;
 }
 
 /* posición covichus */

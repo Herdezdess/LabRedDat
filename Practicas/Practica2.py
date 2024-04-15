@@ -81,7 +81,7 @@ with st.sidebar:
 
 if selected == "Principal":
   #título
-  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 2px 2px #BEFBB3; margin-top: -200px;'>------------ Predicción de COVID19 ------------</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 2px 2px #BEFBB3; margin-top: -200px;'>----------- Predicción de COVID19 -----------</h1>", unsafe_allow_html=True)
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Gráficas desde el 13/03/2020 hasta el 1/05/2020</h1>", unsafe_allow_html=True)
   #lector del csv primera fecha

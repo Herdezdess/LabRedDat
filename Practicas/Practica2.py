@@ -31,7 +31,7 @@ custom_css = """
 /* Estilo para los covis */
 .falling-emoji {
     position: fixed;
-    animation: falling 10s linear infinite;
+    animation: falling 7s linear infinite;
     font-size: 2em;
 }
 

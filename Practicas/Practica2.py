@@ -249,8 +249,8 @@ if selected == "Teoría":
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Distribución binomial</h1>", unsafe_allow_html=True)
   st.markdown("""Este modelo matemático nos da la probabilidad de obtener una cantidad k de casos exitosos en una cantidad de ensayos n. Cada uno de estos intentos tiene una probabilidad de éxito p. La expresión para la distribución binomial es:""")
   st.latex(r''' P(x = k) = \binom{n}{k} p^{k} (1-p)^{n-k} ''')
-  st.markdown("""Todo esto permite que la distribución binomial sea utilizada para el estudio del comportamiento de algún fenómeno, proceso u objeto de estudio. Esto quiere decir que nos permite hacer predicciones a partir de un grupo de datos medidos para tener una idea de cómo evolucionará el objeto o fenómeno de estudio, lo cual da cabida a aplicaciones como:
-  
+  st.markdown("""Todo esto permite que la distribución binomial sea utilizada para el estudio del comportamiento de algún fenómeno, proceso u objeto de estudio. Esto quiere decir que nos permite hacer predicciones a partir de un grupo de datos medidos para tener una idea de cómo evolucionará el objeto o fenómeno de estudio, lo cual da cabida a aplicaciones como:""")
+  st.markdown("""
     ▶ Procesos Bernoulli: La distribución binomial es adecuada para modelar experimentos con dos resultados posibles, como lanzamientos de monedas, pruebas de éxito/fallo, entre otros.
     
     ▶ Predicciones en investigación y ciencias sociales: Se utiliza para predecir el número de respuestas afirmativas o negativas en encuestas, votaciones, estudios de mercado, entre otros.

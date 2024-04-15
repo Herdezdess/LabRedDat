@@ -62,6 +62,11 @@ st.markdown('<div class="falling-emoji" id="emoji2">🦠</div>', unsafe_allow_ht
 st.markdown('<div class="falling-emoji" id="emoji3">🦠</div>', unsafe_allow_html=True)
 st.markdown('<div class="falling-emoji" id="emoji4">🦠</div>', unsafe_allow_html=True)
 
+st.markdown('<div class="falling-emoji" id="emoji1">🦠</div>', unsafe_allow_html=True)
+st.markdown('<div class="falling-emoji" id="emoji2">🦠</div>', unsafe_allow_html=True)
+st.markdown('<div class="falling-emoji" id="emoji3">🦠</div>', unsafe_allow_html=True)
+st.markdown('<div class="falling-emoji" id="emoji4">🦠</div>', unsafe_allow_html=True)
+
 
 
 

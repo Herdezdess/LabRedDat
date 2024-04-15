@@ -285,10 +285,25 @@ if selected == "Teoría":
   st.markdown("""Para esta práctica, se tomaron los casos de estudio mencionados anteriormente y se utilizó un ajuste hecho a partir de una distribución binomial. También fue necesario el uso de herramientas externas a Python como Gnuplot. Esto debdo a que el ajuste realizado con Python se adapta solamente a los datos tomados y no realiza las predicciones deseadas, por lo cual se utilizó Gnuplot para poder obtener los valores para la disribución binomial y luego plotearla dentro de la gráfica con los datos recopilados. Este ajuste nos permitió dar una estimación de la fecha en la cual se dará el pico de casos positivos para COVID19.""")
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #A2BDF1;'>DISCUSIÓN DE RESULTADOS</h1>", unsafe_allow_html=True)  
+  st.markdown("""
+    ▶  Durante la realización de los fit correspondientes, se cambiarón los rangos de fechas. Para la segunda gráfica tomamos las fechas desde el 31 de enero del 2021 hasta el 15 de marzo del 2021 y para la tercera gráfica tomamos las fechas desde el 7 de enero del 2024 hasta el 7 de abril del 2024. 
+    
+    ▶  Lo anterior fue realizado así debido que dichas gráficas ya contienen picos u olas, por lo que estas ya no se comportan como una binomial y no se puede realizar el ajuste en todo el rango de fechas. El nuevo rango de fechas fue elegido de forma que tome todas las fechas de una "ola" para que se comporte como una binomial.
+    
+    ▶ De la primer gráfica desde la última fecha que tenemos los casos disminuirán. De la segunda vemos que tendremos en promedio (esto se puede ver en la gráfica "Casos a lo largo del tiempo") un valor de 1000 casos para el día 395 (corresponde al 12/04/2021). De la tercera gráfica obtenemos un valor máximo (promedio) de 352 casos por día para el día 1424 (corresponde al 4/02/24). Estos datos corresponden a los picos de las últimas olas.
+    
+    """)
   st.markdown("""Para la segunda gráfica, como esta ya tiene picos se tomarón valores del 1 de enero del 2021 hasta el 15/3/2021""")
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CONCLUSIONES</h1>", unsafe_allow_html=True)  
-  st.markdown("""Como ya se tiene una primera ola no se puede hacer el ajuste porque la gráfica ya no se comporta como una bonimial""")
+  st.markdown("""
+    ▶ La primera gráfica nos ayuda a ver el comportamiento de los casos de COVID19 a lo largo del tiempo, además de eso, podemos hacer una predicción de lo que pasará; del fit podemos ver que ya obtuvimos un pico en los casos, estos seguirán en disminución.
+    
+    ▶ El fit de la segunda nos da una predicción de la enfermedas; este nos dice que tendremos un aumento de casos, y para aproximadamente el 12 de abril de 2021 alcanzar el pico de la ola, siendo este aproximadamente 1000 casos. 
+    
+    ▶ En el fit de la tercera gráfica podemos ver que ya se alcanzó el pico de la ola y los casos estarán en disminución.
+
+    """)
   st.divider()
   st.markdown("<h3 style='text-align: left; color: black;'>Referencias</h1>", unsafe_allow_html=True)
   st.markdown("""  

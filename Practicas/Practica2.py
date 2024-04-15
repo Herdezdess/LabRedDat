@@ -293,7 +293,6 @@ if selected == "Teoría":
     ▶ De la primer gráfica desde la última fecha que tenemos los casos disminuirán. De la segunda vemos que tendremos en promedio (esto se puede ver en la gráfica "Casos a lo largo del tiempo") un valor de 1000 casos para el día 395 (corresponde al 12/04/2021). De la tercera gráfica obtenemos un valor máximo (promedio) de 352 casos por día para el día 1424 (corresponde al 4/02/24). Estos datos corresponden a los picos de las últimas olas.
     
     """)
-  st.markdown("""Para la segunda gráfica, como esta ya tiene picos se tomarón valores del 1 de enero del 2021 hasta el 15/3/2021""")
   st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CONCLUSIONES</h1>", unsafe_allow_html=True)  
   st.markdown("""

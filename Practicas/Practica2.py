@@ -285,10 +285,9 @@ if selected == "Principal":
     st.line_chart(df)
     
   
-    
 
-  
 if selected == "Teoría":
+  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 2px 2px #BEFBB3; margin-top: -200px;'>----------- Predicción de COVID19 -----------</h1>", unsafe_allow_html=True)
   st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>RESUMEN</h1>", unsafe_allow_html=True)
   st.markdown("""La pandemia del COVID-19 fué uno de los desafíos más grandes a los que la sociedad guatemalteca se ha enfrentado en la historia reciente. Esto no afectó solamente al sector de la salud, sino que fue un problema multifacético el cual afectó principalmente en las siguientes áreas:""")
   st.markdown("""  

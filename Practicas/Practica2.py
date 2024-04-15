@@ -329,7 +329,7 @@ if selected == "Teoría":
   st.markdown("""
     ▶ La primera gráfica nos ayuda a ver el comportamiento de los casos de COVID19 a lo largo del tiempo, además de eso, podemos hacer una predicción de lo que pasará; del fit podemos ver que ya obtuvimos un pico en los casos, estos seguirán en disminución.
     
-    ▶ El fit de la segunda nos da una predicción de la enfermedas; este nos dice que tendremos un aumento de casos, y para aproximadamente el 12 de abril de 2021 alcanzar el pico de la ola, siendo este aproximadamente 1000 casos. 
+    ▶ El fit de la segunda nos da una predicción de la enfermedad; este nos dice que tendremos un aumento de casos, y para aproximadamente el 12 de abril de 2021 alcanzar el pico de la ola, siendo este aproximadamente 1000 casos. 
     
     ▶ En el fit de la tercera gráfica podemos ver que ya se alcanzó el pico de la ola y los casos estarán en disminución.
 

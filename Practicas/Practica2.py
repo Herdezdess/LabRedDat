@@ -298,7 +298,7 @@ if selected == "Teoría":
     """)
   st.markdown("""La pandemia tuvo un fuerte impacto en cada uno de los puntos vitales de la sociedad en Guatemala. Es por ello que su estudio a lo largo del tiempo es importante. Este laboratorio pretende realizar un estudio posterior para determinar si es posible realizar predicciones acertadas a partir de una cantidas limitada de datos obtenidos durante los ciertos periodos de la pandemia.""")
   st.divider()
-  st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>MARCO TEÓRICO</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- MARCO TEÓRICO ---</h1>", unsafe_allow_html=True)
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Distribución binomial</h1>", unsafe_allow_html=True)
   st.markdown("""Este modelo matemático nos da la probabilidad de obtener una cantidad k de casos exitosos en una cantidad de ensayos n. Cada uno de estos intentos tiene una probabilidad de éxito p. La expresión para la distribución binomial es:""")
   st.latex(r''' P(x = k) = \binom{n}{k} p^{k} (1-p)^{n-k} ''')
@@ -324,7 +324,7 @@ if selected == "Teoría":
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>PROCEDIMIENTO EXPERIMENTAL</h1>", unsafe_allow_html=True)
   st.markdown("""Para esta práctica, se tomaron los casos de estudio mencionados anteriormente y se utilizó un ajuste hecho a partir de una distribución binomial. También fue necesario el uso de herramientas externas a Python como Gnuplot. Esto debdo a que el ajuste realizado con Python se adapta solamente a los datos tomados y no realiza las predicciones deseadas, por lo cual se utilizó Gnuplot para poder obtener los valores para la disribución binomial y luego plotearla dentro de la gráfica con los datos recopilados. Este ajuste nos permitió dar una estimación de la fecha en la cual se dará el pico de casos positivos para COVID19.""")
   st.divider()
-  st.markdown("<h2 style='text-align: left; color: #A2BDF1;'>DISCUSIÓN DE RESULTADOS</h1>", unsafe_allow_html=True)  
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>DISCUSIÓN DE RESULTADOS</h1>", unsafe_allow_html=True)  
   st.markdown("""
     ▶  Durante la realización de los fit correspondientes, se cambiarón los rangos de fechas. Para la segunda gráfica tomamos las fechas desde el 31 de enero del 2021 hasta el 15 de marzo del 2021 y para la tercera gráfica tomamos las fechas desde el 7 de enero del 2024 hasta el 7 de abril del 2024. 
     

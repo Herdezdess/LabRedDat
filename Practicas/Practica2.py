@@ -53,18 +53,29 @@ st.markdown('<div class="falling-emoji" id="emoji3">🦠</div>', unsafe_allow_ht
 st.markdown('<div class="falling-emoji" id="emoji4">🦠</div>', unsafe_allow_html=True)
 
 # Covichus cada 2 segundos
-script = """
-<script>
-setInterval(function() {
-    var emojis = document.querySelectorAll('.falling-emoji');
-    emojis.forEach(function(emoji) {
-        var top = parseInt(emoji.style.top || 0);
-        emoji.style.top = (top + 10) + 'px';
-    });
-}, 2000);
-</script>
-"""
-st.markdown(script, unsafe_allow_html=True)
+st.markdown(
+    """
+    <script>
+    // Función para agregar emojis
+    function addEmojis() {
+        var emojis = ["🦠", "🦠", "🦠", "🦠"];
+        emojis.forEach((emoji, index) => {
+            setTimeout(() => {
+                var newEmoji = document.createElement("div");
+                newEmoji.className = "falling-emoji";
+                newEmoji.innerText = emoji;
+                newEmoji.style.left = (50 + 100 * index) + "px";
+                document.body.appendChild(newEmoji);
+            }, index * 500);
+        });
+    }
+
+    // Llama a la función cada 2 segundos
+    setInterval(addEmojis, 2000);
+    </script>
+    """,
+    unsafe_allow_html=True
+)
 
 
 

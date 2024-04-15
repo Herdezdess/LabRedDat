@@ -287,7 +287,7 @@ if selected == "Principal":
   
 
 if selected == "Teoría":
-  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3; margin-top: -200px;'>--- RESUMEN ---</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- RESUMEN ---</h1>", unsafe_allow_html=True)
   st.markdown("""La pandemia del COVID-19 fué uno de los desafíos más grandes a los que la sociedad guatemalteca se ha enfrentado en la historia reciente. Esto no afectó solamente al sector de la salud, sino que fue un problema multifacético el cual afectó principalmente en las siguientes áreas:""")
   st.markdown("""  
     ▶ **Impacto económico y social:** Las medidas de contención tuvieron un impacto significativo en la economía guatemalteca, especialmente en sectore como el turismo, la agricultura y la manufactura. Además, muchos guatemaltecos enfrentaron dificultades económicas debido a la pérdida de empleos y la reducción de ingresos. 

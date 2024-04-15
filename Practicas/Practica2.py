@@ -22,10 +22,6 @@ custom_css = """
     border-right: 200px solid #D7C7F7; /* Color del borde derecho */
 }
 
-.stDivider {
-    margin-top: -200px; /* Mueve el divisor hacia arriba */
-}
-
 /* Animación de covis cayendo */
 @keyframes falling {
     0% { transform: translateY(-100%); }
@@ -87,7 +83,7 @@ if selected == "Principal":
   #título
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3; margin-top: -200px;'>----------- Predicción de COVID19 -----------</h1>", unsafe_allow_html=True)
   st.divider()
-  st.markdown("<h2 style='text-align: left; color: #D3BEF1; margin-top: -200px;>Gráficas desde el 13/03/2020 hasta el 1/05/2020</h1>", unsafe_allow_html=True)
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1; margin-top: -200px;'>Gráficas desde el 13/03/2020 hasta el 1/05/2020</h1>", unsafe_allow_html=True)
   #lector del csv primera fecha
   data = pd.read_csv('https://raw.githubusercontent.com/Herdezdess/LabRedDat/main/confirmados_fecha_junio.csv', index_col=1, parse_dates=True)
   tab1, tab2, tab3, tab4 = st.tabs(["Casos a lo largo del tiempo", "Casos por fecha de inicio de síntomas", "Casos por fecha de toma de muestra", "Casos por fecha de emisión de resultados"])
@@ -292,7 +288,7 @@ if selected == "Principal":
 
 if selected == "Teoría":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3; margin-top: -200px;'>----------- RESUMEN -----------</h1>", unsafe_allow_html=True)
-  st.markdown("<h1 style='text-align: center; color: #A2BDF1; margin-top: -200px;>RESUMEN</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: center; color: #A2BDF1; margin-top: -200px;'>RESUMEN</h1>", unsafe_allow_html=True)
   st.markdown("""La pandemia del COVID-19 fué uno de los desafíos más grandes a los que la sociedad guatemalteca se ha enfrentado en la historia reciente. Esto no afectó solamente al sector de la salud, sino que fue un problema multifacético el cual afectó principalmente en las siguientes áreas:""")
   st.markdown("""  
     ▶ **Impacto económico y social:** Las medidas de contención tuvieron un impacto significativo en la economía guatemalteca, especialmente en sectore como el turismo, la agricultura y la manufactura. Además, muchos guatemaltecos enfrentaron dificultades económicas debido a la pérdida de empleos y la reducción de ingresos. 

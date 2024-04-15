@@ -288,7 +288,8 @@ if selected == "Principal":
 
 if selected == "Teoría":
   st.divider()
-  st.markdown("*USAC-ECFM. Laboratorio de reducción de datos.*")
+  st.markdown("<div style='text-align:left;'>*USAC-ECFM. Laboratorio de reducción de datos.*</div><div style='text-align:right;'>*Mencos Avila, Allan Fabricio. 202106009.*</div>", unsafe_allow_html=True)
+  st.markdown("<div style='text-align:left;'>*Práctica 2. Predicción de COVID19.*</div><div style='text-align:right;'>*Zapeta Hernández, Alejandra Dessiré. 202112959.*</div>", unsafe_allow_html=True)
   st.markdown("*Práctica 2. Predicción de COVID19.*")
   st.markdown("*Mencos Avila, Allan Fabricio. 202106009,*")
   st.markdown("*Zapeta Hernández, Alejandra Dessiré. 202112959.*")

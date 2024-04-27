@@ -108,7 +108,7 @@ plot_fit.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgb
 plot_fit.add_bar(x=count['Aire'], y=count['count'])
 st.plotly_chart(plot_fit)
 
-st.divider()
+#st.divider()
 st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Mediciones con el Cesio-137</h1>", unsafe_allow_html=True)
 
 # Definir fórmula del fit para el cesio

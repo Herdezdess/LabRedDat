@@ -96,7 +96,7 @@ def fit(x):
 fit = np.vectorize(fit)
 
 # Datos aire
-data = pd.read_csv('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica3/muestra_radiacion.csv')
+data = pd.read_csv('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica3/datos1.csv')
 df = pd.DataFrame(data)
 value_range = np.arange(-3,df['Aire'].max()+1)
 count = df['Aire'].value_counts().reindex(value_range, fill_value=0).reset_index()

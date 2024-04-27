@@ -11,7 +11,7 @@ import math
 sns.set()
 
 #Configuración de la página
-st.set_page_config(page_title="Práctica 3: Deaimiento de Cesio-137", page_icon="☢️", layout="wide")
+st.set_page_config(page_title="Práctica 3: Decaimiento de Cesio-137", page_icon="☢️", layout="wide")
 
 #diseño css y animación de los covichus
 custom_css = """

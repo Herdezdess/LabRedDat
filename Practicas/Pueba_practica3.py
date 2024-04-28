@@ -122,6 +122,9 @@ if selected =="Principal":
   f_obs = data_aire['Aire'].values
   value_range = np.arange(-3, data_aire['Aire'].max() + 1)
   f_esp = fit(value_range)
+  f_obs = np.atleast_2d(f_obs)
+  f_esp = np.atleast_2d(f_esp)
+
   chi2, p_value = chi2_contingency([f_obs, f_esp])
   results_data = {
       'Decaimientos medidos': value_range,

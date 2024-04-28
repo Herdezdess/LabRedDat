@@ -89,6 +89,7 @@ if selected =="Principal":
     r=1.59884
     x = np.array(x, dtype=int)
     return A*math.exp(-((x-u)/r)**2/2)
+      
   fit = np.vectorize(fit)
   #Lector de datos
   data_aire = pd.read_csv('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica3/datos1.csv')
@@ -119,7 +120,7 @@ if selected =="Principal":
 
   f_obs = data_aire['Aire'].values
   value_range = np.arange(-3, data_aire['Aire'].max() + 1)
-  f_esp = fit_vectorized(value_range)
+  f_esp = fit(value_range)
   chi2, p_value = chi2_contingency([f_obs, f_esp])
   results_data = {
       'Decaimientos medidos': value_range,

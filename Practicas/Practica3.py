@@ -158,7 +158,8 @@ st.write('Desviación Estándar de los datos:', desviacion2)
 
 tabla_contingencia = pd.crosstab(index=data['Aire'], columns=data['Cesio'])
 chi2, p, _, _ = chi2_contingency(tabla_contingencia)
-print(f"Chi-cuadrado: {chi2}, p-valor: {p}")
+st.write('Valor de Chi-Cuadrado:', chi2)
+st.write('Valor p:', p)
 
     
   

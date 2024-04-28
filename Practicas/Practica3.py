@@ -4,6 +4,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 from streamlit_option_menu import option_menu
 from scipy.stats import linregress
+from scipy.stats import chi2_contingency
 import plotly.express as px
 import seaborn as sns
 import altair as alt
@@ -154,6 +155,9 @@ promedio2 = round(prom2, 3)
 desviacion2 = round(desv2, 3)
 st.write('Promedio de los datos:', promedio2)
 st.write('Desviación Estándar de los datos:', desviacion2)
+
+tabla_contingencia = pd.crosstab(index=data['Aire'], columns=data['Cesio'])
+chi2, p, _, _ = chi2_contingency(tabla_contingencia)
 
     
   

@@ -11,7 +11,7 @@ import math
 sns.set()
 
 #Configuración de la página
-st.set_page_config(page_title="Práctica 3: Deaimiento de Cesio-137", page_icon="☢️", layout="wide")
+st.set_page_config(page_title="Práctica 3: Decaimiento de Cesio-137", page_icon="☢️", layout="wide")
 
 #diseño css y animación de los covichus
 custom_css = """
@@ -83,7 +83,7 @@ if selected == "Principal":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>- Decaimiento de Cesio-137 -</h1>", unsafe_allow_html=True)
   #st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Mediciones en el aire</h1>", unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Esta es la gráfica obtenida a partir de las mediciones tomadas, por el contador Geiger, en el aire. Para poder trabajar con estos datos, se separaron los casos y se agruparon para poder representarlos correctamente en la gráfica. Es decir, se contaron los casos donde se contaran 3 decaimientos y obtuvimos un total de 58, el cual es el caso mas frecuente. Además, para estos datos, se optó por utilizar una distribución de Poissón debido a la forma en que están distribuidos los datos, pues hay un evidente corriemiento hacia la derecha.</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Esta es la gráfica obtenida a partir de las mediciones tomadas, por el contador Geiger, en el aire. Para poder trabajar con estos datos, se separaron los casos y se agruparon para poder representarlos correctamente en la gráfica. Es decir, se contaron los casos donde se contaran 3 decaimientos y obtuvimos un total de 58, el cual es el caso más frecuente. Además, para estos datos, se optó por utilizar una distribución de Poissón debido a la forma en que están distribuidos los datos, pues hay un evidente corrimiento hacia la derecha.</div>', unsafe_allow_html=True)
   #Primero vamos a definir el fit para la gráfica de las mediciones en el aire
   def fit(x):
       A=63.5733
@@ -116,9 +116,14 @@ if selected == "Principal":
   plot_fit.add_bar(x=count['Aire'], y=count['count'],)
   #Por último, añadimos el gráfico a streamlit
   st.plotly_chart(plot_fit)
+  st.markdown('<div style="text-align: justify;">Con los datos que calculamos y los datos obtenidos del fit, se realizó la prueba de Chi Cuadrado, obtiendo los siguientes datos:</div>', unsafe_allow_html=True)
+
   #st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Mediciones con el Cesio-137</h1>", unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">En este caso, de igual forma que en el anterior caso, agrupamos por casos la cantidad de decaimientos medidos para poder analizar correctamente toda la información. Para este caso, es evidennte ver que la distribución es una de tipo Gaussiana por la forma en que se distribuyeron los datos.</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">En este caso, de igual forma que en el anterior caso, agrupamos por casos la cantidad de decaimientos medidos para poder analizar correctamente toda la información. Para este caso, es evidente ver que la distribución es una de tipo Gaussiana por la forma en que se distribuyeron los datos.</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado: 8.373 </div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Valor asociado a la prueba de Chi Cuadrado (p): 2.417</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Grados de libertad: 12</div>', unsafe_allow_html=True)
   #Ahora vamos a haer lo mismo que hicimos en la parte anterior, pero para los datos del cesio
   #Definimos el fit
   def fit2(x):
@@ -149,6 +154,10 @@ if selected == "Principal":
    )
   plot_fit2.add_bar(x=group, y=dfd['count'])
   st.plotly_chart(plot_fit2)
+  st.markdown('<div style="text-align: justify;">Con los datos que calculamos y los datos obtenidos del fit, se realizó la prueba de Chi Cuadrado, obtiendo los siguientes datos:</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado: 7243.425 </div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Valor asociado a la prueba de Chi Cuadrado (p): 814.959</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Grados de libertad: 80</div>', unsafe_allow_html=True)
 
 
 
@@ -164,7 +173,7 @@ if selected == "Teoría":
   st.markdown("*Zapeta Hernández, Alejandra Dessiré. 202112959.*")
   #st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- RESUMEN ---</h1>", unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Esta práctica pretende analizar el decaimiento del cesio-137 y compararlo con los decaimientos medidos en el aire sin utilizar ningún tipo de material radioactivo. Posteriormente se hará un ajuste a partir de una distribución Gaussiana y una distribución de Poisson para poder determinar cual de estas se adapte mejor a cada uno de los casos. Finalmente, para analizar la relación entre cada uno de los ajustes realizados, se hará la prueba de Chi cuadrada.</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Esta práctica pretende analizar el decaimiento del cesio-137 y compararlo con los decaimientos medidos en el aire sin utilizar ningún tipo de material radioactivo. Posteriormente se hará un ajuste a partir de una distribución Gaussiana y una distribución de Poisson para poder determinar cual de estas se adapte mejor a cada uno de los casos. Finalmente, para analizar la relación entre cada uno de los ajustes realizados, se hará la prueba de Chi cuadrado.</div>', unsafe_allow_html=True)
 
 
   #st.divider()

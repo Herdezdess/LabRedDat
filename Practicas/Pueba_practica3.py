@@ -101,10 +101,10 @@ if selected =="Principal":
   #Actualizamos el estilo del trazo
   plot_fit.update_traces(line_color='#9635E6', line_width=2.5, line_shape='spline')
   #cambiamos el color de fondo del gráfico
-plot_fit.update_layout({
-    'plot_bgcolor': 'rgba(14, 7, 32, 0.8)',
-    'paper_bgcolor': 'rgba(0, 0, 0, 0)',
-})
+  plot_fit.update_layout({
+      'plot_bgcolor': 'rgba(14, 7, 32, 0.8)',
+      'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+  })
   #Cambiamos el nombre de los ejes del gráfico
   plot_fit.update_layout(
     xaxis_title='Decaimientos medidos',

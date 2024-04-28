@@ -81,7 +81,7 @@ with st.sidebar:
 if selected == "Principal":
   #título
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>- Decaimiento de Cesio-137 -</h1>", unsafe_allow_html=True)
-  st.divider()
+  #st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Mediciones en el aire</h1>", unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">Esta es la gráfica obtenida a partir de las mediciones tomadas, por el contador Geiger, en el aire. Para poder trabajar con estos datos, se separaron los casos y se agruparon para poder representarlos correctamente en la gráfica. Es decir, se contaron los casos donde se contaran 3 decaimientos y obtuvimos un total de 58, el cual es el caso mas frecuente. Además, para estos datos, se optó por utilizar una distribución de Poissón debido a la forma en que están distribuidos los datos, pues hay un evidente corriemiento hacia la derecha.</div>', unsafe_allow_html=True)
   #Primero vamos a definir el fit para la gráfica de las mediciones en el aire
@@ -158,17 +158,16 @@ if selected == "Principal":
     
   
 if selected == "Teoría":
-  st.divider()
   st.markdown("*USAC-ECFM. Laboratorio de reducción de datos.*")
   st.markdown("*Práctica 3. Decaimiento del Cesio-137*")
   st.markdown("*Mencos Calva, Allan Fabricio. 202106009,*")
   st.markdown("*Zapeta Hernández, Alejandra Dessiré. 202112959.*")
-  st.divider()
+  #st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- RESUMEN ---</h1>", unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">Esta práctica pretende analizar el decaimiento del cesio-137 y compararlo con los decaimientos medidos en el aire sin utilizar ningún tipo de material radioactivo. Posteriormente se hará un ajuste a partir de una distribución Gaussiana y una distribución de Poisson para poder determinar cual de estas se adapte mejor a cada uno de los casos. Finalmente, para analizar la relación entre cada uno de los ajustes realizados, se hará la prueba de Chi cuadrada.</div>', unsafe_allow_html=True)
 
 
-  st.divider()
+  #st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- Marco Teórico---</h1>", unsafe_allow_html=True)
   st.markdown("<h3 style='text-align: left; color: #5E67DC; text-shadow: 3px 3px #BEFBB3;'>Cesio-137 [Cs]</h3>", unsafe_allow_html=True)
   st.markdown("""
@@ -212,9 +211,9 @@ if selected == "Teoría":
     En general, el resultado de la prueba del chi cuadrado es un valor (el "estadístico chi cuadrado") que describe la magnitud de la diferencia entre los valores observados y esperados. El valor p (probabilidad) asociado con este estadístico nos ayuda a determinar si la diferencia es significativa. Si el valor p es pequeño (por ejemplo, menos de 0.05), puedes rechazar la hipótesis nula, lo que indica que hay una asociación significativa entre las variables (o que la distribución observada no se ajusta a la esperada).
 
     """)
-  st.divider()
+  #st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>-- Análisis de resultados--</h1>", unsafe_allow_html=True)
-  st.divider()
+  #st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- Conclusiones---</h1>", unsafe_allow_html=True)
 
 

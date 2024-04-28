@@ -223,7 +223,7 @@ if selected == "Teoría":
 
 
 
-  st.divider()
+  #st.divider()
   st.markdown("<h3 style='text-align: left; color: black;'>Referencias</h1>", unsafe_allow_html=True)
   st.markdown("""  
   **1.**  Radionuclide Basics: Cesium-137 | US EPA. (2024, 5 febrero). US EPA. https://www.epa.gov/radiation/radionuclide-basics-cesium-137
@@ -233,7 +233,7 @@ if selected == "Teoría":
   **3.**   colaboradores de Wikipedia. (2024, 8 abril). Distribución de poisson. Wikipedia, la Enciclopedia Libre. https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Poisson
 
     """)
-  st.divider()
+  #st.divider()
 
   
   st.markdown('<div style="text-align: justify;> <div>', unsafe_allow_html=True)

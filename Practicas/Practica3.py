@@ -179,70 +179,83 @@ st.write('Valor asociado a la prueba de Chi-Cuadrado:', pt2)
 if selected == "Teoría":
   st.divider()
   st.markdown("*USAC-ECFM. Laboratorio de reducción de datos.*")
-  st.markdown("*Práctica 2. Predicción de COVID19.*")
+  st.markdown("*Práctica 3. Decaimiento del Cesio-137*")
   st.markdown("*Mencos Calva, Allan Fabricio. 202106009,*")
   st.markdown("*Zapeta Hernández, Alejandra Dessiré. 202112959.*")
   st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- RESUMEN ---</h1>", unsafe_allow_html=True)
-  st.markdown("""""")
+  st.markdown('<div style="text-align: justify;">Esta práctica pretende analizar el decaimiento del cesio-137 y compararlo con los decaimientos medidos en el aire sin utilizar ningún tipo de material radioactivo. Posteriormente se hará un ajuste a partir de una distribución Gaussiana y una distribución de Poisson para poder determinar cual de estas se adapte mejor a cada uno de los casos. Finalmente, para analizar la relación entre cada uno de los ajustes realizados, se hará la prueba de Chi cuadrada.</div>', unsafe_allow_html=True)
+
+
+  st.divider()
+  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- Marco Teórico---</h1>", unsafe_allow_html=True)
+  st.markdown("<h3 style='text-align: left; color: #5E67DC; text-shadow: 3px 3px #BEFBB3;'>Cesio-137 [Cs]</h3>", unsafe_allow_html=True)
+  st.markdown("""
+    El cesio es el elemento número 55 de la tabla periódica y tiene un peso atómico de 132.9u. A simple vista, este elemento es de color plateado blanquesino que puede llegar a ser flexible y blando. Aunque este metal se vuelve líquido cerca de la temperatura ambiente. El cesio-137 es la forma radiactiva más común del cesio, el cual es producido mediante fisión nuclear para utilizarse en dispositivos médicos y también se obtiene como subproducto de la fisión nuclear dentro de los reactores nucleares o pruebas de armas nucleares.
+              
+    El cesio-137 es capaz de emitir partículas beta y rayos gamma. Su vida media es de 30.17 años y se mueve con muchísima facilidad con el aire, pero también se disuelve con mucha facilidad al pasar por agua. Cuando el cesio-137 se usa en pequeñas cantidades, puede ser utilizado para calibrar contadores Geiger-Muller. Si la cantidad de cesio-137 aumenta, este puede ser usado para: 
+    """)
   st.markdown("""  
-    ▶  
+    ▶ Dispositivos de radioterapia médica para el tratamiento del cáncer.
+
     
-    ▶ 
+    ▶ Manómetros industriales que detectan el flujo de líquido a través de tuberías.
+
+    
+    ▶ Otros dispositivos industriales que miden el espesor de materiales como papel o láminas de metal.
     """)
-  st.divider()
-  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- MARCO TEÓRICO ---</h1>", unsafe_allow_html=True)
-  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Distribución binomial</h1>", unsafe_allow_html=True)
-  st.markdown("""E""")
-  st.markdown("""Y""")
+  
+  st.markdown("<h3 style='text-align: left; color: #5E67DC; text-shadow: 3px 3px #BEFBB3;'>Contador Geiger-Muller</h3>", unsafe_allow_html=True)
   st.markdown("""
-    ▶ 
-    
-    ▶ 
-    
-    ▶ 
-    
-    ▶ 
+    El contador Geiger es utilizado para detectar la radiación ionizante, es decir que puede medir la cantidad de radiación alfa, beta, gamma, fotones, rayos X. Este es llamado Geiger-Muller porque fue desarrollado en 1928 por los físicos alemanes Hans Geiger y Walter Muller. Hoy en día suele utilizarse mucho para determinar la peligrosidad de diferentes materiales y puede dar mediciones inmediatas o puede programarse para que mida la radiación en un determinado periodo de tiempo
+              
+    Los detectores Geiger-Muller funcionan con un principio muy simple: Dentro del detector hay un gas noble y cuando las partículas entran al detector, estas reaccionan con ese gas noble. Cuando se da esta interacción, el gas cambia sus propiedades habituales y crea una conductividad. Todo esto hace que la radiación pueda medirse a partir de la frecuencia del flujo de la corriente que se genera. Algunos contadores también son capaces de medir rayos X, pero eso dependerá exclusivamente del contador pues existen de diferentes calidades que podrán proporcionar mayor precisión a la hora de realizar las mediciones.
     """)
-  st.markdown("""R""")
+  
+  st.markdown("<h3 style='text-align: left; color: #5E67DC; text-shadow: 3px 3px #BEFBB3;'>Distribución de Poisson</h3>", unsafe_allow_html=True)
+  st.markdown(""" 
+    Fue desarrollada por Siméon Denis Poisson en 1838. Esta distribución, de variable discreta, tiene una enorme importancia en el área de la modelización de fenómenos en los cuales el interés reside en determinar el número de hechos de cierto tipo que se pueden producir en un intervalo de tiempo donde estos hechos tiene una probabilidad muy baja de suceder o son muy raros. 
+              
+    La expresión matemática para esta función de probabilidad está dada por: 
+    """) 
+  st.latex(r''' P(X=k) = \frac{\lambda ^k\cdot e^{-\lambda }}{k!} ''')
+  st.markdown("donde lambda es llamado el parámetro de probabilidad, k es el número de ocasiones en las que queremos obtener determinado suceso y e es el número de Euler. ")
+  st.markdown("<h3 style='text-align: left; color: #5E67DC; text-shadow: 3px 3px #BEFBB3;'>Prueba de Chi cuadrada</h3>", unsafe_allow_html=True)
   st.markdown("""
-    ▶  
-    
-    ▶
+    La prueba del chi cuadrado (o prueba chi-cuadrado) es una técnica estadística utilizada para evaluar relaciones entre variables categóricas. Se basa en la comparación entre datos observados y datos esperados para determinar si las diferencias entre ellos son estadísticamente significativas. Hay dos tipos principales de pruebas del chi cuadrado:
+          
+    ▶ La prueba de independencia
+          
+    ▶Prueba de bondad de ajuste
+              
+    En general, el resultado de la prueba del chi cuadrado es un valor (el "estadístico chi cuadrado") que describe la magnitud de la diferencia entre los valores observados y esperados. El valor p (probabilidad) asociado con este estadístico nos ayuda a determinar si la diferencia es significativa. Si el valor p es pequeño (por ejemplo, menos de 0.05), puedes rechazar la hipótesis nula, lo que indica que hay una asociación significativa entre las variables (o que la distribución observada no se ajusta a la esperada).
+
     """)
   st.divider()
-  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CASO DE ESTUDIO</h1>", unsafe_allow_html=True)
-  st.markdown("""U""")
+  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>-- Análisis de resultados--</h1>", unsafe_allow_html=True)
   st.divider()
-  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>PROCEDIMIENTO EXPERIMENTAL</h1>", unsafe_allow_html=True)
-  st.markdown("""P""")
-  st.divider()
-  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>DISCUSIÓN DE RESULTADOS</h1>", unsafe_allow_html=True)  
-  st.markdown("""
-    ▶  D 
-    
-    ▶  L
-    
-    ▶ D
-    
-    """)
-  st.divider()
-  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CONCLUSIONES</h1>", unsafe_allow_html=True)  
-  st.markdown("""
-    ▶ L
-    
-    ▶ E
-    ▶ E
-    """)
+  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- Conclusiones---</h1>", unsafe_allow_html=True)
+
+
+
+
+
+
+
+
   st.divider()
   st.markdown("<h3 style='text-align: left; color: black;'>Referencias</h1>", unsafe_allow_html=True)
   st.markdown("""  
-  **1.**  Ministerio de Salud de Guatemala. Tablero COVID-19 Guatemala. (s. f.). Recuperado de: https://tableros.mspas.gob.gt/covid/
-
-                  
-  **2.**   Avcontentteam. (2023, 6 diciembre). 6 Types of Probability Distribution in Data Science. Analytics Vidhya. Recuperado de: https://www.analyticsvidhya.com/blog/2017/09/6-probability-distributions-data-science/
+  **1.**  Radionuclide Basics: Cesium-137 | US EPA. (2024, 5 febrero). US EPA. https://www.epa.gov/radiation/radionuclide-basics-cesium-137
+          
+  **2.**   Instrumentación, P. I. S. (2024, 27 abril). Contador Geiger | PCE Instruments. https://www.pce-instruments.com/espanol/instrumento-medida/medidor/contador-geiger-kat_163206.htm
                 
-  **3.**   Perú, D. S. R. (2021, 21 diciembre). 4 Distribuciones de Probabilidad Básicas a usar como Data Scientist. Data Science Research Perú. Recuperado de: https://datasciencepe.substack.com/p/4-distribuciones-de-probabilidad
+  **3.**   colaboradores de Wikipedia. (2024, 8 abril). Distribución de poisson. Wikipedia, la Enciclopedia Libre. https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Poisson
 
     """)
   st.divider()
+
+  
+  st.markdown('<div style="text-align: justify;> <div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;> <div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;> <div>', unsafe_allow_html=True)

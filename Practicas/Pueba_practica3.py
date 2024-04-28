@@ -95,7 +95,7 @@ if selected =="Principal":
   #Lector de datos
   data_aire = pd.read_csv('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica3/datos1.csv')
   df = pd.DataFrame(data_aire)
-  value_range = np.arange(-3,df['Aire'].max()+1)
+  value_range = np.arange(-3,df['Aire'].max()+1,1)
   count = df['Aire'].value_counts().reindex(value_range, fill_value=0).reset_index()
   print(count)
   #creamos la linea principal del gráfico

@@ -101,10 +101,10 @@ if selected =="Principal":
   #Actualizamos el estilo del trazo
   plot_fit.update_traces(line_color='#9635E6', line_width=2.5, line_shape='spline')
   #cambiamos el color de fondo del gráfico
-  plot_fit.update_layout({
+plot_fit.update_layout({
     'plot_bgcolor': 'rgba(14, 7, 32, 0.8)',
     'paper_bgcolor': 'rgba(0, 0, 0, 0)',
-   })
+})
   #Cambiamos el nombre de los ejes del gráfico
   plot_fit.update_layout(
     xaxis_title='Decaimientos medidos',
@@ -114,6 +114,31 @@ if selected =="Principal":
   plot_fit.add_bar(x=count['Aire'], y=count['count'],)
   #Por último, añadimos el gráfico a streamlit
   st.plotly_chart(plot_fit)
+  
+  data_aire = pd.read_csv('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica3/datos1.csv')
+
+  f_obs = data_aire['Aire'].values
+  value_range = np.arange(-3, data_aire['Aire'].max() + 1)
+  f_esp = fit_vectorized(value_range)
+  chi2, p_value = chi2_contingency([f_obs, f_esp])
+  results_data = {
+      'Decaimientos medidos': value_range,
+      'Conteo observado': f_obs,
+      'Conteo esperado': f_esp
+  }
+  results_df = pd.DataFrame(results_data)
+
+
+
+
+
+st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Datos de la prueba de Chi Cuadrado</h1>", unsafe_allow_html=True)
+st.write('Valor de Chi-Cuadrado:', chi2)
+st.write('Valor asociado a la prueba de Chi-Cuadrado (p-valor):', p_value)
+st.write(results_df)
+
+
+    
   #st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Mediciones con el Cesio-137</h1>", unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">En este caso, de igual forma que en el anterior caso, agrupamos por casos la cantidad de decaimientos medidos para poder analizar correctamente toda la información. Para este caso, es evidennte ver que la distribución es una de tipo Gaussiana por la forma en que se distribuyeron los datos.</div>', unsafe_allow_html=True)

@@ -150,20 +150,19 @@ plot_fit2.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rg
 plot_fit2.add_bar(x=group, y=dfd['count'])
 st.plotly_chart(plot_fit2)
 
-prom2=np.mean(data['Cesio'])
-desv2= np.std(data['Cesio'])
-promedio2 = round(prom2, 3)
-desviacion2 = round(desv2, 3)
-st.write('Promedio de los datos:', promedio2)
-st.write('Desviación Estándar de los datos:', desviacion2)
+def f(x):
+    return (25.382) * np.exp(-((x - 439.84) / 19.6525) ** 2 / 2)
+datos = np.loadtxt('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica3/datos1.csv', delimiter=',', usecols=[0], skiprows=1)
+f_esp=np.array([f(x) for x in datos)
+f_obs, _ = np.historigram(datos, bins='auto')
+chi2 = np.sum((f_esp - f_obs)**2/f_esp)
+g_lib = len(f_obs) - 1
+p = 1 - chi2.cdf(chi2, g_lib)
+st.write('Valor de Chi Cuadrado', chi2)
+st.write('Grados de libertad', g_lib)
+st.write('Valor asociado a la prueba de Chi cuadrado', p)
 
 
-#datos observados y esperados (para el coso del chi)
-observados = cesio_cut.values
-esperados = fit2(group)
-chi2, p_value = chi2_contingency([observados, esperados])
-st.write('Valor de Chi Cuadrado:', chi2)
-st.write('Valor p de la prueba de Chi Cuadrado:', p_value)
 
 
 

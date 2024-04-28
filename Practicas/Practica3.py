@@ -118,9 +118,9 @@ if selected == "Principal":
   st.plotly_chart(plot_fit)
   st.markdown('<div style="text-align: justify;">Con los datos que calculamos y los datos obtenidos del fit, se realizó la prueba de Chi Cuadrado, obtiendo los siguientes datos:</div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;"><b>Valor medido de Chi Cuadrado:</b> 8.373 </div>', unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado crítico: 21.026 </div>', unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Nivel de significancia (p): 0.05</div>', unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Grados de libertad: 12</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;"><b>Valor medido de Chi Cuadrado crítico:</b> 21.026 </div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;"><b>Nivel de significancia (p):</b> 0.05</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;"><b>Grados de libertad:</b> 12</div>', unsafe_allow_html=True)
 
     
   #st.divider()
@@ -158,10 +158,10 @@ if selected == "Principal":
   st.plotly_chart(plot_fit2)
     
   st.markdown('<div style="text-align: justify;">Con los datos que calculamos y los datos obtenidos del fit, se realizó la prueba de Chi Cuadrado, obtiendo los siguientes datos:</div>', unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado: 7243.425 </div>', unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado crítico: 814.945 </div>', unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Nivel de significancia (p): 0.05</div>', unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Grados de libertad: 80</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;"><b>Valor medido de Chi Cuadrado:>/b> 7243.425 </div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;"><b>Valor medido de Chi Cuadrado crítico:</b> 814.945 </div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;"><b>Nivel de significancia (p):</b> 0.05</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;"><b>Grados de libertad:</b> 80</div>', unsafe_allow_html=True)
 
 
 

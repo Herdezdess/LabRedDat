@@ -158,7 +158,7 @@ if selected == "Principal":
   st.plotly_chart(plot_fit2)
     
   st.markdown('<div style="text-align: justify;">Con los datos que calculamos y los datos obtenidos del fit, se realizó la prueba de Chi Cuadrado, obtiendo los siguientes datos:</div>', unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;"><b>Valor medido de Chi Cuadrado:>/b> 7243.425 </div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;"><b>Valor medido de Chi Cuadrado:</b> 7243.425 </div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;"><b>Valor medido de Chi Cuadrado crítico:</b> 814.945 </div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;"><b>Nivel de significancia (p):</b> 0.05</div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;"><b>Grados de libertad:</b> 80</div>', unsafe_allow_html=True)

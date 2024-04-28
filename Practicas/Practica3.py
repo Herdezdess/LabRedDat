@@ -116,7 +116,7 @@ if selected == "Principal":
   plot_fit.add_bar(x=count['Aire'], y=count['count'],)
   #Por último, añadimos el gráfico a streamlit
   st.plotly_chart(plot_fit)
-  st.divider()
+  #st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Mediciones con el Cesio-137</h1>", unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">En este caso, de igual forma que en el anterior caso, agrupamos por casos la cantidad de decaimientos medidos para poder analizar correctamente toda la información. Para este caso, es evidennte ver que la distribución es una de tipo Gaussiana por la forma en que se distribuyeron los datos.</div>', unsafe_allow_html=True)
   #Ahora vamos a haer lo mismo que hicimos en la parte anterior, pero para los datos del cesio

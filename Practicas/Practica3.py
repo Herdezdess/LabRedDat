@@ -122,7 +122,8 @@ if selected == "Principal":
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Mediciones con el Cesio-137</h1>", unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">En este caso, de igual forma que en el anterior caso, agrupamos por casos la cantidad de decaimientos medidos para poder analizar correctamente toda la información. Para este caso, es evidente ver que la distribución es una de tipo Gaussiana por la forma en que se distribuyeron los datos.</div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado: 8.373 </div>', unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Valor asociado a la prueba de Chi Cuadrado (p): 2.417</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado crítico: 21.026 </div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Nivel de significancia (p): 0.05</div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">Grados de libertad: 12</div>', unsafe_allow_html=True)
   #Ahora vamos a haer lo mismo que hicimos en la parte anterior, pero para los datos del cesio
   #Definimos el fit
@@ -156,7 +157,8 @@ if selected == "Principal":
   st.plotly_chart(plot_fit2)
   st.markdown('<div style="text-align: justify;">Con los datos que calculamos y los datos obtenidos del fit, se realizó la prueba de Chi Cuadrado, obtiendo los siguientes datos:</div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado: 7243.425 </div>', unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">Valor asociado a la prueba de Chi Cuadrado (p): 814.959</div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado crítico: 814.945 </div>', unsafe_allow_html=True)
+  st.markdown('<div style="text-align: justify;">Nivel de significancia (p): 0.05</div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">Grados de libertad: 80</div>', unsafe_allow_html=True)
 
 
@@ -222,11 +224,21 @@ if selected == "Teoría":
     """)
   #st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>-- Análisis de resultados--</h1>", unsafe_allow_html=True)
+  st.markdown("""
+          
+    ▶ Comparamos el valor de Chi cuadrado y Chi cuadrado crítico para saber si nuestras mediciones son suficiente para ver una relación de dependecia o independencia entre los valores medidos experimentalmente y los valores obtenidos a partir del ajuste binomial y el ajuste de una distribución de Poisson.
+
+    ▶ Además de la comparación de los Chi cuadrado medido y crítico, la relación de los datos medidos experimentalmente y los datos esperados deberían decirnos si la toma de datos fue la correcta.
+
+    """)
   #st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- Conclusiones---</h1>", unsafe_allow_html=True)
+  st.markdown("""
+    ▶ En el Aire, obtenemos un valor de Chi cuadrado relativamente pequeño, el cual nos dice que los datos medidos experimentalmente difieren relativamente poco de los datos esperados. Para el Cesio 137 pasa lo contrario, tenemos un valor muy grande de Chi Cuadrado medido lo que nos dice que los datos experimentales dirieren mucho de los datos esperados. 
+          
+    ▶ Para el primer caso el Chi crítico es mayor que el valor del Chi cuadrado calculado, esto nos dice que no tenemos los datos suficientes para decir que los valores medidos y los valores del ajuste son dependientes entre sí; mientras que en el segundo caso, el valor del Chi cuadrado calculado es mayor que el Chi cuadrado crítico, por lo que podemos decir que sí hay una relaciónde dependencia entre los datos medidos y el ajuste de la muestra. Esto además nos deice que el segundo caso se ajusta mejor al caso experimental. 
 
-
-
+    """)
 
 
 

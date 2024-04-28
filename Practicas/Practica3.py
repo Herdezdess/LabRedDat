@@ -161,7 +161,8 @@ chi2, p, _, _ = chi2_contingency(tabla_contingencia)
 chit2= round(chi2, 3)
 pt2 = round(p,3)
 st.write('Valor de Chi-Cuadrado:', chit2)
-st.write('Valor p:', pt2)
+st.write('Valor asociado a la prueba de Chi-Cuadrado:', pt2)
+#chi2 es el valor de la chi-cuadrado calculado y p es el p valor asociado a la prueba de chi-cuadrado.
 
     
   

@@ -217,8 +217,21 @@ if selected == "Teoría":
     """)
   #st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>-- Análisis de resultados--</h1>", unsafe_allow_html=True)
+  st.markdown("""
+          
+    ▶ 
+          
+    ▶
+
+    """)
   #st.divider()
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- Conclusiones---</h1>", unsafe_allow_html=True)
+  st.markdown("""
+    ▶ 
+          
+    ▶ 
+
+    """)
 
 
 

@@ -238,7 +238,7 @@ if selected == "Teoría":
   st.markdown("""
     ▶ En el Aire, obtenemos un valor de Chi cuadrado relativamente pequeño, el cual nos dice que los datos medidos experimentalmente difieren relativamente poco de los datos esperados. Para el Cesio 137 pasa lo contrario, tenemos un valor muy grande de Chi Cuadrado medido lo que nos dice que los datos experimentales dirieren mucho de los datos esperados. 
           
-    ▶ Para el primer caso el Chi crítico es mayor que el valor del Chi cuadrado calculado, esto nos dice que no tenemos los datos suficientes para decir que los valores medidos y los valores del ajuste son dependientes entre sí; mientras que en el segundo caso, el valor del Chi cuadrado calculado es mayor que el Chi cuadrado crítico, por lo que podemos decir que sí hay una relaciónde dependencia entre los datos medidos y el ajuste de la muestra. Esto además nos deice que el segundo caso se ajusta mejor al caso experimental. 
+    ▶ Para el primer caso el Chi crítico es mayor que el valor del Chi cuadrado calculado, esto nos dice que no tenemos los datos suficientes para decir que los valores medidos y los valores del ajuste son dependientes entre sí; mientras que en el segundo caso, el valor del Chi cuadrado calculado es mayor que el Chi cuadrado crítico, por lo que podemos decir que sí hay una relaciónde dependencia entre los datos medidos y el ajuste de la muestra. Esto además nos dice que el segundo caso se ajusta mejor al caso experimental. 
 
     """)
 

@@ -219,9 +219,9 @@ if selected == "Teoría":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>-- Análisis de resultados--</h1>", unsafe_allow_html=True)
   st.markdown("""
           
-    ▶ 
+    ▶ El valor asociado a la prueba de Chi Cuadrado de nuestras mediciones de radiación en el aire son más pequeñas que las mediciones usando Cesio 137. 
           
-    ▶
+    ▶ 
 
     """)
   #st.divider()
@@ -229,7 +229,7 @@ if selected == "Teoría":
   st.markdown("""
     ▶ 
           
-    ▶ 
+    ▶ Para el primer caso el Chi crítico es mayor que el valor del Chi cuadrado calculado, esto nos dice que no tenemos los datos suficientes para decir que los valores medidos y los valores del ajuste son dependientes entre sí; mientras que en el segundo caso, el valor del Chi cuadrado calculado es mayor que el Chi cuadrado crítico, por lo que podemos decir que sí hay una relaciónde dependencia entre los datos medidos y el ajuste de la muestra. Esto además nos deice que el segundo caso se ajusta mejor al caso experimental. 
 
     """)
 

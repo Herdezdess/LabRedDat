@@ -128,14 +128,10 @@ if selected =="Principal":
   }
   results_df = pd.DataFrame(results_data)
 
-
-
-
-
-    st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Datos de la prueba de Chi Cuadrado</h1>", unsafe_allow_html=True)
-    st.write('Valor de Chi-Cuadrado:', chi2)
-    st.write('Valor asociado a la prueba de Chi-Cuadrado (p-valor):', p_value)
-    st.write(results_df)
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Datos de la prueba de Chi Cuadrado</h1>", unsafe_allow_html=True)
+  st.write('Valor de Chi-Cuadrado:', chi2)
+  st.write('Valor asociado a la prueba de Chi-Cuadrado (p-valor):', p_value)
+  st.write(results_df)
 
 
     

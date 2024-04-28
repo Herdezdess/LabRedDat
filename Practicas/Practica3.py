@@ -153,7 +153,7 @@ st.plotly_chart(plot_fit2)
 def f(x):
     return (25.382) * np.exp(-((x - 439.84) / 19.6525) ** 2 / 2)
 datos = np.loadtxt('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica3/datos1.csv', delimiter=',', usecols=[0], skiprows=1)
-f_esp=np.array([f(x) for x in datos)
+f_esp=np.array([f(x) for x in datos])
 f_obs, _ = np.historigram(datos, bins='auto')
 chi2 = np.sum((f_esp - f_obs)**2/f_esp)
 g_lib = len(f_obs) - 1

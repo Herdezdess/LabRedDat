@@ -159,7 +159,7 @@ st.write('Desviación Estándar de los datos:', desviacion2)
 
 
 
-st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Datos de la prueba de Chi Cuadrado</h1>", unsafe_allow_html=True
+st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Datos de la prueba de Chi Cuadrado</h1>", unsafe_allow_html=True)
 tabla_contingencia = pd.crosstab(index=data['Aire'], columns=data['Cesio'])
 chi2, p, _, _ = chi2_contingency(tabla_contingencia)
 chit2= round(chi2, 3)

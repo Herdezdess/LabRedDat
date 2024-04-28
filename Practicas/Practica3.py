@@ -110,8 +110,11 @@ st.plotly_chart(plot_fit)
 
 prom1=np.mean(data['Aire'])
 desv1= np.std(data['Aire'])
-st.write('Promedio de los datos:', prom1)
-st.write('Desviación Estándar de los datos:', desv1)
+promedio1 = round(prom1, 3)
+desviacion1 = round(desv1, 3)
+st.write('Promedio de los datos:', promedio1)
+st.write('Desviación Estándar de los datos:', desviacion1)
+
 
 
 #st.divider()

@@ -95,7 +95,7 @@ if selected =="Principal":
   #Lector de datos
   data_aire = pd.read_csv('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica3/datos1.csv')
   df = pd.DataFrame(data_aire)
-  value_range = np.arange(-3,df['Aire'].max()+1,1)
+  value_range = np.arange(-3,df['Aire'].max()+1)
   count = df['Aire'].value_counts().reindex(value_range, fill_value=0).reset_index()
   print(count)
   #creamos la linea principal del gráfico
@@ -134,7 +134,7 @@ if selected =="Principal":
   fit2 = np.vectorize(fit2)
   #Tomamos los datos que medimos usando el cesio-137
   print(df['Cesio'].min())
-  value_range2 = np.arange(df['Cesio'].min(),df['Cesio'].max()+1)
+  value_range2 = np.arange(df['Cesio'].min(),df['Cesio'].max()+1,1)
   count_2 = df['Cesio'].value_counts().reindex(value_range2, fill_value=0).reset_index()
   print(count_2)
   print(value_range2)

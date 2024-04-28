@@ -5,6 +5,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 from streamlit_option_menu import option_menu
 from scipy.stats import linregress
+from scipy.stats import chi2_contingency
 import plotly.express as px
 import seaborn as sns
 import altair as alt

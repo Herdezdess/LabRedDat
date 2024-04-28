@@ -122,10 +122,10 @@ if selected == "Principal":
   st.markdown('<div style="text-align: justify;">Nivel de significancia (p): 0.05</div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">Grados de libertad: 12</div>', unsafe_allow_html=True)
 
+    
   #st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Mediciones con el Cesio-137</h1>", unsafe_allow_html=True)
-  st.markdown('<div style="text-align: justify;">En este caso, de igual forma que en el anterior caso, agrupamos por casos la cantidad de decaimientos medidos para poder analizar correctamente toda la información. Para este caso, es evidente ver que la distribución es una de tipo Gaussiana por la forma en que se distribuyeron los datos.</div>', unsafe_allow_html=True)
-
+  st.markdown('<div style="text-align: justify;">En este caso, de igual forma que en el anterior caso, agrupamos por casos la cantidad de decaimientos medidos para poder analizar correctamente toda la información. Para este caso, es evidennte ver que la distribución es una de tipo Gaussiana por la forma en que se distribuyeron los datos.</div>', unsafe_allow_html=True)
   #Ahora vamos a haer lo mismo que hicimos en la parte anterior, pero para los datos del cesio
   #Definimos el fit
   def fit2(x):
@@ -137,7 +137,7 @@ if selected == "Principal":
   fit2 = np.vectorize(fit2)
   #Tomamos los datos que medimos usando el cesio-137
   print(df['Cesio'].min())
-  value_range2 = np.arange(df['Cesio'].min(),df['Cesio'].max()+1)
+  value_range2 = np.arange(df['Cesio'].min(),df['Cesio'].max()+1,1)
   count_2 = df['Cesio'].value_counts().reindex(value_range2, fill_value=0).reset_index()
   print(count_2)
   print(value_range2)
@@ -156,6 +156,7 @@ if selected == "Principal":
    )
   plot_fit2.add_bar(x=group, y=dfd['count'])
   st.plotly_chart(plot_fit2)
+    
   st.markdown('<div style="text-align: justify;">Con los datos que calculamos y los datos obtenidos del fit, se realizó la prueba de Chi Cuadrado, obtiendo los siguientes datos:</div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado: 7243.425 </div>', unsafe_allow_html=True)
   st.markdown('<div style="text-align: justify;">Valor medido de Chi Cuadrado crítico: 814.945 </div>', unsafe_allow_html=True)

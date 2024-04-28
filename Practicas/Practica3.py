@@ -86,6 +86,7 @@ if selected == "Principal":
   st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>- Decaimiento de Cesio-137 -</h1>", unsafe_allow_html=True)
   #st.divider()
   st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Mediciones en el aire</h1>", unsafe_allow_html=True)
+    
 
 #Definir fórmula del fit para el aire
 def fit(x):
@@ -156,6 +157,9 @@ desviacion2 = round(desv2, 3)
 st.write('Promedio de los datos:', promedio2)
 st.write('Desviación Estándar de los datos:', desviacion2)
 
+
+
+st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Datos de la prueba de Chi-cuadrado</h1>", unsafe_allow_html=True
 tabla_contingencia = pd.crosstab(index=data['Aire'], columns=data['Cesio'])
 chi2, p, _, _ = chi2_contingency(tabla_contingencia)
 chit2= round(chi2, 3)

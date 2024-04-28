@@ -177,8 +177,57 @@ if selected == "Teoría":
   st.markdown("*Mencos Calva, Allan Fabricio. 202106009,*")
   st.markdown("*Zapeta Hernández, Alejandra Dessiré. 202112959.*")
   st.divider()
-  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- Cesio-137 ---</h1>", unsafe_allow_html=True)
-  
+  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- RESUMEN ---</h1>", unsafe_allow_html=True)
+  st.markdown("""""")
+  st.markdown("""  
+    ▶  
+    
+    ▶ 
+    """)
+  st.divider()
+  st.markdown("<h1 style='text-align: center; color: #A2BDF1; text-shadow: 3px 3px #BEFBB3;'>--- MARCO TEÓRICO ---</h1>", unsafe_allow_html=True)
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Distribución binomial</h1>", unsafe_allow_html=True)
+  st.markdown("""E""")
+  st.markdown("""Y""")
+  st.markdown("""
+    ▶ 
+    
+    ▶ 
+    
+    ▶ 
+    
+    ▶ 
+    """)
+  st.markdown("""R""")
+  st.markdown("""
+    ▶  
+    
+    ▶
+    """)
+  st.divider()
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CASO DE ESTUDIO</h1>", unsafe_allow_html=True)
+  st.markdown("""U""")
+  st.divider()
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>PROCEDIMIENTO EXPERIMENTAL</h1>", unsafe_allow_html=True)
+  st.markdown("""P""")
+  st.divider()
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>DISCUSIÓN DE RESULTADOS</h1>", unsafe_allow_html=True)  
+  st.markdown("""
+    ▶  D 
+    
+    ▶  L
+    
+    ▶ D
+    
+    """)
+  st.divider()
+  st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>CONCLUSIONES</h1>", unsafe_allow_html=True)  
+  st.markdown("""
+    ▶ L
+    
+    ▶ E
+    ▶ E
+    """)
   st.divider()
   st.markdown("<h3 style='text-align: left; color: black;'>Referencias</h1>", unsafe_allow_html=True)
   st.markdown("""  

@@ -158,6 +158,14 @@ st.write('Promedio de los datos:', promedio2)
 st.write('Desviación Estándar de los datos:', desviacion2)
 
 
+#datos observados y esperados (para el coso del chi)
+observed_data = cesio_cut.values
+expected_data = fit2(group)
+chi2, p_value = chi2_contingency([observed_data, expected_data])
+st.write('Valor de Chi Cuadrado:', chi2)
+st.write('Valor p de la prueba de Chi Cuadrado:', p_value)
+
+
 
 st.markdown("<h2 style='text-align: left; color: #D3BEF1;'>Datos de la prueba de Chi Cuadrado</h1>", unsafe_allow_html=True)
 tabla_contingencia = pd.crosstab(index=data['Aire'], columns=data['Cesio'])

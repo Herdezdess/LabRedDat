@@ -159,9 +159,9 @@ st.write('Desviación Estándar de los datos:', desviacion2)
 
 
 #datos observados y esperados (para el coso del chi)
-observed_data = cesio_cut.values
-expected_data = fit2(group)
-chi2, p_value = chi2_contingency([observed_data, expected_data])
+observados = cesio_cut.values
+esperados = fit2(group)
+chi2, p_value = chi2_contingency([observados, esperados])
 st.write('Valor de Chi Cuadrado:', chi2)
 st.write('Valor p de la prueba de Chi Cuadrado:', p_value)
 

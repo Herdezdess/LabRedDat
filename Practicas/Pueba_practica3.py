@@ -117,19 +117,19 @@ if selected =="Principal":
   #Por último, añadimos el gráfico a streamlit
   st.plotly_chart(plot_fit)
   
-  data_aire = pd.read_csv('https://raw.githubusercontent.com/Fabricio-mencos/LabRedDat/main/Practicas/Practica3/datos1.csv')
 
+  fit_vectorized = np.vectorize(fit)
   f_obs = data_aire['Aire'].values
   value_range = np.arange(-3, data_aire['Aire'].max() + 1)
-  f_esp = fit(value_range)
+  f_esp = fit_vectorized(value_range)
   f_obs = np.atleast_2d(f_obs)
   f_esp = np.atleast_2d(f_esp)
 
   chi2, p_value = chi2_contingency([f_obs, f_esp])
   results_data = {
       'Decaimientos medidos': value_range,
-      'Conteo observado': f_obs,
-      'Conteo esperado': f_esp
+      'Conteo observado': f_obs.flatten(),
+      'Conteo esperado': f_esp.flatten()
   }
   results_df = pd.DataFrame(results_data)
 

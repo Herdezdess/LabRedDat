@@ -148,6 +148,13 @@ plot_fit2.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rg
 plot_fit2.add_bar(x=group, y=dfd['count'])
 st.plotly_chart(plot_fit2)
 
+prom2=np.mean(data['Cesio'])
+desv2= np.std(data['Cesio'])
+promedio2 = round(prom2, 3)
+desviacion2 = round(desv2, 3)
+st.write('Promedio de los datos:', promedio2)
+st.write('Desviación Estándar de los datos:', desviacion2)
+
     
   
 if selected == "Teoría":

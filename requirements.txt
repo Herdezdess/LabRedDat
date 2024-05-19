@@ -19,6 +19,7 @@ mdurl
 numpy
 packaging
 pandas
+pickle
 pillow
 plotly
 protobuf

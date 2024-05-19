@@ -50,4 +50,3 @@ validators
 watchdog
 zipp
 streamlit_option_menu
-spotipy.oauth

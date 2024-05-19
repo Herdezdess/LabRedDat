@@ -23,7 +23,7 @@ with st.sidebar:
     )
 
 if selected == "Principal":
-    st.markdown("<h1 style='text-align: center; color: #A2BDF1;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #F74B66;'>Distribución Binomial: Lanzamiento de monedas</h1>", unsafe_allow_html=True)
     def binom(x,n,p):
     
 

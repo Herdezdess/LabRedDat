@@ -32,6 +32,7 @@ requests
 rich
 rpds-py
 scipy
+spotipy
 seaborn
 six
 smmap

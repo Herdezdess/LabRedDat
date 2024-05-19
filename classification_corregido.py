@@ -116,13 +116,14 @@ W_training = np.zeros((dim))
 # ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧⠀⠀⢀⡾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠙⢿⣿⣇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 # ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡿⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡿⠦⠠⠋⠀⠀⠀⠀⠀⢀⡶⠂⠀⠀⠀⠀⠀⠀⠧⠤⠄⠙⡿⠿⠦⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
+#bucle para el cálculo del promedio de las perdidad y el gradientes de lso datos de entrenamiento
 for iteration in range(max_iterations):
     mean_loss = np.mean([loss_sq(W_training, tds_i[1], tds_i[0]) for tds_i in tds])
     mean_grad_loss = np.mean([grad_loss_sq(W_training, tds_i[1], tds_i[0]) for tds_i in tds],axis=0)
 
     print(mean_grad_loss)
-    W_training -= mean_grad_loss*0.01
-
+    W_training -= mean_grad_loss*0.01 #actualización de parámetros, reducimos el error/pérdida
+#impresion de resultados
     print(f'{W_training} ; {mean_loss}')
 
 print(f'W_target: {W_target}\nW_traini: {W_training}')
@@ -130,38 +131,39 @@ print(f'{W_training/W_target}')
 
 
 # Como plotear puntos con distintos colores:
-fig,ax = plt.subplots(dim-1)
+fig,ax = plt.subplots(dim-1) #gráfica con ejes >=1 dependiendo de dim-1
 
-if dim-1 == 1:
-    ax = [ax]
+if dim-1 == 1: #si solo hay un eje
+    ax = [ax] #conversion a lsta
 
-label_to_color = {1:'C1',-1:'C2',0:'C0'}
+label_to_color = {1:'C1',-1:'C2',0:'C0'}#asignacion de colores especificos
 
-df_tds['x'] = df_tds['vector'].apply(lambda row: row[0])
-df_tds['color'] = df_tds['etiqueta'].apply(lambda label: label_to_color[label])
+df_tds['x'] = df_tds['vector'].apply(lambda row: row[0]) #nueva columna en la lista
+df_tds['color'] = df_tds['etiqueta'].apply(lambda label: label_to_color[label]) #nueva columna en la lista
 
-for i in range(dim-1):
+for i in range(dim-1): #bluce
 
-    df_tds['y'] = df_tds['vector'].apply(lambda row: row[i+1])
+    df_tds['y'] = df_tds['vector'].apply(lambda row: row[i+1])#nueva columana en la lista
 
-    cls_1 = df_tds[df_tds['etiqueta'] == 1]
-    cls_minus_1 = df_tds[df_tds['etiqueta'] == -1]
-    ax[i].scatter(cls_1['x'],cls_1['y'],color='C1',label='+1')
-    ax[i].scatter(cls_minus_1['x'],cls_minus_1['y'],color='C2',label='-1')
+    cls_1 = df_tds[df_tds['etiqueta'] == 1] #crea dataframe y asigna 1
+    cls_minus_1 = df_tds[df_tds['etiqueta'] == -1] #crea Dataframe y asigna -1
+    ax[i].scatter(cls_1['x'],cls_1['y'],color='C1',label='+1')#grafico de dispersion con colos especfico dependiendo de la clase
+    ax[i].scatter(cls_minus_1['x'],cls_minus_1['y'],color='C2',label='-1')#grafico de dispersion con colos especfico dependiendo de la clase
 
 
-    ax[i].quiver(0,0,W_target[0],W_target[i+1])
-    ax[i].quiver(0,0,W_training[0],W_training[i+1])
+    ax[i].quiver(0,0,W_target[0],W_target[i+1])#vecor
+    ax[i].quiver(0,0,W_training[0],W_training[i+1])#vector
 
-fig.legend(['+1','-1'])
+fig.legend(['+1','-1'])#leyenda
 
-fig.savefig('test.pdf')
-plt.close(fig)
+fig.savefig('test.pdf')#guarda la figura 
+plt.close(fig)#cierra la figura
 
 
 df_tds['etiqueta_trained'] = df_tds['vector'].apply(lambda vector: get_y_prediction(W_training,vector))
 fig,ax = plt.subplots(dim-1)
 
+#Gráficas, todo lo siguiente es para gráficar lo que obtuvimos anteriormente, ya con los ejes, colores y vectores 
 if dim-1 == 1:
     ax = [ax]
 
@@ -187,6 +189,7 @@ plt.close(fig)
 df_tds['comparacion'] = df_tds['etiqueta']*df_tds['etiqueta_trained']
 fig,ax = plt.subplots(dim-1)
 
+#Realizamos gráficos comparando los valores reales obtenidos y los datos del entrenamiento
 if dim-1 == 1:
     ax = [ax]
 
@@ -196,8 +199,8 @@ for i in range(dim-1):
 
     cls_1 = df_tds[df_tds['comparacion'] == 1]
     cls_minus_1 = df_tds[df_tds['comparacion'] == -1]
-    ax[i].scatter(cls_1['x'],cls_1['y'],color='green',label='Acertado')
-    ax[i].scatter(cls_minus_1['x'],cls_minus_1['y'],color='red',label='Fallado')
+    ax[i].scatter(cls_1['x'],cls_1['y'],color='green',label='Acertado')#si la comparación es igual, "Acertado", cierto color
+    ax[i].scatter(cls_minus_1['x'],cls_minus_1['y'],color='red',label='Fallado')#si la comparación no es igual, "Fallado", cierto color
 
 
     ax[i].quiver(0,0,W_target[0],W_target[i+1])

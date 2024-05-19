@@ -50,4 +50,4 @@ validators
 watchdog
 zipp
 streamlit_option_menu
-SpotifyClientCredentials
+spotipy.oauth
